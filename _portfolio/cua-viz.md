@@ -1,7 +1,7 @@
 ---
-title: "Cua viz"
-excerpt: "An inclusive template to assist people in blocked subway feeling the surficial city in XR world."
-date: 2023-03-21T11:48:41-04:00
+title: "Activity and Prices"
+excerpt: "Do Vibrant Places Promote Active Living? Analyzing Local Vibrancy, Running Activity, and Real Estate Prices in Beijing"
+date: 2022-09-13T11:48:41-04:00
 tags:
   - spatial analysis
   - representation
