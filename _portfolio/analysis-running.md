@@ -5,15 +5,17 @@ date: 2023-08-05T11:48:41-04:00
 tags:
   - spatial analysis
 header:
-  image: /assets/images/portfolio/Raw Portfolio - Yifeng LIU-9.png
+  image: /assets/images/portfolio/Raw Portfolio - Yifeng LIU-10.png
   teaser: /assets/images/portfolio/figure4-trajectoryviz4.jpeg
 sidebar:
+  - title: "Cooperators"
+    text: "Yuan Lai, Jiachen Zhang"
   - title: "Role"
-    text: "Designer, Front-End Developer"
+    text: "First Author, Front-End Developer"
   - title: "Responsibilities"
-    text: "Questionnaire website maintenance 50%, model training 100%, navigation website development 50%"
+    text: "95% program develop and mantance, 80% writing"
   - title: "Developed Skills"
-    text: "JavaScript, PostgreSQL "
+    text: "Python(geopandas,statsmodels), PostgreSQL(pgGIS)"
 typora-root-url: ./..
 ---
 
