@@ -85,6 +85,7 @@ gallery:
 </div>
 
 <script>
+
     function toggleImage() {
         var avatar = document.getElementById("avatarImage");
         if (avatar.src.match("avatar-head-square.png")) {
@@ -93,12 +94,24 @@ gallery:
             avatar.src = "/assets/images/avatar-head-square.png";
         }
     }
-</script>
 
-<script>
     const targetText = "an architect, \na data representations designer, \nand an urban researcher.";
     let currentText = "";
     let index = 0;
+    
+    function setAlignment() {
+    const avatar = document.getElementById("avatarImage");
+    const typewriter = document.getElementById("typewriter");
+
+    const avatarLeft = avatar.getBoundingClientRect().left;
+    typewriter.style.left = avatarLeft + 'px';
+    typewriter.style.position = 'relative';
+}
+
+window.onload = function() {
+    typeText();
+    setAlignment();
+}
 
     function typeText() {
         if (index < targetText.length) {
