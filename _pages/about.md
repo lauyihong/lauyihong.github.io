@@ -4,6 +4,12 @@ title: "About"
 excerpt: "Hi."
 toc: true
 ---
+<style>
+    body {
+        font-size: 80%; /* This sets the font size to 80% of the original size */
+    }
+</style>
+
 Hi!👋  This is **Yifeng Liu** [刘伊丰].
 
 Graduated from [SATU@Tsinghua](http://www.arch.tsinghua.edu.cn/column/Home), I will join [DUSP@MIT](https://dusp.mit.edu/) as a master student. My experience lies in architecture design, data representation, and urban analysis. I am interested in exploring the relationship between different urban behaviors and the social/physical structure. 
