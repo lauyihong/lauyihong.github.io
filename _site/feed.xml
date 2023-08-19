@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-08-07T08:22:59-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">EvanLou</title><subtitle>An amazing website.</subtitle><author><name>Yifeng Liu</name></author><entry><title type="html">website building notes</title><link href="http://localhost:4000/edge%20case/website-building-not/" rel="alternate" type="text/html" title="website building notes" /><published>2023-06-21T00:00:00-07:00</published><updated>2023-06-21T00:00:00-07:00</updated><id>http://localhost:4000/edge%20case/website-building-not</id><content type="html" xml:base="http://localhost:4000/edge%20case/website-building-not/">&lt;h1 id=&quot;website-building-notes&quot;&gt;website building notes&lt;/h1&gt;
+
+&lt;!-- 
+
+&lt;p&gt;
+  &lt;a href=&quot;https://www.baidu.com&quot;&gt;
+    &lt;img src=&quot;/assets/images/header-trajectoryviz4.png&quot; style=&quot;width: 450px;&quot; alt=&quot;描述图片内容&quot;&gt;
+  &lt;/a&gt;
+&lt;/p&gt; --&gt;</content><author><name>Yifeng Liu</name></author><category term="Edge Case" /><category term="content" /><category term="css" /><category term="edge case" /><category term="lists" /><category term="markup" /><summary type="html">website building notes</summary></entry><entry><title type="html">Summary of my 2023 application</title><link href="http://localhost:4000/note/edge-case-nested-and-mixed-lists-copy/" rel="alternate" type="text/html" title="Summary of my 2023 application" /><published>2023-05-15T00:00:00-07:00</published><updated>2023-05-15T00:00:00-07:00</updated><id>http://localhost:4000/note/edge-case-nested-and-mixed-lists%20%20copy</id><content type="html" xml:base="http://localhost:4000/note/edge-case-nested-and-mixed-lists-copy/">&lt;p&gt;Hi there.&lt;/p&gt;</content><author><name>Yifeng Liu</name></author><category term="Note" /><category term="application" /><category term="life" /><summary type="html">Hi there.</summary></entry><entry><title type="html">Edge Case: Nested and Mixed Lists</title><link href="http://localhost:4000/edge%20case/edge-case-nested-and-mixed-lists/" rel="alternate" type="text/html" title="Edge Case: Nested and Mixed Lists" /><published>2023-05-15T00:00:00-07:00</published><updated>2023-05-15T00:00:00-07:00</updated><id>http://localhost:4000/edge%20case/edge-case-nested-and-mixed-lists</id><content type="html" xml:base="http://localhost:4000/edge%20case/edge-case-nested-and-mixed-lists/">&lt;p&gt;Nested and mixed lists are an interesting beast. It’s a corner case to make sure that&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Lists within lists do not break the ordered list numbering order&lt;/li&gt;
+  &lt;li&gt;Your list styles go deep enough.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;ordered--unordered--ordered&quot;&gt;Ordered – Unordered – Ordered&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ordered item&lt;/li&gt;
+  &lt;li&gt;ordered item
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;unordered&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;unordered&lt;/strong&gt;
+        &lt;ol&gt;
+          &lt;li&gt;ordered item&lt;/li&gt;
+          &lt;li&gt;ordered item&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ordered item&lt;/li&gt;
+  &lt;li&gt;ordered item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ordered--unordered--unordered&quot;&gt;Ordered – Unordered – Unordered&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ordered item&lt;/li&gt;
+  &lt;li&gt;ordered item
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;unordered&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;unordered&lt;/strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;unordered item&lt;/li&gt;
+          &lt;li&gt;unordered item&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;ordered item&lt;/li&gt;
+  &lt;li&gt;ordered item&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;unordered--ordered--unordered&quot;&gt;Unordered – Ordered – Unordered&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;unordered item&lt;/li&gt;
+  &lt;li&gt;unordered item
+    &lt;ol&gt;
+      &lt;li&gt;ordered&lt;/li&gt;
+      &lt;li&gt;ordered
+        &lt;ul&gt;
+          &lt;li&gt;unordered item&lt;/li&gt;
+          &lt;li&gt;unordered item&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;unordered item&lt;/li&gt;
+  &lt;li&gt;unordered item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;unordered--unordered--ordered&quot;&gt;Unordered – Unordered – Ordered&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;unordered item&lt;/li&gt;
+  &lt;li&gt;unordered item
+    &lt;ul&gt;
+      &lt;li&gt;unordered&lt;/li&gt;
+      &lt;li&gt;unordered
+        &lt;ol&gt;
+          &lt;li&gt;&lt;strong&gt;ordered item&lt;/strong&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;strong&gt;ordered item&lt;/strong&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;unordered item&lt;/li&gt;
+  &lt;li&gt;unordered item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;task-lists&quot;&gt;Task Lists&lt;/h3&gt;
+
+&lt;ul class=&quot;task-list&quot;&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; checked=&quot;checked&quot; /&gt;Finish my changes&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Push my commits to GitHub&lt;/li&gt;
+  &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;Open a pull request&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Yifeng Liu</name></author><category term="Edge Case" /><category term="content" /><category term="css" /><category term="edge case" /><category term="lists" /><category term="markup" /><summary type="html">Nested and mixed lists are an interesting beast. It’s a corner case to make sure that</summary></entry></feed>

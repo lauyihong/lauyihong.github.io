@@ -1,0 +1,16 @@
+# main links
+main:
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Portfolio"
+    url: https://lauyihong.github.io/portfolio/
+  - title: "Blog"
+    url: https://lauyihong.github.io/blog/
+  - title: "About"
+    url: https://lauyihong.github.io/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
