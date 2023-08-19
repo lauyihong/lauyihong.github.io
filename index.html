@@ -27,10 +27,12 @@ gallery:
     <!-- Avatar Image -->
     <div style="text-align: center;">
         <img id="avatarImage" src="/assets/images/avatar-head-square.png" alt="Avatar" onclick="toggleImage()" style="width: 45%; max-width: 350px; ">
-        <p style="font-size: bigger; font-style: italic; margin-bottom: 12vh;">Hi! This is Yifeng,</p>
-        <div id="typewriter" style="text-align: center;font-weight: bold; text-decoration: underline;"></div> <br>
-        <p style="text-align: center;font-size: bigger; font-style: italic; margin-bottom: 12vh;">welcome to my website~</p>
-    </div>
+
+        <p style="font-size: bigger; font-style: italic;">
+            Hi! This is Yifeng, 
+            <div id="typewriter"></div>
+            Welcome to my website~
+        </p>
     
 
     <div style="text-align: center;">
@@ -98,7 +100,7 @@ gallery:
 </script>
 
 <script>
-    const targetText = "an architect, \na data representations designer, \nand an urban researcher.";
+    const targetText = "an architect,\na data representations designer, \nand an urban researcher. ";
     let currentText = "";
     let index = 0;
 
@@ -113,5 +115,4 @@ gallery:
 
     window.onload = typeText;  // 当页面加载完成后开始打字动画
 </script>
-
 
