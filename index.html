@@ -6,7 +6,7 @@ gallery:
     image_path: assets/images/portfolio/figure4-trajectoryviz4.jpeg
     alt: "placeholder image 1"
   - url: portfolio/cua-viz/
-    image_path: assets/images/portfolio/Screenshot 2023-08-18 at 12.38.15.jpg
+    image_path: /assets/images/portfolio/Screenshot 2023-08-18 at 12.38.15.jpg
     alt: "placeholder image 2"
   - url: portfolio/metro-ar/
     image_path: assets/images/portfolio/arhead.jpg
@@ -27,12 +27,9 @@ gallery:
     <!-- Avatar Image -->
     <div style="text-align: center;">
         <img id="avatarImage" src="/assets/images/avatar-head-square.png" alt="Avatar" onclick="toggleImage()" style="width: 45%; max-width: 350px; ">
-
-        <p style="font-size: bigger; font-style: italic;">
-            Hi! This is Yifeng, 
-            <div id="typewriter"></div>
-            Welcome to my website~
-        </p>
+        <p style="font-size: bigger; font-style: italic; margin-bottom: 12vh;">Hi! This is Yifeng,<div id="typewriter" style="text-align: center;font-weight: bold; text-decoration: underline;"></div>welcome to my website~</p>
+        
+    </div>
     
 
     <div style="text-align: center;">
@@ -100,7 +97,7 @@ gallery:
 </script>
 
 <script>
-    const targetText = "an architect,\na data representations designer, \nand an urban researcher. ";
+    const targetText = "an architect, \na data representations designer, \nand an urban researcher.";
     let currentText = "";
     let index = 0;
 
@@ -115,4 +112,5 @@ gallery:
 
     window.onload = typeText;  // 当页面加载完成后开始打字动画
 </script>
+
 
