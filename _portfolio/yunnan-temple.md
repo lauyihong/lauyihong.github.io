@@ -1,6 +1,6 @@
 ---
-title: "Yuannan Temple"
-excerpt: "Solar Decathlon China 2021, located in Dezhou, Hebei, China."
+title: "ManYuan Pavilion"
+excerpt: "Construction of Reading Pavilion in ManYuan Based on Village Microclimate Improvement"
 date: 2021-09-17T11:48:41-04:00
 tags:
   - design
