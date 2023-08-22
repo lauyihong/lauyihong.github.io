@@ -10,11 +10,11 @@ header:
   teaser: /assets/images/portfolio/figure4-trajectoryviz4.jpeg
 sidebar:
   - title: "Cooperators"
-    text: "Yuan Lai, Jiachen Zhang"
+    text: "Yuan Lai*"
   - title: "Role"
     text: "First Author, Front-End Developer"
   - title: "Responsibilities"
-    text: "95% program develop and mantance, 80% writing"
+    text: "95% program develop and mantance, 80% writing, 100% drawing"
   - title: "Developed Skills"
     text: "Python(geopandas,statsmodels), PostgreSQL(pgGIS)"
 typora-root-url: ./..
@@ -30,9 +30,13 @@ Outdoor running is one of the most popular physical activities, with numerous he
 
 
 
+<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />{: .align-left}
 
 
-<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />
+
+
+
+<img src="/assets/images/portfolio/figure6-timeSeries2.jpeg" alt="figure4-trajectoryviz4" style="zoom:50%;" />
 
 
 
@@ -40,7 +44,7 @@ Outdoor running is one of the most popular physical activities, with numerous he
 
 ![figure4-trajectoryviz4](/assets/images/portfolio/figure4-trajectoryviz4.jpeg)
 
-The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of u
+The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of 
 
 ![figure7-numtimeseries](/assets/images/portfolio/figure7-numtimeseries.jpeg)
 
