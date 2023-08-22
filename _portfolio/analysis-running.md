@@ -1,4 +1,5 @@
 ---
+
 title: "Jogging analysis"
 excerpt: "Analyzing jogging activity patterns and adaptation to public health regulation."
 date: 2023-08-05T11:48:41-04:00
@@ -20,6 +21,20 @@ typora-root-url: ./..
 ---
 
 The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of urban space in combination with the new technology path method, build an interactive cognition survey website to collect the public's cognitive evaluation of street view, and sort out the correlation mechanism between street architectural interface and street view cognitive evaluation. It provides a new perspective and technical support for urban design and the improvement of urban space quality.
+
+
+
+
+
+<img src="/assets/images/portfolio/figure1-studyarea.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />
+
+
+
+
+
+<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />
+
+
 
 
 
