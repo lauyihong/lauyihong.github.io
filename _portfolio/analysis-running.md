@@ -20,6 +20,12 @@ sidebar:
 typora-root-url: ./..
 ---
 
+<style>
+    body {
+        font-size: 90%; 
+    }
+</style>
+
 Outdoor running is one of the most popular physical activities, with numerous health benefits and minimal cost. Despite such importance, limited scientific understanding of collective behavioral patterns of running activity constraints more evidence-based spatial planning and urban design for promoting an active lifestyle. This study investigates the underlying spatial, temporal, and typological patterns of running activities within a university campus by analyzing a large number of running trajectory data (n = 11088) at high spatial-temporal resolution. Based on classification and pattern identification, the results reveal three major running activity types on streets, tracks, and mixed spatial conditions. This study further investigates data during a specific period when the campus experienced public space regulation as a part of the COVID-19 prevention protocol. Results reveal the disruption, change, and recovery of running activity, revealing local behavioral adaptation and resilience towards spatial intervention. Overall, our findings resonate with classic urban design theory and existing literature, and the proposed analytical workflow can further support more evidence-based and data-informed planning decisions and design actions for promoting physical activity and active living.
 
 
