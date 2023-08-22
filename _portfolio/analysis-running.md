@@ -24,15 +24,11 @@ The continuous development of technology provides new perspectives and tools for
 
 
 
-
-
-<img src="/assets/images/portfolio/figure1-studyarea.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />
-
+![figure4-trajectoryviz4](/assets/images/portfolio/figure1-studyarea.jpeg){: .align-right}
 
 
 
-
-<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />
+<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />{: .align-right}
 
 
 
