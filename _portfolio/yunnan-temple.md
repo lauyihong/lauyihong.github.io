@@ -2,6 +2,8 @@
 title: "ManYuan Pavilion"
 excerpt: "Construction of Reading Pavilion in ManYuan Based on Village Microclimate Improvement"
 date: 2021-09-17T11:48:41-04:00
+header:
+  teaser: /assets/images/portfolio/Screenshot 2023-08-18 at 14.19.48.jpg
 tags:
   - design
 sidebar:
