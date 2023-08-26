@@ -2,6 +2,8 @@
 title: "Perception Map"
 excerpt: "Research on citizen streetscape evaluation based on crowdsourcing survey and the application of navigation optimization."
 date: 2021-10-29T11:48:41-04:00
+header:
+  teaser: assets/images/portfolio/maphead.jpg
 tags:
   - spatial analysis
   - design
@@ -22,5 +24,9 @@ The continuous development of technology provides new perspectives and tools for
 
 ![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.29.12 PM.jpg)
 
-![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.31.29 PM.jpg)![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.32.19 PM.jpg)![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.32.47 PM.jpg)
+![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.31.29 PM.jpg)
+
+![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.32.19 PM.jpg)
+
+![figure1](/assets/images/portfolio/Screenshot 2023-08-26 at 5.32.47 PM.jpg)
 
