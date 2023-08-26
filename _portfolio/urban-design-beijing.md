@@ -30,3 +30,4 @@ typora-root-url: ./..
 
 ![photo](/assets/images/portfolio/Screenshot 2023-08-26 at 4.53.42 PM.jpg)
 
+![photo](/assets/images/portfolio/Screenshot 2023-08-26 at 4.59.36 PM.jpg)
