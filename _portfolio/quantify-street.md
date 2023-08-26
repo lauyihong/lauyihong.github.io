@@ -25,6 +25,6 @@ The continuous development of technology provides new perspectives and tools for
 
 <img src="/assets/images/portfolio/Screenshot 2023-06-30 at 03.48.05.jpg" alt="img0" style="zoom:50%;" />
 
-
+Screenshot 2023-08-26 at 5.29.12 PM.jpg
 
 This study uses a crowdsourced survey-supported web-based questionnaire to collect public cognitive evaluations of the streetscape and to sort out the association mechanism between streetscape elements and streetscape cognitive evaluations. There are three main steps in our study. First, we build an interactive streetscape evaluation website to collect public perceptions of the streetscape, and then we build a machine learning model with the semantic segmentation results of the streetscape and the website evaluation results as x and y. Lastly, we tried to develop a navigation system optimized for the demand and deployed it on a website accessible through the Internet.
