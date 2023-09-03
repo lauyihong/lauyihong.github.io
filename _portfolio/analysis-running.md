@@ -47,13 +47,13 @@ Since the COVID-19 pandemic in 2020, the campus has been closed to the public to
 
 
 
-Due to the local pandemic regulations, the school remained closed to the public from late April to July 2022. And within this period, the campus further enforced a public space regulation from May 6 to June 26 by separating the southwest zone from others,2 which is identified as “campus zone isolation” in this paper. Throughout the observation period, people were restricted from entering or leaving the campus or specific zone (from May 6 through June 26 in the Southwest District). Nevertheless, people’s access to buildings and public spaces remained unaffected. The entire observation period includes three phases depending on the temporary isolation of the particular zone. Because of these public health measures within the campus, its local population was relatively fixed without a significant in-and-out flux during the observation period. Such settings create a relatively constant population group throughout the observation period, providing the basis for control variables to investigate the effects of public space restriction on jogging behavior. We can assume that all movement paths on the campus are from the internal population considering the university usually does not allow visitors since COVID-19. This policy prevents data noises from complex external population groups and many tourists before this pandemic.
-
-
+Due to the local pandemic regulations, the school remained closed to the public from late April to July 2022. And within this period, the campus further enforced a public space regulation from May 6 to June 26 by separating the southwest zone from others,2 which is identified as “campus zone isolation” in this paper. Throughout the observation period, people were restricted from entering or leaving the campus or specific zone (from May 6 through June 26 in the Southwest District). 
 
 <img src="/assets/images/portfolio/figure1-studyarea.jpeg" alt="figure4-trajectoryviz4" style="zoom:50%;" />{: .align-right}
 
 
+
+Nevertheless, people’s access to buildings and public spaces remained unaffected. The entire observation period includes three phases depending on the temporary isolation of the particular zone. Because of these public health measures within the campus, its local population was relatively fixed without a significant in-and-out flux during the observation period. Such settings create a relatively constant population group throughout the observation period, providing the basis for control variables to investigate the effects of public space restriction on jogging behavior. We can assume that all movement paths on the campus are from the internal population considering the university usually does not allow visitors since COVID-19. This policy prevents data noises from complex external population groups and many tourists before this pandemic.
 
 # Data and methods
 
