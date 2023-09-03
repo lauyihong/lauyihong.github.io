@@ -73,9 +73,19 @@ The spatial and temporal changes of coordinates reflect the runner’s speed or 
 
 
 
+# Result
+
+## Jogging trajectory types
+
+The raw data report 11,080 jogging trajectories within the campus during the observation period (Figure 4). Among these, 93.0% of the trajectories (n = 10,305) were of a distance longer than 5 km, implying that people mainly use this app for mid-long jogging activity. The average speed and duration of jogging trajectories were similar across regions, indicating to some extent that runners in each region exercised with similar intensity. The statistical distributions for both jogging speed and duration are bimodal. Specifically, the two peaks for speed are 5.0 and 9.5 min per km, and the peaks for duration are 39 and 70 min. Regarding daily exercise time, the most popular jogging time slots are 10 a.m. and 7 p.m. The Southwest, Northwest, and West zones tend to jog during the daytime, while the North and East zones have a more pronounced tendency to exercise at night.
+
+
+
 ![figure4-trajectoryviz4](/assets/images/portfolio/figure4-trajectoryviz4.jpeg)
 
-# Result
+## Temporal changes of local jogging activity
+
+Our time-series analysis on temporal patterns of local jogging trajectories further explains how local activity changes between different periods. Overall, public space reconfiguration due to public
 
 
 
@@ -85,6 +95,17 @@ The spatial and temporal changes of coordinates reflect the runner’s speed or 
 
 The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of 
 
+
+
+
+
+## Speculations in campus jogging
+
 ![figure7-numtimeseries](/assets/images/portfolio/figure7-numtimeseries.jpeg)
 
 This study uses a crowdsourced survey-supported web-based questionnaire to collect public cognitive evaluations of the streetscape and to sort out the association mechanism between streetscape elements and streetscape cognitive evaluations. There are three main steps in our study. First, we build an interactive streetscape evaluation website to collect public perceptions of the streetscape, and then we build a machine learning model with the semantic segmentation results of the streetscape and the website evaluation results as x and y. Lastly, we tried to develop a navigation system optimized for the demand and deployed it on a website accessible through the Internet.
+
+
+
+# Discussion
+
