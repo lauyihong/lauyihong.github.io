@@ -26,13 +26,22 @@ typora-root-url: ./..
     }
 </style>
 
+
+> This study investigates the underlying spatial-temporal and typological patterns of running activities within a university campus. We also revealed local behavioral adaptation and resilience towards spatial intervention. 
+
+# Background 
+
 Outdoor running is one of the most popular physical activities, with numerous health benefits and minimal cost. Despite such importance, limited scientific understanding of collective behavioral patterns of running activity constraints more evidence-based spatial planning and urban design for promoting an active lifestyle. This study investigates the underlying spatial, temporal, and typological patterns of running activities within a university campus by analyzing a large number of running trajectory data (n = 11088) at high spatial-temporal resolution. Based on classification and pattern identification, the results reveal three major running activity types on streets, tracks, and mixed spatial conditions. This study further investigates data during a specific period when the campus experienced public space regulation as a part of the COVID-19 prevention protocol. Results reveal the disruption, change, and recovery of running activity, revealing local behavioral adaptation and resilience towards spatial intervention. Overall, our findings resonate with classic urban design theory and existing literature, and the proposed analytical workflow can further support more evidence-based and data-informed planning decisions and design actions for promoting physical activity and active living.
 
 
 
+# Study area and observation period
+
 <img src="/assets/images/portfolio/figure1-studyarea.jpeg" alt="figure4-trajectoryviz4" style="zoom:50%;" />{: .align-right}
 
 
+
+# Data and methods
 
 
 
@@ -42,13 +51,15 @@ Outdoor running is one of the most popular physical activities, with numerous he
 
 
 
+![figure4-trajectoryviz4](/assets/images/portfolio/figure4-trajectoryviz4.jpeg)
+
+# Result
+
+
+
 <img src="/assets/images/portfolio/figure6-timeSeries2.jpeg" alt="figure4-trajectoryviz4" style="zoom:50%;" />
 
 
-
-
-
-![figure4-trajectoryviz4](/assets/images/portfolio/figure4-trajectoryviz4.jpeg)
 
 The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of 
 
