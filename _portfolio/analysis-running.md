@@ -49,7 +49,9 @@ Since the COVID-19 pandemic in 2020, the campus has been closed to the public to
 
 Due to the local pandemic regulations, the school remained closed to the public from late April to July 2022. And within this period, the campus further enforced a public space regulation from May 6 to June 26 by separating the southwest zone from others,2 which is identified as “campus zone isolation” in this paper. Throughout the observation period, people were restricted from entering or leaving the campus or specific zone (from May 6 through June 26 in the Southwest District). 
 
-<img src="/assets/images/portfolio/figure1-studyarea.jpeg" alt="figure4-trajectoryviz4" style="zoom:50%;" />{: .align-right}
+
+
+<img src="/assets/images/portfolio/figure1-studyarea.jpeg" alt="figure4-trajectoryviz4" style="zoom:50%;" />
 
 
 
@@ -63,9 +65,9 @@ We collect data from multiple sources to quantify the research site’s jogging 
 
 Figure 3 illustrates the workflow for interpreting one raw trajectory and quantifying the runner’s behavioral characteristics. We quantify each jogging trajectory as a list of tuples fli, i ¼ 1; 2, /, ng, where li denotes the location in geographical coordinates (latitude and longitude) to distinguish each trajectory based on its unique sequence of geo-referenced points (Figure 3(a)). While such data reflect changing spatial location in each jogging trajectory, directly analyzing locational differences is problematic since such information only indicates locational rather than behavioral patterns. For instance, people who jog on tracks share similar behavioral patterns (i.e., jogging in loops) even though they may jog on separate tracks based on different sites far from each other.
 
-<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />{: .align-left}
 
 
+<img src="/assets/images/portfolio/figure3-attributeDiagram.jpeg" alt="figure4-trajectoryviz4" style="zoom: 33%;" />
 
 
 
