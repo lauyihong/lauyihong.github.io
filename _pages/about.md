@@ -6,7 +6,7 @@ toc: true
 ---
 <style>
     body {
-        font-size: 80%; /* This sets the font size to 80% of the original size */
+        font-size: 90%; /* This sets the font size to 80% of the original size */
     }
 </style>
 
