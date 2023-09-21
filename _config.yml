@@ -24,7 +24,6 @@ description              : "Yifeng's personal website."
 URL                      : "https:/lauyihong.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "lauyihong/lauyihong.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-favicon                  : /assets/images/signLOGOdarkgray.png
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : /assets/images/signLOGOwhite.png
 masthead_title           : "Yifeng Liu - 伊丰" # overrides the website title displayed in the masthead, use " " for no title
