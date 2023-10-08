@@ -1,25 +1,26 @@
 ---
 layout: splash
 author_profile: false
-gallery:
+gallery1:
   - url: portfolio/analysis-running/
     image_path: assets/images/portfolio/running-head.png
     alt: "placeholder image 1"
-  - url: portfolio/cua-viz/
-    image_path: assets/images/portfolio/viz-head.png
-    alt: "placeholder image 2"
-  - url: portfolio/metro-ar/
-    image_path: assets/images/portfolio/ar-head.png
-    alt: "placeholder image 2"
-  - url: portfolio/perception-map/
-    image_path: assets/images/portfolio/map-head.png
-    alt: "placeholder image 2"
   - url: portfolio/quantify-street/
     image_path: assets/images/portfolio/shanghai-head.png
     alt: "placeholder image 2"  
+  - url: portfolio/cua-viz/
+    image_path: assets/images/portfolio/viz-head.png
+    alt: "placeholder image 3"
+gallery2:
+  - url: portfolio/metro-ar/
+    image_path: assets/images/portfolio/ar-head.png
+    alt: "placeholder image 4"
+  - url: portfolio/perception-map/
+    image_path: assets/images/portfolio/map-head.png
+    alt: "placeholder image 5"
   - url: portfolio/sdc-team-thu/
     image_path: assets/images/portfolio/sdc-head.png
-    alt: "placeholder image 2"
+    alt: "placeholder image 6"
 ---
 <!-- Set the font size to 80% of the original size -->
 <style>
@@ -44,11 +45,13 @@ gallery:
         <!-- I am deeply passionate about hearing people's stories and am eager to delve into the diverse cultures around the world. My research interests encompass complex urban systems, data visualization, and the application of computing. <br><br> -->
 
         As an <span style="font-size: 1.6em; font-weight: bold;">RESEARCHER</span>, I am ...  <br><br>
+        
+        {% include gallery id="gallery1" caption="Explode more in my <a href="/portfolio/">portfolio!</a>" %}
 
         As an <span style="font-size: 1.6em; font-weight: bold;">ARCHITECT</span>, I am motivated to discern patterns in human mobility, with the goal of amplifying public engagement in both our societal constructs and the built environment. My experience spans Computer Vision algorithm development, spatiotemporal analysis, urban representation, and, naturally, architectural design.
         <br><br>
 
-        {% include gallery caption='Explode more in my <a href="/portfolio/">portfolio!</a>' %}
+        {% include gallery id="gallery2" caption="Explode more in my <a href="/portfolio/">portfolio!</a>" %}
 
         I am now enrolling in <a href="http://dusp.mit.edu">DUSP@MIT</a> as a master student, and am eager to further my studies in the data science and urban planning fields. Also, outside of my professional endeavors, I take pleasure in drawing, photography, playing the bass guitar, tennis, and baseball. The further information about me can be found in my <a href="/about/">About</a> and <a href="/portfolio/">Portfolio</a> pages. If anyone is interested in my work, or a band is looking for a bassist, please feel free to connect with me! <br><br>
 
