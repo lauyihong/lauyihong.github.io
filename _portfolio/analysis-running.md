@@ -1,5 +1,5 @@
 ---
-
+classes: wide
 title: "Jogging analysis"
 excerpt: "Analyzing jogging activity patterns and adaptation to public health regulation."
 date: 2023-08-05T11:48:41-04:00
