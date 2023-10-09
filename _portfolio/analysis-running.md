@@ -1,4 +1,5 @@
 ---
+skin: contrast
 classes: wide
 title: "Jogging analysis"
 excerpt: "Analyzing jogging activity patterns and adaptation to public health regulation."
