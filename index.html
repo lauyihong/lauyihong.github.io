@@ -1,7 +1,7 @@
 ---
 layout: splash
 author_profile: false
-gallery:
+gallery1:
   - url: portfolio/analysis-running/
     image_path: assets/images/portfolio/running-head.png
     alt: "placeholder image 1"
@@ -22,20 +22,17 @@ gallery2:
     image_path: assets/images/portfolio/sdc-head.png
     alt: "placeholder image 2"
 feature_row:
-  - image_path: assets/images/unsplash-gallery-image-1-th.jpg
+  - url: portfolio/analysis-running/
+    image_path: assets/images/portfolio/running-head.png
     alt: "placeholder image 1"
-    title: "Placeholder 1"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
+    btn_label: "Jogging Analysis"
+  - url: portfolio/cua-viz/
+    image_path: assets/images/portfolio/bjmap-head.png
     alt: "placeholder image 2"
-    title: "Placeholder 2"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
-    url: "#test-link"
     btn_label: "Read More"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
-    title: "Placeholder 3"
-    excerpt: "This is some sample content that goes here with **Markdown** formatting."
+  - url: portfolio/quantify-street/
+    image_path: assets/images/portfolio/shanghai-head.png
+    alt: "placeholder image 2" 
 feature_row2:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "placeholder image 2"
@@ -43,7 +40,6 @@ feature_row2:
     excerpt: 'This is some sample content that goes here with **Markdown** formatting. Left aligned with `type="left"`'
     url: "#test-link"
     btn_label: "Read More"
-    btn_class: "btn--primary"
 ---
 <!-- Set the font size to 80% of the original size -->
 <style>
@@ -56,14 +52,14 @@ feature_row2:
 
     <!-- Avatar Image -->
     <div style="text-align: center;">
-        <img id="avatarImage" src="/assets/images/avatar-head-square.png" alt="Avatar" style="width: 45%; max-width: 350px; ">
-        <p style="font-size: bigger; font-style: italic; margin-bottom: 11vh;">Hi! This is Yifeng, welcome to my website~</p>
+        <img id="avatarImage" src="/assets/images/portfolio/websiterealphoto.jpg" alt="Avatar" style="width: 68%; max-width: 480px; ">
+        <p style="font-size: 1.2em; text-decoration: underline; margin-bottom: 11vh;">Hi! This is Yifeng, welcome to my website~</p>
     </div>
     
     <!-- Main Content -->
     <div>
 
-        <p style="font-size: bigger; font-style: italic; margin-bottom: 8vh;">Updated on Oct 14, 2023. The structure of the front page is still being updated. Portfolio project content is still awaiting updates and refinement.</p>
+        <!-- <p style="font-size: bigger; font-style: italic; margin-bottom: 8vh;">Updated on Oct 14, 2023. The structure of the front page is still being updated. Portfolio project content is still awaiting updates and refinement.</p> -->
         <!-- font-weight: bold; text-decoration: underline; -->
         <!-- <div id="typewriter" style="font-size: bigger;"></div> <br> -->
         
@@ -73,22 +69,20 @@ feature_row2:
 
         | <a href="https://dusp.mit.edu/people/yifeng-liu">DUSP Page</a> | <a href="https://www.linkedin.com/in/lauyihong/">LinkedIn</a> | <a href="https://www.researchgate.net/profile/Yifeng-Liu-25">ResearchGate</a> |<br><br>
 
-        As an <span style="font-size: 1.2em; font-weight: bold;">RESEARCHER</span>, his experience accross Computer Vision algorithm development, spatiotemporal analysis.By mining complex urban systems and undiscriminating information about people's behavior, he tries to help build healthy public political systems. <br><br>
+        As an <span style="font-size: 1.2em; font-weight: bold;">RESEARCHER</span>, his experience accross Computer Vision algorithm development, spatiotemporal analysis.By mining complex urban systems and undiscriminating information about people's behavior, he tries to help build healthy public political systems.  his experience accross Computer Vision algorithm development, spatiotemporal analysis.By mining complex urban systems and undiscriminating information about people's behavior, he tries to help build healthy public political systems. <br><br>
 
-        {% include gallery caption="Explore mor of my work in ResearchGate." %}
+        {% include gallery id="gallery1" caption='<div style="text-align: right">sellected publications: Jogging Analysis | Beijing Infrastructure | Streets and Real Estate</div>' %}
 
-        As an <span style="font-size: 1.2em; font-weight: bold;">DESIGNER</span>, I am motivated to discern patterns in human mobility, with the goal of amplifying public engagement in both our societal constructs and the built environment. My experience spans data representation, application development, and, naturally, architectural design.
+        <!-- {% include gallery caption="Explore mor of my work in ResearchGate." %} -->
+
+        As an <span style="font-size: 1.2em; font-weight: bold;">DESIGNER</span>, he is motivated to discern patterns in human mobility, with the goal of amplifying public engagement in both our societal constructs and the built environment. My experience spans data representation, application development, and, naturally, architectural design.  he is motivated to discern patterns in human mobility, with the goal of amplifying public engagement in both our societal constructs and the built environment. My experience spans data representation, application development, and, naturally, architectural design.
         <br><br>
 
-        {% include gallery id="gallery2" caption='Explode more in my <a href="/portfolio/">portfolio!</a>' %}
+        {% include gallery id="gallery2" caption='<div style="text-align: right">sellected VIS work: Streets Map (CV/nevigation) | Underground Portal (AR/Unity) | SDC(arch-contruction/nevigation)</div>' %}
 
         Also, outside of my professional endeavors, I take pleasure in drawing, photography, playing the bass guitar, tennis, and baseball. The further information about me can be found in my <a href="/about/">About</a> and <a href="/portfolio/">Portfolio</a> pages. If anyone is interested in my work, or a band is looking for a bassist, please feel free to connect with me! <br><br>
 
         Thanks for your reading~ <br>
-
-        {% include feature_row %}
-
-        {% include feature_row id="feature_row2" type="left" %}
 
     </div>
 </div>

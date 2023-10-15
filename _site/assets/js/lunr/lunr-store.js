@@ -1,55 +1,49 @@
 var store = [{
-        "title": "Baz Boom Identity",
-        "excerpt":"Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn’t a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model Gardening &amp; War section...","categories": [],
-        "tags": [],
-        "url": "/portfolio/baz-boom-identity/",
-        "teaser": "/assets/images/unsplash-gallery-image-1-th.jpg"
-      },{
-        "title": "Fizz Bang Identity",
-        "excerpt":"Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn’t a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model Gardening &amp; War section...","categories": [],
-        "tags": [],
-        "url": "/portfolio/fizz-bang-identity/",
-        "teaser": "/assets/images/unsplash-gallery-image-2-th.jpg"
-      },{
-        "title": "Foo Bar Identity",
-        "excerpt":"Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn’t a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model Gardening &amp; War section...","categories": [],
-        "tags": [],
-        "url": "/portfolio/foo-bar-website/",
-        "teaser": "/assets/images/foo-bar-identity-th.jpg"
-      },{
-        "title": "Ginger Gulp Identity",
-        "excerpt":"Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn’t a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model Gardening &amp; War section...","categories": [],
-        "tags": [],
-        "url": "/portfolio/ginger-gulp-identity/",
-        "teaser": "/assets/images/unsplash-gallery-image-3-th.jpg"
-      },{
-        "title": "Perception Map",
-        "excerpt":"The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of urban space in combination with the new technology path method, build an interactive cognition survey website to collect the public’s...","categories": [],
-        "tags": [],
-        "url": "/portfolio/perception-map/",
-        "teaser": "/assets/images/portfolio/rodechoiseweb.jpg"
-      },{
         "title": "The Steep Ark",
-        "excerpt":"The Steppe Ark 草原方舟 Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn’t a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model...","categories": [],
-        "tags": [],
+        "excerpt":"  ","categories": [],
+        "tags": ["design"],
         "url": "/portfolio/sdc-team-thu/",
         "teaser": "/assets/images/portfolio/11541687314031_.pic_hd.jpg"
       },{
-        "title": "Summary of my 2023 application",
-        "excerpt":"Hi there.  ","categories": ["Note"],
-        "tags": ["application","life"],
-        "url": "/note/edge-case-nested-and-mixed-lists-copy/",
-        "teaser": null
+        "title": "ManYuan Pavilion",
+        "excerpt":"   A reading pavilion set in Manyuan, Yunan, China. Supported by the EU Embassy in Beijing, China.  ","categories": [],
+        "tags": ["design"],
+        "url": "/portfolio/yunnan-temple/",
+        "teaser": "/assets/images/portfolio/Screenshot%202023-08-18%20at%2014.19.48.jpg"
       },{
-        "title": "Edge Case: Nested and Mixed Lists",
-        "excerpt":"Nested and mixed lists are an interesting beast. It’s a corner case to make sure that Lists within lists do not break the ordered list numbering order Your list styles go deep enough. Ordered – Unordered – Ordered ordered item ordered item unordered unordered ordered item ordered item ordered item...","categories": ["Edge Case"],
-        "tags": ["content","css","edge case","lists","markup"],
-        "url": "/edge%20case/edge-case-nested-and-mixed-lists/",
-        "teaser": null
+        "title": "Perception Map",
+        "excerpt":"The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of urban space in combination with the new technology path method, build an interactive cognition survey website to collect the public’s...","categories": [],
+        "tags": ["spatial analysis","design","representation"],
+        "url": "/portfolio/perception-map/",
+        "teaser": "/assets/images/portfolio/maphead.jpg"
       },{
-        "title": "website building notes",
-        "excerpt":"website building notes    ","categories": ["Edge Case"],
-        "tags": ["content","css","edge case","lists","markup"],
-        "url": "/edge%20case/website-building-not/",
-        "teaser": null
-      }]
+        "title": "Urban-Rural UD",
+        "excerpt":"           ","categories": [],
+        "tags": ["design"],
+        "url": "/portfolio/urban-design-beijing/",
+        "teaser": "/assets/images/portfolio/2page.jpg"
+      },{
+        "title": "Underground Portal",
+        "excerpt":"Advanced urban transportation systems are also contributing to this perception of the city. With the super- fast public transportation service, the city seems to be getting smaller and smaller, so small that only two blocks remain: one for my home and one for my office area/school. People are gradually losing...","categories": [],
+        "tags": ["design","representation"],
+        "url": "/portfolio/metro-ar/",
+        "teaser": "/assets/images/portfolio/arhead.jpg"
+      },{
+        "title": "Activity and Prices",
+        "excerpt":"Although extensive research has investigated urban vibrancy as a critical indicator for spatial planning, urban design, and economic development, the unclear relationship between local vibrancy and active living needs to be clarified and requires more in-depth analysis. This study localizes urban vibrancy at both hyper-local and neighborhood scales by integrating...","categories": [],
+        "tags": ["spatial analysis","representation"],
+        "url": "/portfolio/cua-viz/",
+        "teaser": "/assets/images/portfolio/Screenshot%202023-08-18%20at%2012.38.15.jpg"
+      },{
+        "title": "Neighborhood Measure",
+        "excerpt":"This project content is still awaiting updates and refinement.  ","categories": [],
+        "tags": ["spatial analysis"],
+        "url": "/portfolio/quantify-street/",
+        "teaser": "https://www.researchgate.net/profile/Waishan-Qiu/publication/365275329/figure/fig2/AS:11431281096593884@1668182666424/Gini-importance-of-each-objective-feature-of-subjective-perceptions-prediction.png"
+      },{
+        "title": "Jogging analysis",
+        "excerpt":"Based on jogging trajectories data from a mobile running app KEEP, this study investigates the underlying spatial-temporal and typological patterns of jogging activities within a university campus. We also revealed local behavioral adaptation and resilience towards spatial intervention. Overall, our findings resonate with classic urban design theory and existing literature,...","categories": [],
+        "tags": ["spatial analysis"],
+        "url": "/portfolio/analysis-running/",
+        "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
+      },]
