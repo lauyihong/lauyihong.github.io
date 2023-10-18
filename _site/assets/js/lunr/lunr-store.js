@@ -42,7 +42,7 @@ var store = [{
         "teaser": "https://www.researchgate.net/profile/Waishan-Qiu/publication/365275329/figure/fig2/AS:11431281096593884@1668182666424/Gini-importance-of-each-objective-feature-of-subjective-perceptions-prediction.png"
       },{
         "title": "Jogging analysis",
-        "excerpt":"Based on jogging trajectories data from a mobile running app KEEP, this study investigates the underlying spatial-temporal and typological patterns of jogging activities within a university campus. We also revealed local behavioral adaptation and resilience towards spatial intervention. Overall, our findings resonate with classic urban design theory and existing literature,...","categories": [],
+        "excerpt":"Liu, Y., &amp; Lai, Y. (2023). Analyzing jogging activity patterns and adaptation to public health regulation. Environment and Planning B: Urban Analytics and City Science, 0(0). link Keywords: Running activity, urban informatics, urban planning, public health Based on jogging trajectories data from a mobile running app KEEP, this study investigates...","categories": [],
         "tags": ["spatial analysis"],
         "url": "/portfolio/analysis-running/",
         "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"

@@ -1,5 +1,4 @@
 ---
-skin: contrast
 classes: wide
 title: "Jogging analysis"
 excerpt: "Analyzing jogging activity patterns and adaptation to public health regulation."
@@ -19,7 +18,20 @@ sidebar:
   - title: "Developed Skills"
     text: "Python(geopandas,statsmodels), PostgreSQL(pgGIS)"
 typora-root-url: ./..
+
+gallery:
+  - url: /assets/images/portfolio/figure1-studyarea.jpeg
+    image_path: /assets/images/portfolio/figure1-studyarea.jpeg
+    alt: "placeholder image 1"
+    title: "trajectoryviz4"
+  - url: /assets/images/portfolio/figure3-attributeDiagram.jpeg
+    image_path: /assets/images/portfolio/figure3-attributeDiagram.jpeg
+    alt: "placeholder image 2"
+    title: "trajectoryviz4"
 ---
+
+{% assign stylesheet = page.skin | default: 'light' | prepend: '/assets/css/' | append: '.css' %}
+<link rel="stylesheet" href="{{ stylesheet | relative_url }}">
 
 <style>
     body {
@@ -27,21 +39,15 @@ typora-root-url: ./..
     }
 </style>
 
-
-> Based on jogging trajectories data from a mobile running app KEEP, this study investigates the underlying spatial-temporal and typological patterns of jogging activities within a university campus. We also revealed local behavioral adaptation and resilience towards spatial intervention. 
->
-> Overall, our findings resonate with classic urban design theory and existing literature, and the proposed analytical workflow can further support more evidence-based and data-informed planning decisions and design actions for promoting physical activity and active living.
-
-
+*Liu, Y., & Lai, Y. (2023). Analyzing jogging activity patterns and adaptation to public health regulation. Environment and Planning B: Urban Analytics and City Science, 0(0).
+[link](https://doi.org/10.1177/23998083231193484)*
 
 Keywords: Running activity, urban informatics, urban planning, public health
 
 
-
-> 基于对来自KEEP软件的运动轨迹分析，该项目在校园范围内研究了潜在的慢跑时空规律。同时在COVID19的背景下，我们还揭示了在地活动对空间隔离的适应和恢复现象。
+> Based on jogging trajectories data from a mobile running app KEEP, this study investigates the underlying spatial-temporal and typological patterns of jogging activities within a university campus. We also revealed local behavioral adaptation and resilience towards spatial intervention. 
 >
-> 总体而言，我们的发现与经典的城市设计理论和现有文献产生了共鸣，拟议的分析工作流程可以进一步支持更多基于证据和数据知情的规划决策和设计行动，以促进体育活动和积极生活。
-
+> Overall, our findings resonate with classic urban design theory and existing literature, and the proposed analytical workflow can further support more evidence-based and data-informed planning decisions and design actions for promoting physical activity and active living.
 
 
 # Background 
@@ -52,6 +58,7 @@ Outdoor running is one of the most popular physical activities, with numerous he
 
 This study investigates the underlying spatial, temporal, and typological patterns of running activities within a university campus by analyzing a large number of running trajectory data (n = 11088) at high spatial-temporal resolution. Based on classification and pattern identification, the results reveal three major running activity types on streets, tracks, and mixed spatial conditions. This study further investigates data during a specific period when the campus experienced public space regulation as a part of the COVID-19 prevention protocol. Results reveal the disruption, change, and recovery of running activity, revealing local behavioral adaptation and resilience towards spatial intervention. Overall, our findings resonate with classic urban design theory and existing literature, and the proposed analytical workflow can further support more evidence-based and data-informed planning decisions and design actions for promoting physical activity and active living.
 
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
 
 
 # Study area and observation period
