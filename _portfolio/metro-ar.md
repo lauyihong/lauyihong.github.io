@@ -7,7 +7,7 @@ tags:
   - design
   - representation
 header:
-  image: /assets/images/portfolio/arhead.jpg
+  image: /assets/images/portfolio/ar-head-black.png
   teaser: /assets/images/portfolio/arhead.jpg
 sidebar:
   - title: "Role"
