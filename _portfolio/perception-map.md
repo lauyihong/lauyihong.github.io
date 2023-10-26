@@ -42,3 +42,5 @@ gallery:
 ---
 
 The continuous development of technology provides new perspectives and tools for people to recognize and analyze the city. The research team hopes to conduct research on the basic elements of urban space in combination with the new technology path method, build an interactive cognition survey website to collect the public's cognitive evaluation of street view, and sort out the correlation mechanism between street architectural interface and street view cognitive evaluation. It provides a new perspective and technical support for urban design and the improvement of urban space quality.
+
+{% include gallery caption="This is a sample gallery with **Markdown support**." %}
