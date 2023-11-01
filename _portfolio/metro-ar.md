@@ -17,6 +17,10 @@ sidebar:
 typora-root-url: ./..
 
 gallery:
+  - url: /assets/images/portfolio/Screenshot 2023-11-01 at 6.55.38 PM.jpg
+    image_path: /assets/images/portfolio/Screenshot 2023-11-01 at 6.55.38 PM.jpg
+    alt: "Firstpage"
+    title: "Firstpage"
   - url: /assets/images/portfolio/Screenshot 2023-08-26 at 5.24.49 PM.jpg
     image_path: /assets/images/portfolio/Screenshot 2023-08-26 at 5.24.49 PM.jpg
     alt: "Background"
