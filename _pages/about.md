@@ -10,7 +10,7 @@ excerpt: "Hi."
     }
 </style>
 
-Hi!👋  This is **Yifeng Liu** [刘伊丰]. [Here is my CV.pdf](/assets/pdf/YifengCV.pdf)
+Hi!👋  This is **Yifeng Liu** [刘伊丰]. [Here is my CV.pdf](/assets/pdf/yifengCV.pdf)
 
 Graduated from [SATU@Tsinghua](http://www.arch.tsinghua.edu.cn/column/Home), I will join [DUSP@MIT](https://dusp.mit.edu/) as a master student. My experience lies in architecture design, data representation, and urban analysis. I am interested in exploring the relationship between different urban behaviors and the social/physical structure. 
 
@@ -49,5 +49,5 @@ national Conference on Pervasive Computing and Communications Workshops and othe
 
 # Pdf download
 
-**[Download my CV.pdf file here](/assets/pdf/YifengCV.pdf)**
+**[Download my CV.pdf file here](/assets/pdf/yifengCV.pdf)**
 
