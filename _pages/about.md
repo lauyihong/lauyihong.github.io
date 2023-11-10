@@ -10,7 +10,7 @@ excerpt: "Hi."
     }
 </style>
 
-Hi!👋  This is **Yifeng Liu** [刘伊丰].
+Hi!👋  This is **Yifeng Liu** [刘伊丰]. [here is my CV.pdf](https://www.dropbox.com/scl/fi/889i6jwns098xb1m6sxws/YifengCV.pdf?rlkey=olno0y96e446534xohic53q8y&dl=0)
 
 Graduated from [SATU@Tsinghua](http://www.arch.tsinghua.edu.cn/column/Home), I will join [DUSP@MIT](https://dusp.mit.edu/) as a master student. My experience lies in architecture design, data representation, and urban analysis. I am interested in exploring the relationship between different urban behaviors and the social/physical structure. 
 
