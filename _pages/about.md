@@ -1,8 +1,8 @@
 ---
+classes: wide
 permalink: /about/
 title: "About"
 excerpt: "Hi."
-toc: true
 ---
 <style>
     body {
