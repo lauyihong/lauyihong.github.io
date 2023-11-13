@@ -30,13 +30,13 @@ var store = [{
         "teaser": "/assets/images/portfolio/arhead.jpg"
       },{
         "title": "Activity and Prices",
-        "excerpt":"Although extensive research has investigated urban vibrancy as a critical indicator for spatial planning, urban design, and economic development, the unclear relationship between local vibrancy and active living needs to be clarified and requires more in-depth analysis. This study localizes urban vibrancy at both hyper-local and neighborhood scales by integrating...","categories": [],
+        "excerpt":"Lai Y, Li J, Zhang J, Yan L, Liu Y. Do Vibrant Places Promote Active Living? Analyzing Local Vibrancy, Running Activity, and Real Estate Prices in Beijing. International Journal of Environmental Research and Public Health. 2022; 19(24):16382. article link visulization platform demo Although extensive research has investigated urban vibrancy as...","categories": [],
         "tags": ["spatial analysis","representation"],
         "url": "/portfolio/cua-viz/",
         "teaser": "/assets/images/portfolio/Screenshot%202023-08-18%20at%2012.38.15.jpg"
       },{
         "title": "Neighborhood Measure",
-        "excerpt":"This project content is still awaiting updates and refinement.  ","categories": [],
+        "excerpt":"Song, Q., Liu, Y., Qiu, W., Liu, R., &amp; Li, M. (2022). Investigating the impact of perceived micro-level neighborhood characteristics on housing prices in Shanghai. Land, 11(11), 2002.link It is widely accepted that houses in better-designed neighborhoods are found to enjoy a price premium. Prior studies have mainly examined the...","categories": [],
         "tags": ["spatial analysis"],
         "url": "/portfolio/quantify-street/",
         "teaser": "https://www.researchgate.net/profile/Waishan-Qiu/publication/365275329/figure/fig2/AS:11431281096593884@1668182666424/Gini-importance-of-each-objective-feature-of-subjective-perceptions-prediction.png"
@@ -45,5 +45,11 @@ var store = [{
         "excerpt":"Liu, Y., &amp; Lai, Y. (2023). Analyzing jogging activity patterns and adaptation to public health regulation. Environment and Planning B: Urban Analytics and City Science, 0(0). link Keywords: Running activity, urban informatics, urban planning, public health Based on jogging trajectories data from a mobile running app KEEP, this study investigates...","categories": [],
         "tags": ["spatial analysis"],
         "url": "/portfolio/analysis-running/",
+        "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
+      },{
+        "title": " Urban Informal Computing",
+        "excerpt":"Lai, Y., &amp; Liu, Y., (2022). Computing Places and Human Activity in Data-absent Informal Urban Settlements.2022 IEEE Inter- national Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops), 2022, pp. 478-483. link Informal urban settlements are critical for sustainable development but challenging for computational analytics due...","categories": [],
+        "tags": ["spatial analysis"],
+        "url": "/portfolio/informal-map/",
         "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
       },]
