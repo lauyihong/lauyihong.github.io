@@ -6,7 +6,7 @@ date: 2023-08-05T11:48:41-04:00
 tags:
   - spatial analysis
 header:
-  teaser: /assets/images/portfolio/figure4-trajectoryviz4.jpeg
+  teaser: /assets/images/portfolio/informal-head.png
 typora-root-url: ./..
 
 gallery:

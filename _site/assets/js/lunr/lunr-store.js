@@ -51,5 +51,5 @@ var store = [{
         "excerpt":"Lai, Y., &amp; Liu, Y., (2022). Computing Places and Human Activity in Data-absent Informal Urban Settlements.2022 IEEE Inter- national Conference on Pervasive Computing and Communications Workshops and other Affiliated Events (PerCom Workshops), 2022, pp. 478-483. link Informal urban settlements are critical for sustainable development but challenging for computational analytics due...","categories": [],
         "tags": ["spatial analysis"],
         "url": "/portfolio/informal-map/",
-        "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
+        "teaser": "/assets/images/portfolio/informal-head.png"
       },]
