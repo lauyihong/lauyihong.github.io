@@ -52,4 +52,28 @@ var store = [{
         "tags": ["spatial analysis"],
         "url": "/portfolio/informal-map/",
         "teaser": "/assets/images/portfolio/informal-head.png"
-      },]
+      },{
+        "title": "Edge Case: Many Categories",
+        "excerpt":"This post has many categories.  ","categories": ["aciform","antiquarianism","arrangement","asmodeus","broder","buying","championship","chastening","disinclination","disinfection","dispatch","echappee","enphagy"],
+        "tags": ["categories","edge case"],
+        "url": "/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/edge-case-many-categories/",
+        "teaser": null
+      },{
+        "title": "Edge Case: No Body Content",
+        "excerpt":" ","categories": ["Edge Case"],
+        "tags": ["content","edge case","layout"],
+        "url": "/edge%20case/edge-case-no-body-content/",
+        "teaser": null
+      },{
+        "title": "Edge Case No Yaml Title",
+        "excerpt":"This post has no title specified in the YAML Front Matter. Jekyll should auto-generate a title from the filename.  ","categories": ["Edge Case"],
+        "tags": ["edge case","layout","title"],
+        "url": "/edge%20case/edge-case-no-yaml-title/",
+        "teaser": null
+      },{
+        "title": "Edge Case: Post with multiline excerpt",
+        "excerpt":"Et ex ullamco duis don’t combine these words quis laborum sunt sint. Nisi et Lorem reprehenderit cupidatat. Aliqua fugiat aliquip officia culpa elit. Adipisicing do eu duis aute et aute amet anim ut cillum aliqua. Aliqua adipisicing occaecat et ullamco fugiat.  ","categories": [],
+        "tags": [],
+        "url": "/edge-case-multiline-excerpt/",
+        "teaser": null
+      }]
