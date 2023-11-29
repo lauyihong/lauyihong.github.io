@@ -22,9 +22,9 @@ I also enjoy playing rock music🎵 and baseball⚾️ in my spare time. Please 
 2018-2023, BArch, SATU, THU, Beijing, China
 
 # Academic Experience
-2022-2023, Research Assitance, [Sustainable Urbanization Lab](http://sul.mit.edu), MIT, Cambridge, MA
+2023-Present, Research Assitance, [Sustainable Urbanization Lab](http://sul.mit.edu), MIT, Cambridge, MA
 
-2022-2023, Research Assitance, [Future Urban AI Studio](http://urbanintelligence.tech/eng.html), Tsinghua University, Beijing, China
+2022-Present, Research Assitance, [Future Urban AI Studio](http://urbanintelligence.tech/eng.html), Tsinghua University, Beijing, China
 
 2020-2021, Research Assitance, Prof. Wang's Group, Tsinghua University, Beijing, China
 
