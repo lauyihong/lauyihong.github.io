@@ -53,6 +53,12 @@ var store = [{
         "url": "/portfolio/informal-map/",
         "teaser": "/assets/images/portfolio/informal-head.png"
       },{
+        "title": "ALLOCATING COVID TESTING STATIONS",
+        "excerpt":"The project is a course project for Optimization Methods, the final report is not published yet. You can access to the drafet version of the report and slides here: Final Report Final Slides Keywords: COVID, Mixed Integer Optimization, Infrastructure and System Management, Spatial Analysis This project, undertaken in the 6.7201...","categories": [],
+        "tags": ["spatial analysis","optimization"],
+        "url": "/portfolio/covid-allocation/",
+        "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
+      },{
         "title": "Post example",
         "excerpt":"This post has many categories.  ","categories": ["aciform","antiquarianism","arrangement","asmodeus","broder","buying","championship","chastening","disinclination","disinfection","dispatch","echappee","enphagy"],
         "tags": ["categories","edge case"],
