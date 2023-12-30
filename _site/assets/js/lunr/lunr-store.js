@@ -64,4 +64,10 @@ var store = [{
         "tags": ["categories","edge case"],
         "url": "/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/case/",
         "teaser": null
+      },{
+        "title": "fast pitch note",
+        "excerpt":"Research keyworks and todo Jinhua Zhao Rebalancing shared mobility-on-demand systems: A reinforcement learning approach Measuring Regularity of Individual Travel Patterns Estimating a Rail Passenger Trip Origin‐Destination Matrix Using Automatic Data Collection Systems Quick note talk with Zhengxu, about the enviroument of Chinese entroneurship. send him the project proposal at the...","categories": ["aciform","antiquarianism","arrangement","asmodeus","broder","buying","championship","chastening","disinclination","disinfection","dispatch","echappee","enphagy"],
+        "tags": ["categories","edge case"],
+        "url": "/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/note/",
+        "teaser": null
       }]
