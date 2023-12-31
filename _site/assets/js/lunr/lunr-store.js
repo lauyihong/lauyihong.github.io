@@ -70,4 +70,10 @@ var store = [{
         "tags": ["categories","edge case"],
         "url": "/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/note/",
         "teaser": null
+      },{
+        "title": "location operation reading list",
+        "excerpt":"Related field reading list  Collect relevant journals and related articles   1. Journal           management science            policy science            Operations Research       2. Keywords  policy and apply based     location-allocation   location problem   covering problem   covid-19        methodology based            Location Set Covering Problem, LSCP       Maximum Covering Location Problem，MCLP   ","categories": ["operation","reading list","spatial analysis"],
+        "tags": ["categories","edge case"],
+        "url": "/operation/reading%20list/spatial%20analysis/note/",
+        "teaser": null
       }]
