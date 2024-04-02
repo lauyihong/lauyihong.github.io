@@ -59,6 +59,12 @@ var store = [{
         "url": "/portfolio/covid-allocation/",
         "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
       },{
+        "title": "Jogging trajectories analyais for discover spatial-temporal patterns.",
+        "excerpt":"This is the class project proposal for 6.s952 , Spring 2024. the project’s background is related from my previous undergrad years’ research work, which is published in Environment and Planning B: Urban Analytics and City Science. further information link Liu, Y., &amp; Lai, Y. (2023). Analyzing jogging activity patterns and...","categories": [],
+        "tags": ["spatial analysis","machine learning","urban informatics","physical activity"],
+        "url": "/portfolio/analysis-running-proposal/",
+        "teaser": "/assets/images/portfolio/figure4-trajectoryviz4.jpeg"
+      },{
         "title": "Post example",
         "excerpt":"This post has many categories.  ","categories": ["aciform","antiquarianism","arrangement","asmodeus","broder","buying","championship","chastening","disinclination","disinfection","dispatch","echappee","enphagy"],
         "tags": ["categories","edge case"],
@@ -75,5 +81,17 @@ var store = [{
         "excerpt":"Related field reading list  Collect relevant journals and related articles   1. Journal           management science            policy science            Operations Research       2. Keywords  policy and apply based     location-allocation   location problem   covering problem   covid-19        methodology based            Location Set Covering Problem, LSCP       Maximum Covering Location Problem，MCLP   ","categories": ["operation","reading list","spatial analysis"],
         "tags": ["categories","edge case"],
         "url": "/operation/reading%20list/spatial%20analysis/note/",
+        "teaser": null
+      },{
+        "title": "PathBy BP 1.0",
+        "excerpt":"This file is the brainstorming draft of PathBy project. the idea start from a previours project Portal Business Plan Draft 1.0 In short: trafic path based facility recommendation system imagine a world that you don’t need to travel away to a crowded restaurant, but the dilicious will suddenly appear around...","categories": ["entrepreneurship"],
+        "tags": ["business plan"],
+        "url": "/entrepreneurship/bp/",
+        "teaser": null
+      },{
+        "title": "Yifeng LIU",
+        "excerpt":"Abstract Urban Science is a new field that combines urban planning and data science. In the past few years, I have been working on a series of research projects that focus on the application of data science and optimization algorithms in urban planning and design. My research interests include data...","categories": [],
+        "tags": [],
+        "url": "/proposal/",
         "teaser": null
       }]

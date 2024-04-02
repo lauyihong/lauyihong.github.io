@@ -1,4 +1,501 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2023-12-31T17:44:04-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yifeng Liu</title><subtitle>Yifeng's personal website.</subtitle><author><name>Yifeng Liu</name></author><entry><title type="html">location operation reading list</title><link href="http://localhost:4000/operation/reading%20list/spatial%20analysis/note/" rel="alternate" type="text/html" title="location operation reading list" /><published>2023-12-29T00:00:00-05:00</published><updated>2023-12-29T00:00:00-05:00</updated><id>http://localhost:4000/operation/reading%20list/spatial%20analysis/note</id><content type="html" xml:base="http://localhost:4000/operation/reading%20list/spatial%20analysis/note/">&lt;h1 id=&quot;related-field-reading-list&quot;&gt;Related field reading list&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-02T04:15:42-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yifeng Liu</title><subtitle>Yifeng's personal website.</subtitle><author><name>Yifeng Liu</name></author><entry><title type="html">Yifeng LIU</title><link href="http://localhost:4000/proposal/" rel="alternate" type="text/html" title="Yifeng LIU" /><published>2024-04-02T00:00:00-04:00</published><updated>2024-04-02T00:00:00-04:00</updated><id>http://localhost:4000/proposal</id><content type="html" xml:base="http://localhost:4000/proposal/">&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/light.css&quot; /&gt;
+
+&lt;style&gt;
+    body {
+        font-size: 90%; 
+    }
+&lt;/style&gt;
+
+&lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Urban Science is a new field that combines urban planning and data science. In the past few years,&lt;/p&gt;
+
+&lt;p&gt;I have been working on a series of research projects that focus on the application of data science and optimization algorithms in urban planning and design. My research interests include data mining, optimization, and reinforcement learning. I am particularly interested in developing computational models and algorithms to support urban planning decision-making processes.&lt;/p&gt;
+
+&lt;p&gt;I grow strong interest in computing for urban planning decision making. In my undergraduate years, I have reseached in serious of project in mining the urabn inforstucture or markteing via diffetenct methods accross traditional CV, segration and trajectories mining. 
+&lt;strong&gt;Describe my project about running trajectories here.&lt;/strong&gt; Description of the project can be found in the following section.&lt;/p&gt;
+
+&lt;p&gt;Since I started my graduate studies at MIT, I strat to dive into methodology and algorithm development studies. I have learned courses accross optimization, machine learning, and transportattion simulation(reinforcement learning). 
+&lt;strong&gt;FLP Julia Package here.&lt;/strong&gt; 
+&lt;strong&gt;Running Behavor Analysis here.&lt;/strong&gt; Now is &lt;strong&gt;density prediction&lt;/strong&gt;, but waana develop it to a &lt;strong&gt;Sequence data prediction&lt;/strong&gt;
+&lt;strong&gt;Rainforcement Leaning here&lt;/strong&gt;
+I found there is serious of works we can do in this field,&lt;/p&gt;
+
+&lt;p&gt;But now I am confused: If I am interested in the impact of computational algorithm research on urban construction, which path should I choods. Should I pursue &lt;strong&gt;a PHD?&lt;/strong&gt; Because the relevant research-level positions in the United States require a PhD degree for internship; Or should I go straight back to the Chinese industry for &lt;strong&gt;work practice?&lt;/strong&gt; I find that because of China’s social system and cultural background, we have more opportunities for industrial practices, whether it is because of the denser population in super cities, or because of the richer life in urban centers, such as food delivery, delivery and Internet economy.  Or should I &lt;strong&gt;start a business?&lt;/strong&gt; I now have a team doing some small trials with sandbox support, and I’m back home for spring break talking to alumni investors and I’ve got a lot of verbal commitments.&lt;/p&gt;
+
+&lt;p&gt;I am more confused now because I am not familiar with the industrial environment in the United States.&lt;/p&gt;
+
+&lt;p&gt;&lt;span id=&quot;articles-section&quot; style=&quot;font-size: 1.2em; font-weight: bold;&quot;&gt;Research &amp;amp; Design Experiences&lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;feature__wrapper&quot;&gt;
+
+  
+    &lt;div class=&quot;feature__item&quot;&gt;
+      &lt;div class=&quot;archive__item&quot;&gt;
+        
+          &lt;div class=&quot;archive__item-teaser&quot;&gt;
+            &lt;img src=&quot;/assets/images/portfolio/allocation-head.png&quot; alt=&quot;placeholder image 1&quot; /&gt;
+            
+          &lt;/div&gt;
+        
+
+        &lt;div class=&quot;archive__item-body&quot;&gt;
+          
+            &lt;h2 class=&quot;archive__item-title&quot;&gt;&lt;a href=&quot;https://lauyihong.github.io/portfolio/covid-allocation/&quot;&gt;Allocating Covid Testing Stations in large-scale &lt;/a&gt;&lt;/h2&gt;
+          
+
+          
+            &lt;div class=&quot;archive__item-excerpt&quot;&gt;
+              &lt;p&gt;Covid testing stations allocating optimization and decomposition in 2022 Lockdown Shanghai.&lt;/p&gt;
+
+            &lt;/div&gt;
+          
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;feature__item&quot;&gt;
+      &lt;div class=&quot;archive__item&quot;&gt;
+        
+          &lt;div class=&quot;archive__item-teaser&quot;&gt;
+            &lt;img src=&quot;/assets/images/portfolio/running-head.png&quot; alt=&quot;placeholder image 1&quot; /&gt;
+            
+          &lt;/div&gt;
+        
+
+        &lt;div class=&quot;archive__item-body&quot;&gt;
+          
+            &lt;h2 class=&quot;archive__item-title&quot;&gt;&lt;a href=&quot;https://lauyihong.github.io/portfolio/analysis-running/&quot;&gt;Jogging Analysis&lt;/a&gt;&lt;/h2&gt;
+          
+
+          
+            &lt;div class=&quot;archive__item-excerpt&quot;&gt;
+              &lt;p&gt;Analyzing jogging activity patterns and adaptation to public health regulation.&lt;/p&gt;
+
+            &lt;/div&gt;
+          
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;feature__item&quot;&gt;
+      &lt;div class=&quot;archive__item&quot;&gt;
+        
+          &lt;div class=&quot;archive__item-teaser&quot;&gt;
+            &lt;img src=&quot;/assets/images/portfolio/bjmap-head.png&quot; alt=&quot;placeholder image 2&quot; /&gt;
+            
+          &lt;/div&gt;
+        
+
+        &lt;div class=&quot;archive__item-body&quot;&gt;
+          
+            &lt;h2 class=&quot;archive__item-title&quot;&gt;&lt;a href=&quot;https://lauyihong.github.io/portfolio/cua-viz/&quot;&gt;Beijing Infrastructure&lt;/a&gt;&lt;/h2&gt;
+          
+
+          
+            &lt;div class=&quot;archive__item-excerpt&quot;&gt;
+              &lt;p&gt;Analyzing local virbrancy, running activity, and real estate prices in Beijing.&lt;/p&gt;
+
+            &lt;/div&gt;
+          
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;feature__item&quot;&gt;
+      &lt;div class=&quot;archive__item&quot;&gt;
+        
+          &lt;div class=&quot;archive__item-teaser&quot;&gt;
+            &lt;img src=&quot;/assets/images/portfolio/shanghai-head.png&quot; alt=&quot;placeholder image 1&quot; /&gt;
+            
+          &lt;/div&gt;
+        
+
+        &lt;div class=&quot;archive__item-body&quot;&gt;
+          
+            &lt;h2 class=&quot;archive__item-title&quot;&gt;&lt;a href=&quot;https://lauyihong.github.io/portfolio/quantify-street/&quot;&gt;Streets and Real Estate&lt;/a&gt;&lt;/h2&gt;
+          
+
+          
+            &lt;div class=&quot;archive__item-excerpt&quot;&gt;
+              &lt;p&gt;Investigating the impact of perceived micro-level neighborhood characteristics on housing prices in Shanghai&lt;/p&gt;
+
+            &lt;/div&gt;
+          
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;feature__item&quot;&gt;
+      &lt;div class=&quot;archive__item&quot;&gt;
+        
+          &lt;div class=&quot;archive__item-teaser&quot;&gt;
+            &lt;img src=&quot;/assets/images/portfolio/map-head.png&quot; alt=&quot;placeholder image 1&quot; /&gt;
+            
+          &lt;/div&gt;
+        
+
+        &lt;div class=&quot;archive__item-body&quot;&gt;
+          
+            &lt;h2 class=&quot;archive__item-title&quot;&gt;&lt;a href=&quot;https://lauyihong.github.io/portfolio/perception-map/&quot;&gt;Street Computer Vision&lt;/a&gt;&lt;/h2&gt;
+          
+
+          
+            &lt;div class=&quot;archive__item-excerpt&quot;&gt;
+              &lt;p&gt;Research on citizen streetscape evaluation based on crowd sourcing survey and the application of navigation optimization.&lt;/p&gt;
+
+            &lt;/div&gt;
+          
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;div class=&quot;feature__item&quot;&gt;
+      &lt;div class=&quot;archive__item&quot;&gt;
+        
+          &lt;div class=&quot;archive__item-teaser&quot;&gt;
+            &lt;img src=&quot;/assets/images/portfolio/informal-head.png&quot; alt=&quot;placeholder image 1&quot; /&gt;
+            
+          &lt;/div&gt;
+        
+
+        &lt;div class=&quot;archive__item-body&quot;&gt;
+          
+            &lt;h2 class=&quot;archive__item-title&quot;&gt;&lt;a href=&quot;https://lauyihong.github.io/portfolio/informal-map/&quot;&gt;Informal-Mapping&lt;/a&gt;&lt;/h2&gt;
+          
+
+          
+            &lt;div class=&quot;archive__item-excerpt&quot;&gt;
+              &lt;p&gt;Computing places and human activity in data-absent informal urban settlements.&lt;/p&gt;
+
+            &lt;/div&gt;
+          
+
+          
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+
+&lt;/div&gt;
+
+&lt;p&gt;This file is the brainstorming draft of PathBy project.&lt;/p&gt;
+
+&lt;p&gt;the idea start from a previours project &lt;a href=&quot;https://lauyihong.github.io/portfolio/metro-ar/&quot;&gt;Portal&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;business-plan-draft-10&quot;&gt;Business Plan Draft 1.0&lt;/h1&gt;
+
+&lt;p&gt;In short: trafic path based facility recommendation system&lt;/p&gt;
+
+&lt;p&gt;imagine a world that you don’t need to travel away to a crowded restaurant, but the dilicious will suddenly appear around you.  new events!! new restaurants!! new friends!! new opportunities!! new life!!&lt;/p&gt;
+
+&lt;p&gt;It’s a new Yelp, not recommend you to visit a place, but bring the diliciours around you.&lt;/p&gt;
+
+&lt;p&gt;it’s like a new Uber, not for taxi, but for facilities.&lt;/p&gt;
+
+&lt;figure class=&quot;half &quot;&gt;
+  
+    
+      &lt;a href=&quot;/assets/images/portfolio/IMG_7673.jpeg&quot; title=&quot;before path&quot;&gt;
+          &lt;img src=&quot;/assets/images/portfolio/IMG_7673.jpeg&quot; alt=&quot;placeholder image 1&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/assets/images/portfolio/IMG_7675.jpeg&quot; title=&quot;after path&quot;&gt;
+          &lt;img src=&quot;/assets/images/portfolio/IMG_7675.jpeg&quot; alt=&quot;placeholder image 2&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;diagrams
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;even if people live in city for years, travel through the city for 2 hours per day, they will only know about 3 groups of facilities:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. facilities around their home
+2. facilities around their work place
+3. facilities recommended by Ins and Yelp.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;we can see that these three group pointer to 3 different kinds of urban functions: residential, work,and commercial. Usually, if someone want to go hangout with friends, he/she will go to the facilities around his/her home, or the facilities recommended by Ins and Yelp. the first one is limitated area, and the second one will cause huge traffic load.&lt;/p&gt;
+
+&lt;p&gt;The way people use facilities and the spatial correlation is weak, resulting in a lot of extra traffic demand and facility load on the basis of necessary traffic.&lt;/p&gt;
+
+&lt;p&gt;Maybe its a very Megacity problem? some more Asin area studies will help.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;h3 id=&quot;product-1-metro-advertisement-system&quot;&gt;product 1: metro advertisement system&lt;/h3&gt;
+
+&lt;p&gt;at the first stage, due to lake of personal data, we will focus on the metro advertisement system: with metro system and POI around metro stations, we can build the system, and will recommend facilities to people based on their OD trafic path.&lt;/p&gt;
+
+&lt;h3 id=&quot;product-2-personal-facility-recommendation-application&quot;&gt;product 2: personal facility recommendation application&lt;/h3&gt;
+
+&lt;p&gt;as more and more people use our product, we will have more and more personal data, and we can build a personal facility recommendation application based on individual interest and daily path: recommend your future dinner plan!&lt;/p&gt;
+
+&lt;h3 id=&quot;based-algorithm&quot;&gt;based algorithm&lt;/h3&gt;
+
+&lt;p&gt;recommend facilities to people based on OD trafic path&lt;/p&gt;
+
+&lt;h3 id=&quot;objective-function&quot;&gt;objective function:&lt;/h3&gt;
+
+&lt;p&gt;Local index (need research support): extra distance consumption is the shortest; The highest recommended cumulative index&lt;/p&gt;
+
+&lt;p&gt;Overall indicator: Highest utilization rate of facilities, lowest traffic load.&lt;/p&gt;
+
+&lt;h2 id=&quot;company-purpose&quot;&gt;Company purpose&lt;/h2&gt;
+
+&lt;p&gt;Based on people’s trafic partten in Megacities, recommend facilities to them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;to customer:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;With this product, we will help people to save time and energy on finding facilities, and help facilities to get more customers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;to city:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A soft way of facility assolotation - for RealEstate economy;&lt;/li&gt;
+  &lt;li&gt;reduce the traffic load caused by - people’s extra trafic demand for far away facilities;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;to commercial facilities:&lt;/strong&gt; a new way of advertisement! more chance and more space for your new opportunities!&lt;/p&gt;
+
+&lt;h2 id=&quot;market-size&quot;&gt;Market Size&lt;/h2&gt;
+
+&lt;p&gt;(based on the research on ‘Problem’ part , show the portential martket and its influence)&lt;/p&gt;
+
+&lt;h2 id=&quot;competition&quot;&gt;Competition&lt;/h2&gt;
+&lt;p&gt;Google map(Gaode Map)&lt;/p&gt;
+
+&lt;p&gt;Yelp(Meituan)&lt;/p&gt;
+
+&lt;h2 id=&quot;business-model&quot;&gt;Business Model&lt;/h2&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;h2 id=&quot;team&quot;&gt;Team&lt;/h2&gt;
+
+&lt;h3 id=&quot;yifeng&quot;&gt;Yifeng&lt;/h3&gt;
+
+&lt;p&gt;MIT DUSP MCP student 25’&lt;/p&gt;
+
+&lt;p&gt;2023, Gratudted from Tsinghua University, School of Architecture.&lt;/p&gt;
+
+&lt;p&gt;Urban informatics researcher. Research interest on facility management and  Currently work on a project about the local optimization of facaility allocation problem. with wild experience about the inforstructure distribution analysis.&lt;/p&gt;
+
+&lt;h3 id=&quot;ceci&quot;&gt;Ceci&lt;/h3&gt;
+
+&lt;p&gt;Harvard GSD Mdes-public 25’&lt;/p&gt;
+
+&lt;p&gt;[education bg]&lt;/p&gt;
+
+&lt;p&gt;[short bio]&lt;/p&gt;
+
+&lt;h3 id=&quot;im-looking-for&quot;&gt;I’m looking for:&lt;/h3&gt;
+
+&lt;p&gt;engineer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;who have strong skillset in transporation system analysis, and optimization. I can do that but im good engough to do that alone.&lt;/li&gt;
+  &lt;li&gt;have skill set in spatial database or distributed computing
+    &lt;ul&gt;
+      &lt;li&gt;ML skillset of course, especially DL and large scale&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;CFO: no reason.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-questionstodo-i-have-now&quot;&gt;some questions/todo I have now:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;which city should I start with in demo?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;should I builid this project with academic research (show its social impact and more science based optimization algoroithm development) or just a startup (demo or die)?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Singepore is too small for our project? where should be the market research base?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;market research&lt;/li&gt;
+  &lt;li&gt;prototype and test with users&lt;/li&gt;
+  &lt;li&gt;business model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##&lt;/p&gt;</content><author><name>Yifeng Liu</name></author><summary type="html"></summary></entry><entry><title type="html">PathBy BP 1.0</title><link href="http://localhost:4000/entrepreneurship/bp/" rel="alternate" type="text/html" title="PathBy BP 1.0" /><published>2024-01-09T00:00:00-05:00</published><updated>2024-01-09T00:00:00-05:00</updated><id>http://localhost:4000/entrepreneurship/bp</id><content type="html" xml:base="http://localhost:4000/entrepreneurship/bp/">&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/light.css&quot; /&gt;
+
+&lt;style&gt;
+    body {
+        font-size: 90%; 
+    }
+&lt;/style&gt;
+
+&lt;p&gt;This file is the brainstorming draft of PathBy project.&lt;/p&gt;
+
+&lt;p&gt;the idea start from a previours project &lt;a href=&quot;https://lauyihong.github.io/portfolio/metro-ar/&quot;&gt;Portal&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;business-plan-draft-10&quot;&gt;Business Plan Draft 1.0&lt;/h1&gt;
+
+&lt;p&gt;In short: trafic path based facility recommendation system&lt;/p&gt;
+
+&lt;p&gt;imagine a world that you don’t need to travel away to a crowded restaurant, but the dilicious will suddenly appear around you.  new events!! new restaurants!! new friends!! new opportunities!! new life!!&lt;/p&gt;
+
+&lt;p&gt;It’s a new Yelp, not recommend you to visit a place, but bring the diliciours around you.&lt;/p&gt;
+
+&lt;p&gt;it’s like a new Uber, not for taxi, but for facilities.&lt;/p&gt;
+
+&lt;figure class=&quot;half &quot;&gt;
+  
+    
+      &lt;a href=&quot;/assets/images/portfolio/IMG_7673.jpeg&quot; title=&quot;before path&quot;&gt;
+          &lt;img src=&quot;/assets/images/portfolio/IMG_7673.jpeg&quot; alt=&quot;placeholder image 1&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+    
+      &lt;a href=&quot;/assets/images/portfolio/IMG_7675.jpeg&quot; title=&quot;after path&quot;&gt;
+          &lt;img src=&quot;/assets/images/portfolio/IMG_7675.jpeg&quot; alt=&quot;placeholder image 2&quot; /&gt;
+      &lt;/a&gt;
+    
+  
+  
+    &lt;figcaption&gt;diagrams
+&lt;/figcaption&gt;
+  
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;problem&quot;&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;even if people live in city for years, travel through the city for 2 hours per day, they will only know about 3 groups of facilities:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. facilities around their home
+2. facilities around their work place
+3. facilities recommended by Ins and Yelp.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;we can see that these three group pointer to 3 different kinds of urban functions: residential, work,and commercial. Usually, if someone want to go hangout with friends, he/she will go to the facilities around his/her home, or the facilities recommended by Ins and Yelp. the first one is limitated area, and the second one will cause huge traffic load.&lt;/p&gt;
+
+&lt;p&gt;The way people use facilities and the spatial correlation is weak, resulting in a lot of extra traffic demand and facility load on the basis of necessary traffic.&lt;/p&gt;
+
+&lt;p&gt;Maybe its a very Megacity problem? some more Asin area studies will help.&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;h3 id=&quot;product-1-metro-advertisement-system&quot;&gt;product 1: metro advertisement system&lt;/h3&gt;
+
+&lt;p&gt;at the first stage, due to lake of personal data, we will focus on the metro advertisement system: with metro system and POI around metro stations, we can build the system, and will recommend facilities to people based on their OD trafic path.&lt;/p&gt;
+
+&lt;h3 id=&quot;product-2-personal-facility-recommendation-application&quot;&gt;product 2: personal facility recommendation application&lt;/h3&gt;
+
+&lt;p&gt;as more and more people use our product, we will have more and more personal data, and we can build a personal facility recommendation application based on individual interest and daily path: recommend your future dinner plan!&lt;/p&gt;
+
+&lt;h3 id=&quot;based-algorithm&quot;&gt;based algorithm&lt;/h3&gt;
+
+&lt;p&gt;recommend facilities to people based on OD trafic path&lt;/p&gt;
+
+&lt;h3 id=&quot;objective-function&quot;&gt;objective function:&lt;/h3&gt;
+
+&lt;p&gt;Local index (need research support): extra distance consumption is the shortest; The highest recommended cumulative index&lt;/p&gt;
+
+&lt;p&gt;Overall indicator: Highest utilization rate of facilities, lowest traffic load.&lt;/p&gt;
+
+&lt;h2 id=&quot;company-purpose&quot;&gt;Company purpose&lt;/h2&gt;
+
+&lt;p&gt;Based on people’s trafic partten in Megacities, recommend facilities to them.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;to customer:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;With this product, we will help people to save time and energy on finding facilities, and help facilities to get more customers.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;to city:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A soft way of facility assolotation - for RealEstate economy;&lt;/li&gt;
+  &lt;li&gt;reduce the traffic load caused by - people’s extra trafic demand for far away facilities;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;to commercial facilities:&lt;/strong&gt; a new way of advertisement! more chance and more space for your new opportunities!&lt;/p&gt;
+
+&lt;h2 id=&quot;market-size&quot;&gt;Market Size&lt;/h2&gt;
+
+&lt;p&gt;(based on the research on ‘Problem’ part , show the portential martket and its influence)&lt;/p&gt;
+
+&lt;h2 id=&quot;competition&quot;&gt;Competition&lt;/h2&gt;
+&lt;p&gt;Google map(Gaode Map)&lt;/p&gt;
+
+&lt;p&gt;Yelp(Meituan)&lt;/p&gt;
+
+&lt;h2 id=&quot;business-model&quot;&gt;Business Model&lt;/h2&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;h2 id=&quot;team&quot;&gt;Team&lt;/h2&gt;
+
+&lt;h3 id=&quot;yifeng&quot;&gt;Yifeng&lt;/h3&gt;
+
+&lt;p&gt;MIT DUSP MCP student 25’&lt;/p&gt;
+
+&lt;p&gt;2023, Gratudted from Tsinghua University, School of Architecture.&lt;/p&gt;
+
+&lt;p&gt;Urban informatics researcher. Research interest on facility management and  Currently work on a project about the local optimization of facaility allocation problem. with wild experience about the inforstructure distribution analysis.&lt;/p&gt;
+
+&lt;h3 id=&quot;ceci&quot;&gt;Ceci&lt;/h3&gt;
+
+&lt;p&gt;Harvard GSD Mdes-public 25’&lt;/p&gt;
+
+&lt;p&gt;[education bg]&lt;/p&gt;
+
+&lt;p&gt;[short bio]&lt;/p&gt;
+
+&lt;h3 id=&quot;im-looking-for&quot;&gt;I’m looking for:&lt;/h3&gt;
+
+&lt;p&gt;engineer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;who have strong skillset in transporation system analysis, and optimization. I can do that but im good engough to do that alone.&lt;/li&gt;
+  &lt;li&gt;have skill set in spatial database or distributed computing
+    &lt;ul&gt;
+      &lt;li&gt;ML skillset of course, especially DL and large scale&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;CFO: no reason.&lt;/p&gt;
+
+&lt;h2 id=&quot;some-questionstodo-i-have-now&quot;&gt;some questions/todo I have now:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;which city should I start with in demo?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;should I builid this project with academic research (show its social impact and more science based optimization algoroithm development) or just a startup (demo or die)?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Singepore is too small for our project? where should be the market research base?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;market research&lt;/li&gt;
+  &lt;li&gt;prototype and test with users&lt;/li&gt;
+  &lt;li&gt;business model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;##&lt;/p&gt;</content><author><name>Yifeng Liu</name></author><category term="entrepreneurship" /><category term="business plan" /><summary type="html"></summary></entry><entry><title type="html">location operation reading list</title><link href="http://localhost:4000/operation/reading%20list/spatial%20analysis/note/" rel="alternate" type="text/html" title="location operation reading list" /><published>2023-12-29T00:00:00-05:00</published><updated>2023-12-29T00:00:00-05:00</updated><id>http://localhost:4000/operation/reading%20list/spatial%20analysis/note</id><content type="html" xml:base="http://localhost:4000/operation/reading%20list/spatial%20analysis/note/">&lt;h1 id=&quot;related-field-reading-list&quot;&gt;Related field reading list&lt;/h1&gt;
 &lt;p&gt;Collect relevant journals and related articles&lt;/p&gt;
 
 &lt;h2 id=&quot;1-journal&quot;&gt;1. Journal&lt;/h2&gt;
