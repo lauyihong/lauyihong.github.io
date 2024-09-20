@@ -3,11 +3,11 @@ main:
   # - title: "Quick-Start Guide"
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Portfolio"
-    url: https://lauyihong.github.io/portfolio/
+    url: /portfolio/
   - title: "Blog"
-    url: https://lauyihong.github.io/blog/
+    url: /blog/
   - title: "About"
-    url: https://lauyihong.github.io/about/
+    url: /about/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"

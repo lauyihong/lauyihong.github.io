@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-04-02T04:15:42-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yifeng Liu</title><subtitle>Yifeng's personal website.</subtitle><author><name>Yifeng Liu</name></author><entry><title type="html">Yifeng LIU</title><link href="http://localhost:4000/proposal/" rel="alternate" type="text/html" title="Yifeng LIU" /><published>2024-04-02T00:00:00-04:00</published><updated>2024-04-02T00:00:00-04:00</updated><id>http://localhost:4000/proposal</id><content type="html" xml:base="http://localhost:4000/proposal/">&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/light.css&quot; /&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-06T08:48:04-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yifeng Liu</title><subtitle>Yifeng's personal website.</subtitle><author><name>Yifeng Liu</name></author><entry><title type="html">Yifeng LIU</title><link href="http://localhost:4000/proposal/" rel="alternate" type="text/html" title="Yifeng LIU" /><published>2024-04-02T00:00:00-04:00</published><updated>2024-04-02T00:00:00-04:00</updated><id>http://localhost:4000/proposal</id><content type="html" xml:base="http://localhost:4000/proposal/">&lt;link rel=&quot;stylesheet&quot; href=&quot;/assets/css/light.css&quot; /&gt;
 
 &lt;style&gt;
     body {
@@ -8,20 +8,20 @@
 
 &lt;p&gt;&lt;strong&gt;Abstract&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;Urban Science is a new field that combines urban planning and data science. In the past few years,&lt;/p&gt;
+&lt;p&gt;With a undergraduate background in architecture and statistics, I have grown a strong interest in data-driven urban decision-making, applying the particularly interested in developing computational models and algorithms to support city planning processes. I’m a customer based person, and moreover, I believe that in this era of personal activity data explosion, it is necessary for a planner to participate in data science, so that the behavior of profiting from the public can be turned into the profiting for the public.&lt;/p&gt;
 
-&lt;p&gt;I have been working on a series of research projects that focus on the application of data science and optimization algorithms in urban planning and design. My research interests include data mining, optimization, and reinforcement learning. I am particularly interested in developing computational models and algorithms to support urban planning decision-making processes.&lt;/p&gt;
+&lt;p&gt;In my undergraduate years, I have researched in serious of project in mining the urban infrastructure or marketing via different methods across traditional CV, segmentation and trajectories mining. 
+&lt;strong&gt;Describe my project about running trajectories here.&lt;/strong&gt; 
+&lt;strong&gt;Describe my project about housing plan here.&lt;/strong&gt;
+Description of the project can be found in the following section.&lt;/p&gt;
 
-&lt;p&gt;I grow strong interest in computing for urban planning decision making. In my undergraduate years, I have reseached in serious of project in mining the urabn inforstucture or markteing via diffetenct methods accross traditional CV, segration and trajectories mining. 
-&lt;strong&gt;Describe my project about running trajectories here.&lt;/strong&gt; Description of the project can be found in the following section.&lt;/p&gt;
-
-&lt;p&gt;Since I started my graduate studies at MIT, I strat to dive into methodology and algorithm development studies. I have learned courses accross optimization, machine learning, and transportattion simulation(reinforcement learning). 
+&lt;p&gt;Since I started my graduate studies at MIT, I start to dive into methodology and algorithm development studies. I have learned courses across optimization, machine learning, and transportation simulation(reinforcement learning). 
 &lt;strong&gt;FLP Julia Package here.&lt;/strong&gt; 
-&lt;strong&gt;Running Behavor Analysis here.&lt;/strong&gt; Now is &lt;strong&gt;density prediction&lt;/strong&gt;, but waana develop it to a &lt;strong&gt;Sequence data prediction&lt;/strong&gt;
-&lt;strong&gt;Rainforcement Leaning here&lt;/strong&gt;
+&lt;strong&gt;Running Behavior Analysis here.&lt;/strong&gt; Now is &lt;strong&gt;density prediction&lt;/strong&gt;, but wanna develop it to a &lt;strong&gt;Sequence data prediction&lt;/strong&gt;
+&lt;strong&gt;Reinforcement Leaning here&lt;/strong&gt;
 I found there is serious of works we can do in this field,&lt;/p&gt;
 
-&lt;p&gt;But now I am confused: If I am interested in the impact of computational algorithm research on urban construction, which path should I choods. Should I pursue &lt;strong&gt;a PHD?&lt;/strong&gt; Because the relevant research-level positions in the United States require a PhD degree for internship; Or should I go straight back to the Chinese industry for &lt;strong&gt;work practice?&lt;/strong&gt; I find that because of China’s social system and cultural background, we have more opportunities for industrial practices, whether it is because of the denser population in super cities, or because of the richer life in urban centers, such as food delivery, delivery and Internet economy.  Or should I &lt;strong&gt;start a business?&lt;/strong&gt; I now have a team doing some small trials with sandbox support, and I’m back home for spring break talking to alumni investors and I’ve got a lot of verbal commitments.&lt;/p&gt;
+&lt;p&gt;But now I am confused in my own decisions: If I am interested in the impact of computational algorithm research on urban construction, which path should I choose. How can I explore my career path and apply operations research or large models to real industries? Should I pursue a PhD? Because the relevant research-level positions in the United States require a PhD degree for internship; Or should I go straight back to the Chinese for industrial practice? I find that because of China’s social system and cultural background, we have more opportunities for industrial practices, whether it is because of the denser population in super cities, or because of the richer life in urban centers, such as food delivery, delivery and Internet economy.  Or should I start a business? I now have a team doing some small trials with sandbox support, and I’m back home for spring break talking to alumni investors and I’ve got a lot of verbal commitments.&lt;/p&gt;
 
 &lt;p&gt;I am more confused now because I am not familiar with the industrial environment in the United States.&lt;/p&gt;
 

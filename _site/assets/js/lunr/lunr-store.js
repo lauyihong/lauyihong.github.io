@@ -90,7 +90,7 @@ var store = [{
         "teaser": null
       },{
         "title": "Yifeng LIU",
-        "excerpt":"Abstract Urban Science is a new field that combines urban planning and data science. In the past few years, I have been working on a series of research projects that focus on the application of data science and optimization algorithms in urban planning and design. My research interests include data...","categories": [],
+        "excerpt":"Abstract With a undergraduate background in architecture and statistics, I have grown a strong interest in data-driven urban decision-making, applying the particularly interested in developing computational models and algorithms to support city planning processes. I’m a customer based person, and moreover, I believe that in this era of personal activity...","categories": [],
         "tags": [],
         "url": "/proposal/",
         "teaser": null
