@@ -17,10 +17,7 @@ sidebar:
 typora-root-url: ./..
 
 gallery:
-  - url: /assets/images/portfolio/Screenshot 2024-09-19 at 8.36.54 PM.jpg
-    image_path: /assets/images/portfolio/Screenshot 2024-09-19 at 8.36.54 PM.jpg
-    alt: "Firstpage"
-    title: "Firstpage"
+
   - url: /assets/images/portfolio/Screenshot 2023-08-26 at 5.24.49 PM.jpg
     image_path: /assets/images/portfolio/Screenshot 2023-08-26 at 5.24.49 PM.jpg
     alt: "Background"
@@ -37,6 +34,10 @@ gallery:
     image_path: /assets/images/portfolio/Screenshot 2023-08-26 at 5.26.44 PM.jpg
     alt: "placeholder image 2"
     title: "Tech Stack"
+  - url: /assets/images/portfolio/Screenshot 2024-09-19 at 8.36.54 PM.jpg
+    image_path: /assets/images/portfolio/Screenshot 2024-09-19 at 8.36.54 PM.jpg
+    alt: "UIline"
+    title: "UIline"
   - url: /assets/images/portfolio/Screenshot 2023-08-26 at 5.27.54 PM.jpg
     image_path: /assets/images/portfolio/Screenshot 2023-08-26 at 5.27.54 PM.jpg
     alt: "placeholder image 2"
