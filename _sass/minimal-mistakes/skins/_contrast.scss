@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Contrast skin
+   Contrast skin (#0000ff -> #ff3399 -> #750014)
    ========================================================================== */
 
 /* Colors */
@@ -8,7 +8,7 @@ $muted-text-color: $text-color !default;
 $primary-color: #ff0000 !default;
 $border-color: mix(#fff, $text-color, 75%) !default;
 $footer-background-color: #000 !default;
-$link-color: #ff3399 !default;
+$link-color: #750014 !default; 
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
