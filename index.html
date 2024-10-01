@@ -44,9 +44,9 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
   <br>
     This website is still under construction... Come back later! <br>
   </div>
-
+  
 <!-- Main Content -->
-<div style="display: flex; align-items: center; padding-top: 9vh;">
+<div style="display: flex; align-items: center; padding-top: 9vh; flex-wrap: wrap;">
   
   <!-- Left Side: Text Content -->
   <div style="flex: 1; padding-right: 20px;">
@@ -70,35 +70,26 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
   
 </div>
 
-  
+<!-- Add responsive CSS for mobile view -->
+<style>
+  @media only screen and (max-width: 768px) {
+    /* For screens smaller than 768px (e.g., mobile devices) */
+    .main-content {
+      display: block;
+      text-align: center;
+    }
 
-<div style="padding-top: 3vh;">
+    .main-content div {
+      padding-right: 0;
+      padding-bottom: 20px;
+    }
 
-  <!-- posts -->
-  <span id="post-section" style="font-size: 1.2em; font-weight: bold;">Blogs and ideas</span><br><br>
+    .main-content img {
+      max-width: 100%;
+    }
+  }
+</style>
 
-  {% if paginator %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
-
-  {% assign entries_layout = page.entries_layout | default: 'list' %}
-  <div class="entries-{{ entries_layout }}">
-    Also, I will post some blogs and interesting ideas here, related to my recent work across Architecture Design, Urban Informatics Analysis, and Data Visulization.
-    {% for post in posts %}
-      {% include archive-single.html type=entries_layout %}
-    {% endfor %}
-    The further information about me can be found in my <a href="/about/">About</a> and <a href="/portfolio/">Portfolio</a> pages. If anyone is interested in my work, or our band's music, please feel free to connect me! <br><br>
-  </div>
-
-  <span id="articles-section" style="font-size: 1.2em; font-weight: bold;">Research & Design Experiences</span><br><br>
-  {% include feature_row %}
-    
-  {% include paginator.html %}
-
-
-</div>
      
 
 
