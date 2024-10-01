@@ -166,78 +166,132 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
     body {
         font-size: 90%; 
     }
-</style>
+    /* 窄屏幕（如手机）下的样式 */
+    @media screen and (max-width: 768px) {
+      /* 将左右布局变为上下布局 */
+      .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      /* 图片居中并缩小 */
+      .content-wrapper img {
+        max-width: 100%; /* 图片占满宽度 */
+        height: auto; /* 保持图片宽高比 */
+      }
+  
+      /* 调整文字块的宽度以适应屏幕 */
+      .text-content {
+        width: 90%; /* 让文字块在窄屏幕下也有适应宽度 */
+        padding: 10px;
+      }
+    }
+  
+    /* 宽屏幕（如桌面设备）下的样式 */
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      padding-top: 9vh;
+    }
+  
+    .text-content {
+      flex: 1;
+      padding-right: 20px;
+    }
+  
+    .content-wrapper img {
+      flex: 1;
+      max-width: 80%; /* 图片在宽屏下保持适中的大小 */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  
 
-<div style="padding-top: 9vh;">
-
-  <!-- Main Content -->
-  <div>
-      <!-- <p style="font-size: bigger; font-style: italic; margin-bottom: 8vh;">Updated on Oct 14, 2023. The structure of the front page is still being updated. Portfolio project content is still awaiting updates and refinement.</p> -->
-      <!-- font-weight: bold; text-decoration: underline; -->
-      <!-- <div id="typewriter" style="font-size: bigger;"></div> <br> -->
-      
-      <!-- I am deeply passionate about hearing people's stories and am eager to delve into the diverse cultures around the world. My research interests encompass complex urban systems, data visualization, and the application of computing. <br><br> -->
-      <span style="font-size: 1.2em; font-weight: bold;">Hi! I'm Yifeng, a grad student at <a href="http://dusp.mit.edu">DUSP@MIT</a> </span>, where I merge my curiosity for people's stories with a rigorous study of urban informatics and data-driven optimization.
-      From DUSP, my research interests are in human mobility and operation reaserch in city planning; At MIT, I am also conducting research on machine learning and optimization of urban problems.<br><br>
-       <!-- My journey is a blend of different cultures and an exploration into the power of visualization and operation to understand and improve the cities we live in. -->
-
-      <!-- As a <span style="font-size: 1.2em; font-weight: bold;">researcher</span>, I dive into the realms of infrastructure management and spatiotemporal analysis to decode complex urban behaviors. My work aims to harness these insights to support robust and equitable public policy frameworks. And as a <span style="font-size: 1.2em; font-weight: bold;">designer</span>, I'm fueled by a desire to unravel human mobility patterns, enhancing civic participation and enriching urban life. My projct expertise includes crafting clear data narratives, developing applications, and contributing to architectural design with a focus on functionality and social impact.<br><br> -->
-
-      Before coming to MIT, I received my Bachelor's degree in architecture from Tsinghua University. My first research was guided by Professor Yuan Lai. 
+<div style="flex: 1; display: flex; justify-content: center; padding-top: 3vh;">
+  <br>
+    This website is still under construction... Come back later!
+  </div>
+  
+  <!-- 页面内容部分 -->
+  <div class="content-wrapper">
+    <!-- 左边的文本内容 -->
+    <div class="text-content">
+      <span style="font-weight: bold;font-size: 120%;">
+      This is Yifeng, a grad student at <a href="http://dusp.mit.edu">DUSP</a> and <a href="https://www.eecs.mit.edu/">EECS</a> at MIT. 
+      </span>
       <br><br>
-      <a href="#articles-section">▽ Scroll down and click photos to explore my works! ▽</a> <a href="#post-section">▽ or blogs ~ ▽</a> <br><br><br>
-      <!-- Yifeng is deeply passionate about hearing people's stories and am eager to delve into the diverse cultures around the world. His research interests encompass complex urban systems, data visualization, and the application of computing. He is now enrolling in <a href="http://dusp.mit.edu">DUSP@MIT</a> as a grad student, and eager to further his studies in the data science and urban planning fields. 
+      From DUSP, my research focuses on the application of urban operations research. In EECS, under the supervision of <a href="https://mraghavan.github.io/">Manish Raghavan</a>, I am researching how to implement fairness in AI within complex industrial recommendation systems.      
       <br><br>
-
-      As a <span style="font-size: 1.2em; font-weight: bold;">RESEARCHER</span>, his experience accross Computer Vision algorithm development, spatiotemporal analysis. By mining complex urban systems and undiscriminating information about people's behavior, he tries to help build healthy public political systems. And as a <span style="font-size: 1.2em; font-weight: bold;">DESIGNER</span>, he is motivated to discern patterns in human mobility, with the goal of amplifying public engagement in both our societal constructs and the built environment. My experience spans data representation, application development, and, naturally, architectural design. 
-      <br><br> -->
-
+      Prior to MIT, I earned my Bachelor's degree in Architecture from Tsinghua University, where I worked under the guidance of Professors Yuan Lai and Hui Wang, with a strong focus on urban economics and human mobility research.      
+      <br><br>
+      <a href="#articles-section">▽ Scroll down to explore my previous work! ▽</a> <br>
+      <a href="#post-section">▽ Blogs ~ ▽</a> 
+      <br><br>
     </div>
-    
-  </div>      
-
-      <!-- 
-
-
-
-<figure class=" ">
   
+    <!-- 右边的图片内容 -->
+    <div style="flex: 1; display: flex; justify-content: center;">
+      <img src="/assets/images/yifeng_2024.jpg" alt="Yifeng's photo">
+    </div>
+  </div>
   
-    <figcaption><div style="text-align: right">sellected publications: Jogging Analysis | Beijing Infrastructure | Streets and Real Estate</div>
-</figcaption>
-  
-</figure>
- -->
-
-      <!-- 
-
-
-
-<figure class=" ">
-  
-  
-    <figcaption>Explore mor of my work in ResearchGate.
-</figcaption>
-  
-</figure>
- -->
-
-      <!-- 
-
-
-
-<figure class=" ">
-  
-  
-    <figcaption><div style="text-align: right">sellected projects: Streets Map (CV/nevigation) | Underground Portal (AR/Unity) | informal-mapping(urban studies/Geocoding)</div>
-</figcaption>
-  
-</figure>
- -->
-
-
 
 <div style="padding-top: 3vh;">
+
+  <!-- posts -->
+  <span id="post-section" style="font-size: 1.2em; font-weight: bold;">Blogs and ideas</span><br><br>
+
+  
+
+  
+  <div class="entries-list">
+    Also, I will post some blogs and interesting ideas here, related to my recent work across Architecture Design, Urban Informatics Analysis, and Data Visulization.
+    
+      
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/case/" rel="permalink">Post example
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">This post has many categories.
+</p>
+  </article>
+</div>
+
+    
+    The further information about me can be found in my <a href="/about/">About</a> and <a href="/portfolio/">Portfolio</a> pages. If anyone is interested in my work, or our band's music, please feel free to connect me! <br><br>
+  </div>
 
   <span id="articles-section" style="font-size: 1.2em; font-weight: bold;">Research & Design Experiences</span><br><br>
   
@@ -330,7 +384,7 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
       <div class="archive__item">
         
           <div class="archive__item-teaser">
-            <img src="/assets/images/portfolio/ar-head.png"
+            <img src="/assets/images/portfolio/shanghai-head.png"
                  alt="placeholder image 1">
             
           </div>
@@ -338,12 +392,12 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
 
         <div class="archive__item-body">
           
-            <h2 class="archive__item-title"><a href="portfolio/metro-ar/">AR interactive application</a></h2>
+            <h2 class="archive__item-title"><a href="portfolio/quantify-street/">Streets and Real Estate</a></h2>
           
 
           
             <div class="archive__item-excerpt">
-              <p>An inclusive template toassist people in blockedsubway feeling the surficialcity in XR world.</p>
+              <p>Investigating the impact of perceived micro-level neighborhood characteristics on housing prices in Shanghai</p>
 
             </div>
           
@@ -411,105 +465,13 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
 </div>
 
     
-  <!-- posts -->
-  <span id="post-section" style="font-size: 1.2em; font-weight: bold;">Blogs and ideas</span><br><br>
-
-  
-
-  
-  <div class="entries-list">
-    Also, I will post some blogs and interesting ideas here, related to my recent work across Architecture Design, Urban Informatics Analysis, and Data Visulization.
-    
-      
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/proposal/" rel="permalink">Yifeng LIU
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          5 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">
-
-
-</p>
-  </article>
-</div>
-
-    
-      
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/aciform/antiquarianism/arrangement/asmodeus/broder/buying/championship/chastening/disinclination/disinfection/dispatch/echappee/enphagy/case/" rel="permalink">Post example
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">This post has many categories.
-</p>
-  </article>
-</div>
-
-    
-    The further information about me can be found in my <a href="/about/">About</a> and <a href="/portfolio/">Portfolio</a> pages. If anyone is interested in my work, or our band's music, please feel free to connect me! <br><br>
-  </div>
-
   
 
 
 
 </div>
+     
+
 
 <!-- Avatar Image -->
 <div style="text-align: center; padding-top: 5vh">
