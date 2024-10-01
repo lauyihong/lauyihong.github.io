@@ -99,8 +99,7 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
       <br><br>
       Prior to MIT, I earned my Bachelor's degree in Architecture from Tsinghua University, where I worked under the guidance of Professors Yuan Lai and Hui Wang, with a strong focus on urban economics and human mobility research.      
       <br><br>
-      <a href="#articles-section">▽ Scroll down to explore my previous work! ▽</a> <br>
-      <a href="#post-section">▽ Blogs ~ ▽</a> 
+      Scroll down to explore my <a href="#post-section">▽ rescent blogs ▽</a> and <a href="#articles-section">▽ previous work! ▽</a>
       <br><br>
     </div>
   
@@ -114,7 +113,7 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
 <div style="padding-top: 3vh;">
 
   <!-- posts -->
-  <span id="post-section" style="font-size: 1.2em; font-weight: bold;">Blogs and ideas</span><br><br>
+  <span id="post-section" style="font-size: 1.2em; font-weight: bold;">Research and Projects</span><br><br>
 
   {% if paginator %}
     {% assign posts = paginator.posts %}
@@ -124,14 +123,14 @@ excerpt: "An inclusive template to assis people in blocked subway feeling the su
 
   {% assign entries_layout = page.entries_layout | default: 'list' %}
   <div class="entries-{{ entries_layout }}">
-    Also, I will post some blogs and interesting ideas here, related to my recent work across Architecture Design, Urban Informatics Analysis, and Data Visulization.
+    The world is changing because of the innovative methods of AI, and so am I. Much of my recent work is still in the peer review process or in draft form, but I will post as much as I can here.
     {% for post in posts %}
       {% include archive-single.html type=entries_layout %}
     {% endfor %}
     The further information about me can be found in my <a href="/about/">About</a> and <a href="/portfolio/">Portfolio</a> pages. If anyone is interested in my work, or our band's music, please feel free to connect me! <br><br>
   </div>
 
-  <span id="articles-section" style="font-size: 1.2em; font-weight: bold;">Research & Design Experiences</span><br><br>
+  <span id="articles-section" style="font-size: 1.2em; font-weight: bold;">Previous Research & Design Experiences</span><br><br>
   {% include feature_row %}
     
   {% include paginator.html %}
