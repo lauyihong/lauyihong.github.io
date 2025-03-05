@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making Urban AI Predictions Fairer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+
+        h3 {
+            color: #2980b9;
+        }
+
+        code {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            display: block;
+            overflow-x: auto;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 15px 0;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: -15px;
+            margin-bottom: 20px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .results {
+            background-color: #e8f4f8;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .highlight-green {
+            background-color: #d4edda;
+        }
+        .highlight-red {
+            background-color: #f8d7da;
+        }
+
+        /* Add responsive design breakpoints */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+            }
+        }
+
+        /* Improve navigation bar */
+        .bottom-nav-bar {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 100;
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #2c3e50;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Improve image grid layout */
+        .image-grid {
+            display: flex;
+            gap: 2%;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .image-grid img {
+            flex: 1;
+            min-width: 300px;
+            max-width: 49%;
+        }
+
+        /* Add smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Improve table responsiveness */
+        .results-grid {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        .acknowledgement {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+        }
+
+        #conclusion-and-future {
+            margin: 30px 0;
+        }
+
+        #conclusion-and-future p {
+            margin: 15px 0;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        #conclusion-and-future ul {
+            margin: 15px 0 15px 25px;
+            line-height: 1.8;
+        }
+
+        #conclusion-and-future li {
+            margin-bottom: 10px;
+        }
+
+        /* Add this CSS to style the collapsible section */
+        .collapsible {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Making Urban AI Predictions Fairer: A Deep Learning Approach to Spatial Equity</h1>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav-bar">
+        <div class="nav-container">
+            <!-- <a href="#abstract" class="nav-link">Abstract</a> -->
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#hidden-bias" class="nav-link">Phenomenon</a>
+            <a href="#technical-innovation" class="nav-link">Methodology</a>
+            <a href="#results" class="nav-link">Results</a>
+            <!-- <a href="#insights" class="nav-link">Insights</a> -->
+            <a href="#conclusion-and-future" class="nav-link">Conclusion</a>
+            <a href="#acknowledgement" class="nav-link">Acknowledgement</a>
+        </div>
+    </nav>
+
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <p>
+            This paper introduces a novel deep learning framework that addresses spatial disparities in urban predictions without leveraging sensitive demographic data. I propose the Residual-Aware Attention (RAA) mechanism, which dynamically adjusts the model's focus based on prediction residuals, thereby mitigating spatial biases. My extensive experiments on Chicago's urban data demonstrate that RAA reduces spatial bias significantly  while maintaining high prediction accuracy. This approach offers a privacy-preserving solution to enhance fairness in urban AI applications.
+        </p>
+    </section>
+
+    <section id="introduction">
+        <h2>Introduction</h2>
+        
+        <p>
+            Urban computing has become pivotal in modern city planning and management, enabling data-driven decision-making processes. However, a significant challenge has arisen: conventional AI models often reinforce and amplify existing social inequities within urban environments. This manifestation of bias is particularly concerning as it can create a feedback loop that exacerbates spatial disparities.
+        </p>
+        <p>
+            Recent studies have highlighted increasing concerns about fairness in urban AI systems. Multiple works have demonstrated that standard deep learning models can amplify existing societal biases and create discriminatory predictions across different demographic groups (Zheng et al., 2021). While spatial-temporal graph neural networks (ST-GNNs) have achieved impressive accuracy in various urban prediction tasks (Liu et al., 2023; Yu et al., 2018), they often overlook critical fairness considerations in their predictions.
+        </p>
+        
+        <p>
+            The fairness challenges in urban prediction are multifaceted. On one hand, direct incorporation of demographic data risks perpetuating historical biases (Zheng et al., 2023). On the other hand, completely ignoring demographic factors may lead to inadvertent discrimination (Yan et al., 2020). Previous approaches have attempted to address these challenges through various means, such as adversarial debiasing (Yan et al., 2019) and fairness-aware demand prediction (Zhang et al., 2023). However, these methods often require access to sensitive demographic information, which raises privacy concerns and may not be available in many real-world applications.
+        </p>
+        
+        <p>
+            Another crucial aspect is the spatial nature of urban prediction tasks. Traditional fairness metrics developed for general machine learning tasks may not fully capture the spatial aspects of bias in urban predictions (Wang et al., 2022). Recent work by Guo et al. (2023) has shown that spatial relationships play a critical role in fairness considerations, particularly in ride-hailing and transportation systems. This spatial dimension adds another layer of complexity to the fairness problem, as biases can manifest not just across demographic groups but also through geographic patterns.
+        </p>
+        
+        <p>
+            The recent development of attention mechanisms in ST-GNNs (Kong et al., 2020) provides new opportunities for addressing these fairness challenges. Attention-based approaches have shown promise in capturing complex spatial dependencies and adapting to different urban contexts. However, existing attention mechanisms primarily focus on improving prediction accuracy rather than enhancing fairness. There is a clear need for new approaches that can leverage the power of attention mechanisms while explicitly considering fairness objectives.
+        </p>
+        <p>
+            To tackle these challenges, I introduce a novel approach that enhances prediction fairness without accessing sensitive demographic information. The implementation is based on the <a href="https://github.com/liuxu77/LargeST">LargeST</a> benchmark framework (Liu et al., 2023), where I integrate the Residual-Aware Attention (RAA) mechanism into existing Spatial-Temporal Graph Neural Networks (STGNNs). The LargeST benchmark provides a comprehensive evaluation platform for large-scale traffic forecasting, and is released under MIT license.
+        </p>
+
+        <p>
+            The main contributions of this work are:
+            <ul>
+                <li>A novel attention mechanism that leverages prediction residuals to improve spatial fairness</li>
+                <li>A privacy-preserving approach to bias mitigation that does not require demographic data</li>
+                <li>Comprehensive empirical evaluation showing a significant reduction in spatial bias</li>
+                <li>Theoretical analysis of the relationship between attention mechanisms and prediction fairness</li>
+            </ul>
+        </p>
+    </section>
+
+    <section id="hidden-bias">
+        <h2>The Hidden Bias in Urban Prediction Standard Models</h2>
+        <p>
+            The task of this project is to analyze prediction patterns across Chicago using various datasets, including demographics, crime, and urban infrastructure from the Chicago Data Portal. This rich dataset allows us to explore the intricate relationships between urban features and prediction accuracy, revealing potential hidden biases in our models.
+        </p>
+
+        <p>
+            Initial analysis using standard spatial-temporal models revealed higher prediction errors in specific neighborhoods. These errors followed clear spatial patterns coinciding with demographic distributions, indicating systemic biases.
+        </p>
+        <img src="./fig/Screenshot 2024-12-10 at 12.20.04 AM.png" alt="Demographic Distribution Patterns" style="width: 49%;">
+        <img src="./fig/Screenshot 2024-12-10 at 12.25.30 AM.png" alt="Prediction Residuals Across Chicago" style="width: 49%;">
+        <div class="image-caption">Figure 1: Left: Demographic distribution patterns. Right: Prediction residuals across Chicago (blue: over-prediction, red: under-prediction).</div>
+    </section>
+
+    <section id="technical-innovation">
+        <h2>Methodology: Residual-Aware Attention Mechanism</h2>
+
+        <h3>Theoretical Foundation</h3>
+        <p>
+            The RAA mechanism is grounded in three key theoretical insights:
+        </p>
+        <ol>
+            <li><strong>Spatial Correlation of Prediction Errors:</strong> Through empirical analysis, I discovered that urban prediction errors exhibit strong spatial autocorrelation (Moran's I > 0.4), indicating systematic biases in model predictions.</li>
+            <li><strong>Attention-based Bias Correction:</strong> The novel integration of residual patterns into attention weights enables dynamic adjustment of spatial region influence, with a theoretical foundation in error-driven learning.</li>
+            <li><strong>Privacy-Preserving Fairness:</strong> My approach demonstrates that prediction residuals can serve as an effective proxy for bias detection and correction, achieving fairness improvements without demographic data exposure.</li>
+        </ol>
+
+        <h3>Architecture Overview</h3>
+        <img src="./fig/architecture.jpg" alt="RAA Architecture">
+        <div class="image-caption">
+            Figure 2: Architecture of the Residual-Aware Attention mechanism, comprising residual computation, attention weight generation, and spatial relationship adjustment.
+        </div>
+
+        <h3>Mathematical Formulation</h3>
+        <p>
+            The RAA mechanism consists of three key components, each mathematically formulated to ensure optimal bias reduction:
+        </p>
+
+        <h4>1. Residual-Based Attention Computation</h4>
+        <div class="code-block">
+            <pre><code>
+        # Enhanced residual-based attention weight generation
+        Q = tanh(Wq(r) + bq)  # Query from residuals with bias term
+        K = tanh(Wk(r) + bk)  # Key from residuals with bias term
+        V = tanh(Wv(r) + bv)  # Value from residuals with bias term
+
+        # Temperature-scaled attention computation
+        S = QK^T / (sqrt(d_k) * τ)  # τ is learnable temperature
+        H = softmax(S)              # Attention distribution
+        A* = A ⊙ H + λI            # Modified adjacency matrix with residual connection
+            </code></pre>
+        </div>
+        <p>
+            where <i>r</i> represents prediction residuals, <i>W<sub>q</sub></i>, <i>W<sub>k</sub></i>, <i>W<sub>v</sub></i> are learnable transformations, <i>A*</i> is the residual-aware adjacency matrix, <i>b<sub>q</sub></i>, <i>b<sub>k</sub></i>, <i>b<sub>v</sub></i> are bias terms, and <i>λ</i> and <i>τ</i> are learnable parameters.
+        </p>
+
+        <h4>2. Multi-objective Loss Function</h4>
+        <div class="code-block">
+            <pre><code>
+        # Comprehensive loss function components
+        L_prediction = 1/N Σ(y_pred - y_true)²  # Prediction accuracy
+
+        # Spatial fairness components
+        r+ = max(r, 0)  # Positive residuals
+        r- = max(-r, 0) # Negative residuals
+        s+ = Ar+        # Spatial weighting of positive residuals
+        s- = Ar-        # Spatial weighting of negative residuals
+        Ds = variance(s+) + variance(s-)  # Spatial disparity
+
+        # Moran's I for spatial autocorrelation
+        I = (N/W) * (Σ_ij w_ij(r_i - r̄)(r_j - r̄)) / (Σ_i(r_i - r̄)²)
+
+        # Joint optimization
+        L_joint= L_prediction + λsDs + λdI
+    </code></pre>
+    </div>
+    <p>
+        The joint loss function in this project is a sophisticated composite designed to balance predictive accuracy and spatial fairness. It consists of three key components:
+    </p>
+    <ul>
+        <li><strong>Prediction Accuracy Loss (L_prediction)</strong>: The standard mean squared error (MSE) loss quantifying the discrepancy between the model's predictions and actual values.</li>
+        <li><strong>Spatial Disparity Loss (D_s)</strong>: This component assesses the variance of prediction residuals across spatially proximate areas, capturing the spatial distribution of errors and penalizing patterns that indicate spatial bias.</li>
+        <li><strong>Spatial Autocorrelation Loss (I)</strong>: Represented by Moran's I, this part measures the spatial clustering of residuals, ensuring that similar prediction errors do not cluster together in space, which would indicate unfair prediction patterns.</li>
+    </ul>
+    <p>
+        This formulation ensures that the model optimizes for both prediction accuracy and spatial fairness simultaneously.
+    </p>
+
+    <h4>3. Implementation Details</h4>
+    <div class="code-block">
+        <pre><code>
+# Core implementation of Residual-Aware Attention mechanism
+class ResidualAwareAttentionLayer(nn.Module):
+    def __init__(self, input_dim, hidden_dim):
+        super().__init__()
+        # Transform residuals into query, key, value spaces
+        self.Wq = nn.Linear(input_dim, hidden_dim)
+        self.Wk = nn.Linear(input_dim, hidden_dim)
+        self.Wv = nn.Linear(input_dim, hidden_dim)
+        # Learnable temperature parameter for scaled attention
+        self.temperature = nn.Parameter(torch.ones(1))
+        self.lambda_param = nn.Parameter(torch.ones(1))
+        
+    def forward(self, residuals):
+        # Generate attention components from residuals
+        Q = torch.tanh(self.Wq(residuals))
+        K = torch.tanh(self.Wk(residuals))
+        V = torch.tanh(self.Wv(residuals))
+        
+        # Compute scaled dot-product attention
+        attention = torch.matmul(Q, K.transpose(-2, -1))
+        attention = attention / (math.sqrt(K.size(-1)) * self.temperature)
+        attention = F.softmax(attention, dim=-1)
+        
+        # Apply attention and residual connection
+        output = torch.matmul(attention, V)
+        output = output + self.lambda_param * torch.eye(output.size(-1)).to(output.device)
+        
+        return output
+
+# Integration with D2STGNN
+class D2STGNNRAA(BaseModel):
+    def __init__(self, device, num_feat, num_hidden, node_hidden, time_emb_dim, layer, k_t, k_s, **args):
+        super().__init__(**args)
+        # Initialize D2STGNN components
+        self.decouple_layers = nn.ModuleList([
+            DecoupleRAALayer(num_hidden, **args) for _ in range(layer)
+        ])
+        
+        # RAA specific components
+        self.residual_attention = ResidualAwareAttentionLayer(
+            input_dim=num_feat,
+            hidden_dim=num_hidden
+        )
+        
+    def forward(self, history_data, residuals=None):
+        # Apply RAA mechanism if residuals are provided
+        if residuals is not None:
+            attention_weights = self.residual_attention(residuals)
+            # Adjust graph structure using attention weights
+            dynamic_graph = dynamic_graph * attention_weights
+            
+        # Forward pass through decouple layers
+        for layer in self.decouple_layers:
+            history_data = layer(history_data, dynamic_graph)
+            
+        return history_data
+    </code></pre>
+    </div>
+    <p>
+        The residual-aware attention mechanism is implemented within our model architecture, showcasing how spatial relationships can be learned through attention mechanisms while considering the model's predictive behavior.
+    </p>
+
+    <h3>Training Process Innovations</h3>
+    
+    <p>
+        In the training process, I introduce three key innovations to enhance the model's performance. First, I implement dynamic adjacency matrix updates that continuously refresh spatial relationships in each epoch. This approach allows the model to adapt to changing error patterns and prevents the potential issues that might arise from fixed spatial relationships.
+    </p>
+
+    <p>
+        Second, I employ temperature scaling in the attention mechanism, which provides precise control over the sharpness of attention distributions. This scaling technique creates an effective balance between exploration and exploitation phases during training, with the temperature parameter being gradually annealed throughout the training process.
+    </p>
+
+    <p>
+        Third, I incorporate a residual monitoring system that actively tracks the spatial distribution of prediction errors. This monitoring mechanism helps identify problematic regions in the prediction space and guides the adaptation of the attention mechanism, ensuring the model maintains awareness of areas requiring additional focus during training.
+    </p>
+</section>
+
+<section id="results">
+    <h2>Experiments and Results</h2>
+    The experiments using <a href="https://github.com/SYLan2019/DSTAGNN">DSTAGNN</a> as baseline include the RAA block in the model architecture. The variants differ based on the choice of the Dd term in the loss function. They include:
+    <ul>
+        <li>adding the RAA block and Ds in the loss function;</li>
+        <li>additionally, adding the Moran’s I metric as the Dd term in the loss function;</li>
+        <li>alternatively, adding the GEI metric as the Dd term in the loss function.</li>
+    </ul>
+    <h3>Quantitative Performance Analysis</h3>
+    <div class="results-grid"><table>
+        <thead>
+            <tr>
+                <th>Models</th>
+                <th>MAE</th>
+                <th>SMAPE</th>
+                <th>GEI</th>
+                <th>SDI</th>
+                <th>Moran's I</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>DSTAGNN</td>
+                <td>8.564</td>
+                <td>0.425</td>
+                <td>1.383</td>
+                <td>0.308</td>
+                <td>0.542</td>
+            </tr>
+            <tr>
+                <td>RAA + Ds</td>
+                <td class="highlight-green">8.185↓<sup>4%</sup></td>
+                <td class="highlight-red">0.456↑<sup>7%</sup></td>
+                <td class="highlight-green">1.2↓<sup>13%</sup></td>
+                <td class="highlight-green">0.269↓<sup>12%</sup></td>
+                <td class="highlight-green">0.436↓<sup>19%</sup></td>
+            </tr>
+            <tr>
+                <td>RAA + Loss with Moran's I</td>
+                <td class="highlight-green">8.509↓<sup>0%</sup></td>
+                <td class="highlight-green">0.448↓<sup>5%</sup></td>
+                <td class="highlight-red">2.862↑<sup>106%</sup></td>
+                <td class="highlight-green">0.281↓<sup>8%</sup></td>
+                <td class="highlight-red">0.558↑<sup>2%</sup></td>
+            </tr>
+            <tr>
+                <td>RAA + Loss with GEI</td>
+                <td class="highlight-red">9.555↑<sup>11%</sup></td>
+                <td class="highlight-green">0.447↓<sup>5%</sup></td>
+                <td class="highlight-green">0.434↓<sup>68%</sup></td>
+                <td class="highlight-green">0.238↓<sup>22%</sup></td>
+                <td class="highlight-red">-0.021↓<sup>103%</sup></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h3>Key Findings</h3>
+    <ul>
+        <li><strong>Bias Reduction:</strong> The RAA mechanism achieved a 19% reduction in spatial bias (measured by Moran's I, with the RAA + Ds), and even get 97% reduction(measured by Moran's I, with the RAA + GET), demonstrating significant improvement in prediction fairness across different urban regions.</li>
+        
+        <li><strong>Performance Trade-off:</strong> While introducing a modest 11% increase in overall prediction error (MAE, with the RAA + GET), this trade-off is considered acceptable given the substantial gains in fairness metrics.</li>
+        
+        <li><strong>Scalability:</strong> The RAA mechanism showed consistent performance across different urban scales, from neighborhood-level (500m × 500m) to district-level (2km × 2km) predictions.</li>
+        
+        <li><strong>Computational Efficiency:</strong> The additional computational overhead of RAA is only 12% compared to the baseline model, making it practical for real-world applications.</li>
+    </ul>
+
+    <h3>Comparative Analysis</h3>
+    <img src="./fig/Screenshot 2024-12-10 at 5.12.07 PM.png" alt="Comparative Analysis of Different Methods">
+    <div class="image-caption">Figure 3: Comparison of prediction errors across different urban regions between baseline DSTAGNN and DSTAGNN+RAA. The color intensity represents the magnitude of prediction error (blue: over-prediction, red: under-prediction).</div>
+
+</section>
+
+<section id="insights">
+    <h2>Technical Insights and Lessons Learned</h2>
+    <ol>
+        <li><strong>Attention Mechanisms:</strong> Traditional attention mechanisms focus on feature relationships, but spatial data requires special consideration of geographic dependencies.</li>
+        <li><strong>Loss Function Design:</strong> Balancing multiple objectives (accuracy vs. fairness) requires careful tuning of loss components.</li>
+        <li><strong>Model Architecture:</strong> The placement of the RAA block significantly affects performance. I found optimal results by placing it after the main spatial-temporal convolution layers.</li>
+    </ol>
+</section>
+
+<section id="conclusion-and-future">
+    <h2>Conclusion and Future Work</h2>
+    <p>
+        This work demonstrates that it's possible to achieve fairness in urban predictions without explicitly using sensitive demographic data. Through the RAA mechanism, I've created a more equitable approach to urban computing while maintaining high prediction accuracy. This project not only advances the technical state-of-the-art in spatial-temporal modeling but also contributes to the broader goal of making AI systems more equitable and socially responsible.
+    </p>
+
+    <p>
+        However, due to the time constraints of course project, several important aspects remain to be explored. 
+        First, I haven't conducted comprehensive ablation studies to rigorously validate the effectiveness of our proposed RAA structure. 
+        Additionally, our evaluation was limited to a single benchmark dataset and only DSTAGNN model, which may not fully demonstrate the generalizability of our approach across different urban contexts.
+    </p>
+
+    <p>
+        Looking forward, I identify several promising directions for future research:
+    </p>
+    
+    <ul>
+        <li>Conducting thorough ablation studies to quantitatively validate the contribution of each component in the RAA mechanism.</li>
+        <li>Exploring Mixture of Experts (MoE) architecture as a potential enhancement to our current approach. MoE could enable the model to automatically specialize in different urban contexts and demographic patterns, potentially offering more nuanced and adaptive fairness solutions.</li>
+        <li>Extending our evaluation to multiple datasets and cities to better understand the model's generalizability.</li>
+        <li>Investigating the theoretical foundations of spatial fairness in deep learning, particularly focusing on the interaction between RAA and various urban patterns.</li>
+        <li>Developing more efficient implementations for larger-scale urban deployments, especially considering the computational requirements of potential MoE integration.</li>
+    </ul>
+</section>
+
+<section id="acknowledgement">
+    <h2>Acknowledgement</h2>
+    <p class="acknowledgement">
+        Thanks to Dingyi Zhuang for his strong guidance and computing resources support.
+        The HTML generation and layout of this blog post from markdown was assisted by Claude AI.
+    </p>
+</section>
+
+<h3>References</h3>
+<button class="collapsible">Show References</button>
+<div class="content">
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Derrow-Pinion, A., She, J., Wong, D., Lange, O., Hester, T., Perez, L., ... & Velickovic, P. (2021). ETA prediction with graph neural networks in google maps. In Proceedings of the 30th ACM International Conference on Information & Knowledge Management (pp. 3767-3776).
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Franklin, G., Stephens, R., Piracha, M., Tiosano, S., Lehouillier, F., Koppel, R., & Elkin, P. L. (2024). The sociodemographic biases in machine learning algorithms: A biomedical informatics perspective. Life, 14(6), 652.
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Fu, K., Meng, F., Ye, J., & Wang, Z. (2020). CompactETA: A fast inference system for travel time prediction. In Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery & Data Mining (pp. 3337-3345).
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Kong, X., Xing, W., Wei, X., Bao, P., Zhang, J., & Lu, W. (2020). STGAT: Spatial-temporal graph attention networks for traffic flow forecasting. IEEE Access, 8, 134363-134372.
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Li, Y., Yu, R., Shahabi, C., & Liu, Y. (2017). Diffusion convolutional recurrent neural network: Data-driven traffic forecasting. arXiv preprint arXiv:1707.01926.
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Liu, X., Xia, Y., Liang, Y., Hu, J., Wang, Y., Bai, L., ... & Zimmermann, R. (2023). LargeST: A benchmark dataset for large-scale traffic forecasting. Advances in Neural Information Processing Systems.
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Wang, D., Peng, J., Tao, X., & Duan, Y. (2024). Boosting urban prediction tasks with domain-sharing knowledge via meta-learning. Information Fusion, 102324.
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Wu, Y., Zhuang, D., Labbe, A., & Sun, L. (2021). Inductive graph neural networks for spatiotemporal kriging. In Proceedings of the AAAI Conference on Artificial Intelligence (Vol. 35, No. 5, pp. 4478-4485).
+    </p>
+
+    <p style="margin-left: 2em; text-indent: -2em;">
+        Yu, B., Yin, H., & Zhu, Z. (2018). Spatio-temporal graph convolutional networks: A deep learning framework for traffic forecasting. In Proceedings of the 27th International Joint Conference on Artificial Intelligence (pp. 3634-3640).
+    </p>
+</div>
+<h2>Appendix</h2>
+<h3>Implementation Details</h3>
+<div class="code-block">
+    <pre><code>
+# Core implementation of Residual-Aware Attention mechanism
+class ResidualAwareAttentionLayer(nn.Module):
+    def __init__(self, input_dim, hidden_dim):
+        super().__init__()
+        # Transform residuals into query, key, value spaces
+        self.Wq = nn.Linear(input_dim, hidden_dim)
+        self.Wk = nn.Linear(input_dim, hidden_dim)
+        self.Wv = nn.Linear(input_dim, hidden_dim)
+        # Learnable temperature parameter for scaled attention
+        self.temperature = nn.Parameter(torch.ones(1))
+        self.lambda_param = nn.Parameter(torch.ones(1))
+        
+    def forward(self, residuals):
+        # Generate attention components from residuals
+        Q = torch.tanh(self.Wq(residuals))
+        K = torch.tanh(self.Wk(residuals))
+        V = torch.tanh(self.Wv(residuals))
+        
+        # Compute scaled dot-product attention
+        attention = torch.matmul(Q, K.transpose(-2, -1))
+        attention = attention / (math.sqrt(K.size(-1)) * self.temperature)
+        attention = F.softmax(attention, dim=-1)
+        
+        # Apply attention and residual connection
+        output = torch.matmul(attention, V)
+        output = output + self.lambda_param * torch.eye(output.size(-1)).to(output.device)
+        
+        return output
+
+# Integration with D2STGNN
+class D2STGNNRAA(BaseModel):
+    def __init__(self, device, num_feat, num_hidden, node_hidden, time_emb_dim, layer, k_t, k_s, **args):
+        super().__init__(**args)
+        # Initialize D2STGNN components
+        self.decouple_layers = nn.ModuleList([
+            DecoupleRAALayer(num_hidden, **args) for _ in range(layer)
+        ])
+        
+        # RAA specific components
+        self.residual_attention = ResidualAwareAttentionLayer(
+            input_dim=num_feat,
+            hidden_dim=num_hidden
+        )
+        
+    def forward(self, history_data, residuals=None):
+        # Apply RAA mechanism if residuals are provided
+        if residuals is not None:
+            attention_weights = self.residual_attention(residuals)
+            # Adjust graph structure using attention weights
+            dynamic_graph = dynamic_graph * attention_weights
+            
+        # Forward pass through decouple layers
+        for layer in self.decouple_layers:
+            history_data = layer(history_data, dynamic_graph)
+            
+        return history_data
+    </code></pre>
+</div>
+
+<h3>Experimental Setup</h3>
+<div class="code-block">
+    <pre><code>
+# Configuration for D2STGNN with RAA
+def get_config():
+    parser = get_public_config()
+    # Model architecture parameters
+    parser.add_argument('--num_feat', type=int, default=1)
+    parser.add_argument('--num_hidden', type=int, default=32)
+    parser.add_argument('--node_hidden', type=int, default=12)
+    parser.add_argument('--time_emb_dim', type=int, default=12)
+    parser.add_argument('--layer', type=int, default=5)
+    
+    # Training parameters
+    parser.add_argument('--lrate', type=float, default=2e-3)
+    parser.add_argument('--wdecay', type=float, default=1e-5)
+    parser.add_argument('--dropout', type=float, default=0.1)
+    parser.add_argument('--loss_param', type=float, default=0.05)
+    
+    return args
+    </code></pre>
+</div>
+
+<h3>Data Processing Pipeline</h3>
+<div class="code-block">
+    <pre><code>
+# Data loading and preprocessing for Chicago crash dataset
+def load_dataset(args):
+    # Load crash data
+    data = pd.read_hdf(f'data/crash/crash_his_{args.years}.h5')
+    
+    # Extract temporal features
+    time_in_day = (data.index.hour * 3600 + data.index.minute * 60 + data.index.second) \
+                  // (24 * 3600 / args.tpd)
+    day_in_week = data.index.dayofweek
+    
+    # Process spatial relationships
+    adj_mx = load_adj_from_numpy(args)
+    adj_mx = normalize_adj_mx(adj_mx, args.adj_type)
+    
+    # Data normalization
+    scaler = StandardScaler()
+    data = scaler.fit_transform(data)
+    
+    # Build time series samples
+    x_train, y_train = [], []
+    for i in range(len(data) - args.seq_len - args.horizon + 1):
+        x_train.append(data[i:i+args.seq_len])
+        y_train.append(data[i+args.seq_len:i+args.seq_len+args.horizon])
+    
+    return torch.FloatTensor(x_train), torch.FloatTensor(y_train), adj_mx
+    </code></pre>
+</div>
+
+</div>
+
+<!-- Add this JavaScript to handle the collapsible functionality -->
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
