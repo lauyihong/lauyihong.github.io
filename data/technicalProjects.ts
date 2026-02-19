@@ -3,50 +3,57 @@ import { Project } from '../types';
 export const TECHNICAL_PROJECTS: Project[] = [
   {
     id: "pr1",
-    title: "Adaptive Gripper Control",
-    description: "Hardware-software co-design of a gripper that adapts its geometry based on object topology using real-time tactile feedback.",
-    tags: ["Python", "PyBullet", "Control Theory"],
-    collaborators: ["Advisor Name", "Collaborator A"],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
-    details: {
-      subtitle: "Tactile Intelligence for Unstructured Manipulation",
-      challenge: `Standard robotic grippers operate on a rigid logic: they assume a known geometry or rely on crushing force to secure an object. 
-      However, in unstructured environments—like construction sites or disaster zones—objects are often irregular, fragile, or slippery.
-      The goal was to create a gripper that doesn't just "grab" but "feels" the object's topology and adjusts its own geometry accordingly.`,
-      solution: `We developed a soft-actuated finger design embedded with high-resolution tactile sensors. The control loop utilizes a hierarchical approach:
-      
-      1. **Low-Level (1kHz):** Local reflex loops adjust finger stiffness based on shear force detection to prevent slippage.
-      2. **Mid-Level (100Hz):** A geometric reconstruction algorithm estimates the local surface curvature of the object.
-      3. **High-Level (10Hz):** An RL policy (PPO) decides the optimal grasp strategy (e.g., pinch, wrap, or cage) based on the reconstructed shape.`,
-      results: `The adaptive gripper achieved a **94% success rate** on the YCB object set, outperforming standard rigid grippers by 15% on adversarial geometries (e.g., mustard bottles, power drills). 
-      Furthermore, the hardware-software co-design reduced the energy consumption by 20% by optimizing the force application vectors.`,
-      additionalImages: [
-        "https://images.unsplash.com/photo-1535378437327-b712818f6652?auto=format&fit=crop&q=80&w=800", 
-        "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800"
-      ]
-    }
+    title: "xLeRobot: Autonomous Mahjong-Playing Robot",
+    description: "An end-to-end robotic system for playing physical mahjong. Built on the SO-100 robotic arm with custom end-effector for precise tile manipulation. Integrates Vision-Language Models for game-state perception and strategic decision-making, with visuomotor control deployed via the LeRobot framework. Formulates a flow network optimization model bridging high-level planning and physical execution.",
+    tags: ["Robotics", "VLM", "LeRobot"],
+    collaborators: ["Yifeng Liu"],
+    affiliation: "MIT · Feb 2026",
+    links: [
+      { label: "project page", url: "#" },
+      { label: "video", url: "#" },
+      { label: "code", url: "#" }
+    ]
   },
   {
     id: "pr2",
-    title: "Site-Sim Environment",
-    description: "An open-source simulation environment for construction robotics based on real-world architectural BIM data.",
-    tags: ["C++", "Isaac Gym", "ProcGen"],
-    collaborators: ["Collaborator B"],
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600"
+    title: "Articulated Object Reconstruction & Modeling with Active Vision",
+    description: "An end-to-end pipeline for reconstructing articulated objects from fixed-perspective photos: 3D mesh generation → SAM-based part-level segmentation → hinge/joint estimation → interactable movable mesh assembly. The system supports active vision for iterative refinement through robot-object interaction.",
+    tags: ["3D Vision", "Segmentation", "Robotics"],
+    collaborators: ["Yifeng Liu", "Multisensory Intelligence Group"],
+    affiliation: "MIT Media Lab · Sep 2025 – Present",
+    links: [
+      { label: "details", url: "#" }
+    ]
   },
   {
     id: "pr3",
-    title: "Opti-Plan Library",
-    description: "A lightweight C++ library for trajectory optimization in constrained 3D manifolds. Designed for low-compute embedded systems.",
-    tags: ["C++", "Optimization", "Embedded"],
-    collaborators: ["Advisor Name"],
+    title: "Real2Code: Articulated Object Code Generation from Visual Observations",
+    description: "Reproduction and extension of the Real2Code pipeline for generating simulation-ready articulated assets from visual observations. Integrated PointNet-based 3D shape completion, Blender rendering pipeline, and SAPIEN simulation environment for creating interactable digital twins of real-world articulated objects.",
+    tags: ["3D Vision", "Simulation", "PointNet"],
+    collaborators: ["Yifeng Liu (reproduction & extension)"],
+    affiliation: "MIT Media Lab · 2025",
+    links: [
+      { label: "code", url: "#" }
+    ]
   },
   {
     id: "pr4",
-    title: "Swarm 3D Printing",
-    description: "Cooperative multi-robot additive manufacturing system for large-scale architectural components without bounding box constraints.",
-    tags: ["ROS2", "Python", "Manufacturing"],
-    collaborators: ["Collaborator A", "Collaborator C"],
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=600"
+    title: "Resolving Braess's Paradox via Deep Reinforcement Learning in Open Traffic Systems",
+    description: "A framework modeling real-world traffic as an MDP and training DQN agents to control traffic lights and speed limits. Designed per-vehicle optimal agents and demonstrated emergent reduction of Braess's paradox through learned cooperative policies.",
+    tags: ["Deep RL", "Traffic", "MDP"],
+    collaborators: ["Yifeng Liu"],
+    affiliation: "MIT · May 2024",
+    links: [
+      { label: "paper", url: "#" },
+      { label: "code", url: "#" }
+    ]
+  },
+  {
+    id: "pr5",
+    title: "End-to-End Policy Learning for 3D Bin Packing",
+    description: "A 3D bin packing solver using end-to-end deep RL to compute optimal spatial packing strategies for arbitrary item sets and fixed container sizes. Achieved competitive solution quality with significant speedup over heuristic baselines, enabling real-time packing decisions in logistics workflows.",
+    tags: ["Deep RL", "Optimization", "Logistics"],
+    collaborators: ["Yifeng Liu"],
+    affiliation: "ByteDance · Summer 2024"
   }
 ];

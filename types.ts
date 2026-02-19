@@ -15,6 +15,7 @@ export interface BlogPost {
   title: string;
   preview: string;
   readTime: string;
+  content?: string;
 }
 
 export interface ProjectDetails {
@@ -31,8 +32,18 @@ export interface Project {
   description: string;
   tags: string[];
   collaborators?: string[];
-  image?: string; // Optional image for mixed layouts
-  details?: ProjectDetails; // Optional rich content for inner pages
+  affiliation?: string;
+  links?: { label: string; url: string }[];
+  image?: string;
+  details?: ProjectDetails;
+}
+
+export interface IndustryExperience {
+  id: string;
+  date: string;
+  role: string;
+  company: string;
+  description: string;
 }
 
 export interface ChatMessage {
