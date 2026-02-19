@@ -6,6 +6,7 @@ export const TECHNICAL_PROJECTS: Project[] = [
     title: "Adaptive Gripper Control",
     description: "Hardware-software co-design of a gripper that adapts its geometry based on object topology using real-time tactile feedback.",
     tags: ["Python", "PyBullet", "Control Theory"],
+    collaborators: ["Advisor Name", "Collaborator A"],
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=600",
     details: {
       subtitle: "Tactile Intelligence for Unstructured Manipulation",
@@ -30,6 +31,7 @@ export const TECHNICAL_PROJECTS: Project[] = [
     title: "Site-Sim Environment",
     description: "An open-source simulation environment for construction robotics based on real-world architectural BIM data.",
     tags: ["C++", "Isaac Gym", "ProcGen"],
+    collaborators: ["Collaborator B"],
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=600"
   },
   {
@@ -37,13 +39,14 @@ export const TECHNICAL_PROJECTS: Project[] = [
     title: "Opti-Plan Library",
     description: "A lightweight C++ library for trajectory optimization in constrained 3D manifolds. Designed for low-compute embedded systems.",
     tags: ["C++", "Optimization", "Embedded"],
-    // No image - Text only example
+    collaborators: ["Advisor Name"],
   },
   {
     id: "pr4",
     title: "Swarm 3D Printing",
     description: "Cooperative multi-robot additive manufacturing system for large-scale architectural components without bounding box constraints.",
     tags: ["ROS2", "Python", "Manufacturing"],
+    collaborators: ["Collaborator A", "Collaborator C"],
     image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=600"
   }
 ];

@@ -293,52 +293,109 @@ const HomeView: React.FC<{
             {/* Research Section */}
             <Section id="research" title="Research">
                 <div className="space-y-16">
-                    
-                    {/* Technical Projects - MOVED TO TOP */}
+
+                    {/* Technical Projects Table */}
                     <div>
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-8">Technical Projects</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {TECHNICAL_PROJECTS.map((proj) => (
-                                <ProjectCard key={proj.id} project={proj} onClick={onProjectSelect} />
-                            ))}
-                        </div>
+                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Technical Projects</h3>
+                        <table className="w-full border-collapse">
+                            <thead>
+                                <tr className="border-b border-black/10">
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-2/5">Title</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-1/4">Category</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3">Collaborators</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {TECHNICAL_PROJECTS.map((proj) => (
+                                    <tr
+                                        key={proj.id}
+                                        onClick={() => onProjectSelect(proj)}
+                                        className="group border-b border-black/5 cursor-pointer hover:bg-gray-50 transition-colors"
+                                    >
+                                        <td className="py-4 pr-8">
+                                            <span className="font-medium group-hover:underline underline-offset-2 decoration-gray-400">{proj.title}</span>
+                                        </td>
+                                        <td className="py-4 pr-8 font-mono text-xs text-gray-500">
+                                            {proj.tags.join(' · ')}
+                                        </td>
+                                        <td className="py-4 text-sm text-gray-500 font-light">
+                                            {proj.collaborators?.join(', ') ?? '—'}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
 
-                    {/* Publications List - MOVED AFTER TECHNICAL PROJECTS */}
-                    <div className="space-y-8">
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-8">Selected Publications</h3>
-                        {PUBLICATIONS.map((pub) => (
-                            <div key={pub.id} className="group flex flex-col md:flex-row gap-4 md:gap-12 border-b border-black/5 pb-8 last:border-0">
-                                <div className="md:w-32 shrink-0 font-mono text-sm text-gray-500 pt-1">
-                                    {pub.venue} {pub.year}
-                                </div>
-                                <div className="flex-1">
-                                    <h4 className="text-2xl font-medium mb-2 group-hover:text-gray-600 transition-colors">{pub.title}</h4>
-                                    <p className="font-mono text-xs text-gray-500 mb-3">
-                                        {pub.authors.map((author, i) => (
-                                            <span key={i} className={author.includes("Yifeng") || author.includes("Liu") || author.includes("Boyuan") ? "text-black font-semibold" : ""}>
-                                                {author}{i < pub.authors.length - 1 ? ", " : ""}
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <p className="text-gray-600 font-light max-w-2xl leading-relaxed">{pub.abstract}</p>
-                                </div>
-                                <div className="md:w-12 flex items-start justify-end opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <ArrowUpRight className="w-5 h-5 text-gray-400" />
-                                </div>
-                            </div>
-                        ))}
+                    {/* Selected Publications Table */}
+                    <div>
+                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Selected Publications</h3>
+                        <table className="w-full border-collapse">
+                            <thead>
+                                <tr className="border-b border-black/10">
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-2/5">Title</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-1/4">Venue</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3">Authors</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {PUBLICATIONS.map((pub) => (
+                                    <tr key={pub.id} className="group border-b border-black/5 hover:bg-gray-50 transition-colors">
+                                        <td className="py-4 pr-8">
+                                            <span className="font-medium">{pub.title}</span>
+                                        </td>
+                                        <td className="py-4 pr-8 font-mono text-xs text-gray-500">
+                                            {pub.venue} {pub.year}
+                                        </td>
+                                        <td className="py-4 text-sm font-light">
+                                            {pub.authors.map((author, i) => (
+                                                <span
+                                                    key={i}
+                                                    className={author.includes("Yifeng") || author.includes("Liu") ? "text-black font-medium" : "text-gray-500"}
+                                                >
+                                                    {author}{i < pub.authors.length - 1 ? ', ' : ''}
+                                                </span>
+                                            ))}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
 
-                    {/* Design Projects */}
+                    {/* Design & Building Projects Table */}
                     <div>
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-8 mt-12">Design & Building Projects</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {DESIGN_PROJECTS.map((proj) => (
-                                <ProjectCard key={proj.id} project={proj} onClick={onProjectSelect} />
-                            ))}
-                        </div>
+                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Design & Building Projects</h3>
+                        <table className="w-full border-collapse">
+                            <thead>
+                                <tr className="border-b border-black/10">
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-2/5">Title</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-1/4">Category</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3">Collaborators</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {DESIGN_PROJECTS.map((proj) => (
+                                    <tr
+                                        key={proj.id}
+                                        onClick={() => onProjectSelect(proj)}
+                                        className="group border-b border-black/5 cursor-pointer hover:bg-gray-50 transition-colors"
+                                    >
+                                        <td className="py-4 pr-8">
+                                            <span className="font-medium group-hover:underline underline-offset-2 decoration-gray-400">{proj.title}</span>
+                                        </td>
+                                        <td className="py-4 pr-8 font-mono text-xs text-gray-500">
+                                            {proj.tags.join(' · ')}
+                                        </td>
+                                        <td className="py-4 text-sm text-gray-500 font-light">
+                                            {proj.collaborators?.join(', ') ?? '—'}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
+
                 </div>
             </Section>
 

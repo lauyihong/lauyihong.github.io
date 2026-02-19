@@ -30,6 +30,7 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
+  collaborators?: string[];
   image?: string; // Optional image for mixed layouts
   details?: ProjectDetails; // Optional rich content for inner pages
 }
