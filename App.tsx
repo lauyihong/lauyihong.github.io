@@ -3,8 +3,8 @@ import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
 import ChatWidget from './components/ChatWidget';
-import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, DESIGN_PROJECTS, BLOG_POSTS } from './data';
-import { Project, BlogPost } from './types';
+import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
+import { Project, IndustryExperience } from './types';
 
 // --- Components ---
 
@@ -20,70 +20,18 @@ const MapWidget: React.FC = () => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.id = 'mapmyvisitors';
-    // Configuration from your snippet:
-    // cl=d1d1d1 (Border Color)
-    // co=ffffff (Background Color)
-    // cmo=939393 (Map Ocean Color?)
-    // cmn=000000 (Map Node/Text Color?)
     script.src = 'https://mapmyvisitors.com/map.js?cl=d1d1d1&w=a&t=n&d=oeiR-cUnGjbVvYidl9tI42Db7SfqSDYwxx9M3-OxrCw&co=ffffff&cmo=939393&cmn=000000';
-    
-    containerRef.current.innerHTML = ''; // Clean up placeholder
+
+    containerRef.current.innerHTML = '';
     containerRef.current.appendChild(script);
   }, []);
 
   return (
-    // grayscale class forces the widget to be black & white.
-    // min-h-[100px] reserves space so layout doesn't jump when loading.
-    <div 
-        ref={containerRef} 
-        className="flex justify-center items-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500" 
+    <div
+        ref={containerRef}
+        className="flex justify-center items-center grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
         style={{ minHeight: '100px' }}
     />
-  );
-};
-
-const ProjectCard: React.FC<{ project: Project; onClick: (p: Project) => void }> = ({ project, onClick }) => {
-  return (
-    <div 
-      onClick={() => onClick(project)}
-      className="group flex flex-col h-full bg-white border border-neutral-200 cursor-pointer hover:border-black transition-all duration-300 hover:shadow-sm"
-    >
-      {/* Image Section */}
-      {project.image && (
-        <div className="w-full aspect-[4/3] overflow-hidden border-b border-neutral-100 relative">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out"
-          />
-           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-500" />
-        </div>
-      )}
-
-      {/* Content Section */}
-      <div className="p-6 flex flex-col flex-1">
-        <div className="flex justify-between items-start mb-4">
-          <h3 className="font-medium text-lg leading-tight group-hover:text-blue-600 transition-colors">
-            {project.title}
-          </h3>
-          <div className="opacity-0 group-hover:opacity-100 transition-opacity -translate-y-1 group-hover:translate-y-0 duration-300">
-            <ArrowUpRight className="w-4 h-4 text-gray-400" />
-          </div>
-        </div>
-        
-        <p className="text-gray-600 font-light text-sm leading-relaxed mb-6 flex-1 line-clamp-4">
-          {project.description}
-        </p>
-
-        <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-neutral-50 group-hover:border-neutral-100 transition-colors">
-          {project.tags.slice(0, 3).map((tag) => (
-            <span key={tag} className="text-[10px] uppercase tracking-wider font-mono text-gray-500 bg-gray-50 px-2 py-1">
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 };
 
@@ -97,7 +45,7 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
          <button onClick={onBack} className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest hover:text-black transition-colors mb-12 text-gray-500">
             <ArrowLeft className="w-4 h-4" /> Back to Index
          </button>
-         
+
          <div className="mb-12">
             <div className="flex flex-wrap gap-3 mb-6">
                 {project.tags.map(tag => (
@@ -108,6 +56,9 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
             </div>
             <h1 className="text-4xl md:text-5xl font-medium leading-tight mb-6">{project.title}</h1>
             <p className="text-xl font-light text-gray-600 leading-relaxed">{project.description}</p>
+            {project.affiliation && (
+              <p className="font-mono text-xs text-gray-400 mt-4">{project.affiliation}</p>
+            )}
          </div>
 
          {project.image && (
@@ -115,7 +66,7 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
                  <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale" />
              </div>
          )}
-         
+
          <div className="p-8 bg-gray-50 border border-gray-200">
            <p className="font-mono text-sm text-gray-500">Additional case study details are being compiled.</p>
          </div>
@@ -127,12 +78,12 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
     <div className="pt-32 pb-20 px-6 md:px-12 animate-in fade-in duration-500">
       <div className="container mx-auto max-w-3xl">
         {/* Navigation */}
-        <button 
-            onClick={onBack} 
+        <button
+            onClick={onBack}
             className="group flex items-center gap-3 text-xs font-mono uppercase tracking-widest hover:text-black transition-colors mb-16 text-gray-400"
         >
             <div className="p-2 border border-gray-200 rounded-full group-hover:border-black transition-colors">
-                <ArrowLeft className="w-3 h-3" /> 
+                <ArrowLeft className="w-3 h-3" />
             </div>
             Back to Index
         </button>
@@ -171,7 +122,7 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
                     </div>
                 </>
             )}
-            
+
             {details.solution && (
                 <>
                     <h3 className="text-2xl font-medium mt-12 mb-6">Approach</h3>
@@ -205,82 +156,44 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
   );
 }
 
-const BlogDetailView: React.FC<{ post: BlogPost; onBack: () => void }> = ({ post, onBack }) => {
-    return (
-      <div className="pt-32 pb-20 px-6 md:px-12 animate-in fade-in duration-500">
-        <div className="container mx-auto max-w-2xl">
-          <button 
-              onClick={onBack} 
-              className="group flex items-center gap-3 text-xs font-mono uppercase tracking-widest hover:text-black transition-colors mb-16 text-gray-400"
-          >
-              <div className="p-2 border border-gray-200 rounded-full group-hover:border-black transition-colors">
-                  <ArrowLeft className="w-3 h-3" /> 
-              </div>
-              Back to Writing
-          </button>
-  
-          <div className="border-b border-black/10 pb-8 mb-12">
-            <div className="flex items-center gap-4 mb-6">
-               <span className="font-mono text-xs uppercase tracking-widest text-gray-500">{post.date}</span>
-               <span className="w-px h-3 bg-gray-300"></span>
-               <span className="font-mono text-xs uppercase tracking-widest text-gray-500">{post.readTime}</span>
-            </div>
-            <h1 className="text-3xl md:text-5xl font-medium leading-tight text-black mb-6">
-                {post.title}
-            </h1>
-          </div>
-  
-          <div className="prose prose-lg prose-neutral max-w-none leading-relaxed">
-            {post.content ? (
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
-            ) : (
-                <p className="text-gray-500 italic">Content coming soon...</p>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-const HomeView: React.FC<{ 
-    onProjectSelect: (p: Project) => void; 
-    onBlogSelect: (b: BlogPost) => void 
-}> = ({ onProjectSelect, onBlogSelect }) => {
+const HomeView: React.FC<{
+    onProjectSelect: (p: Project) => void;
+}> = ({ onProjectSelect }) => {
     return (
         <>
-             {/* Hero Section - Updated Alignment */}
+             {/* Hero Section */}
             <div className="pt-32 pb-20 md:pt-48 md:pb-16">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24 border-b border-black/10 pb-24">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                        
-                        {/* Title Row: Placed in the right column (cols 4-12) first */}
+
+                        {/* Title Row */}
                         <div className="md:col-span-9 md:col-start-4 mb-2">
                             <div className="text-3xl md:text-4xl font-medium text-black leading-tight">
                                 I'm Yifeng Liu.
                             </div>
                         </div>
 
-                        {/* Avatar & Links: Left Column (cols 1-3) */}
-                        {/* Since Grid auto-flows, we place this next, and it goes to the 'next available slot' which is row 2 col 1-3 */}
+                        {/* Avatar & Links: Left Column */}
                         <div className="md:col-span-3 flex flex-col gap-6">
                             <div className="w-full max-w-[180px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                                <img 
-                                    src={PROFILE.avatar} 
+                                <img
+                                    src={PROFILE.avatar}
                                     alt={PROFILE.name}
                                     className="w-full h-auto object-contain"
                                 />
                             </div>
                             <div className="flex flex-row flex-wrap gap-4 items-center">
+                                <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
                                 <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
                                 <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
+                                <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">LinkedIn</a>
                             </div>
                         </div>
 
-                        {/* Bio Text: Right Column (cols 4-12) */}
-                        {/* This goes to row 2, col 4-12, aligning its top with the Avatar */}
+                        {/* Bio Text: Right Column */}
                         <div className="md:col-span-9">
-                             <div 
+                             <div
                                 className="prose prose-lg prose-neutral max-w-none"
                                 dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
                              />
@@ -295,32 +208,57 @@ const HomeView: React.FC<{
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <div className="space-y-16">
 
-                    {/* Technical Projects Table */}
+                    {/* Research & Projects Table */}
                     <div>
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Technical Projects</h3>
+                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Research & Projects</h3>
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-black/10">
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-2/5">Title</th>
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-1/4">Category</th>
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3">Collaborators</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-2/5">Title</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-1/5 hidden md:table-cell">Collaborators</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-1/5 hidden md:table-cell">Affiliation</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/5 hidden md:table-cell">Links</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {TECHNICAL_PROJECTS.map((proj) => (
                                     <tr
                                         key={proj.id}
-                                        onClick={() => onProjectSelect(proj)}
-                                        className="group border-b border-black/5 cursor-pointer hover:bg-gray-50 transition-colors"
+                                        className="group border-b border-black/5 hover:bg-gray-50 transition-colors"
                                     >
-                                        <td className="py-4 pr-8">
-                                            <span className="font-medium group-hover:underline underline-offset-2 decoration-gray-400">{proj.title}</span>
+                                        <td className="py-5 pr-4">
+                                            <span className="font-medium block mb-1">{proj.title}</span>
+                                            <span className="text-gray-500 font-light text-sm leading-relaxed block">{proj.description}</span>
+                                            {/* Mobile-only info */}
+                                            <div className="md:hidden mt-2 space-y-1">
+                                                <span className="text-gray-400 font-mono text-xs block">{proj.affiliation}</span>
+                                                {proj.links && (
+                                                    <div className="flex flex-wrap gap-3 mt-1">
+                                                        {proj.links.map((link, i) => (
+                                                            <a key={i} href={link.url} className="font-mono text-xs text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-black transition-colors">
+                                                                {link.label}
+                                                            </a>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
                                         </td>
-                                        <td className="py-4 pr-8 font-mono text-xs text-gray-500">
-                                            {proj.tags.join(' · ')}
-                                        </td>
-                                        <td className="py-4 text-sm text-gray-500 font-light">
+                                        <td className="py-5 pr-4 text-sm text-gray-500 font-light align-top hidden md:table-cell">
                                             {proj.collaborators?.join(', ') ?? '—'}
+                                        </td>
+                                        <td className="py-5 pr-4 font-mono text-xs text-gray-500 align-top hidden md:table-cell">
+                                            {proj.affiliation ?? '—'}
+                                        </td>
+                                        <td className="py-5 align-top hidden md:table-cell">
+                                            {proj.links ? (
+                                                <div className="flex flex-wrap gap-3">
+                                                    {proj.links.map((link, i) => (
+                                                        <a key={i} href={link.url} className="font-mono text-xs text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-black transition-colors">
+                                                            {link.label}
+                                                        </a>
+                                                    ))}
+                                                </div>
+                                            ) : '—'}
                                         </td>
                                     </tr>
                                 ))}
@@ -334,29 +272,47 @@ const HomeView: React.FC<{
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-black/10">
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-2/5">Title</th>
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-1/4">Venue</th>
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3">Authors</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-2/5">Title</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-1/4 hidden md:table-cell">Venue</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-[60px] hidden md:table-cell">Year</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-[60px] hidden md:table-cell"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {PUBLICATIONS.map((pub) => (
                                     <tr key={pub.id} className="group border-b border-black/5 hover:bg-gray-50 transition-colors">
-                                        <td className="py-4 pr-8">
-                                            <span className="font-medium">{pub.title}</span>
+                                        <td className="py-4 pr-4">
+                                            <span className="font-medium block mb-1">{pub.title}</span>
+                                            <span className="text-sm font-light block">
+                                                {pub.authors.map((author, i) => (
+                                                    <span
+                                                        key={i}
+                                                        className={author.includes("Liu") ? "text-black font-medium" : "text-gray-500"}
+                                                    >
+                                                        {author}{i < pub.authors.length - 1 ? ', ' : ''}
+                                                    </span>
+                                                ))}
+                                            </span>
+                                            {/* Mobile-only info */}
+                                            <div className="md:hidden mt-1">
+                                                <span className="text-gray-400 font-mono text-xs">{pub.venue}, {pub.year}</span>
+                                                {pub.link && (
+                                                    <a href={pub.link} className="font-mono text-xs text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black ml-3">paper</a>
+                                                )}
+                                            </div>
                                         </td>
-                                        <td className="py-4 pr-8 font-mono text-xs text-gray-500">
-                                            {pub.venue} {pub.year}
+                                        <td className="py-4 pr-4 font-mono text-xs text-gray-500 align-top hidden md:table-cell">
+                                            {pub.venue}
                                         </td>
-                                        <td className="py-4 text-sm font-light">
-                                            {pub.authors.map((author, i) => (
-                                                <span
-                                                    key={i}
-                                                    className={author.includes("Yifeng") || author.includes("Liu") ? "text-black font-medium" : "text-gray-500"}
-                                                >
-                                                    {author}{i < pub.authors.length - 1 ? ', ' : ''}
-                                                </span>
-                                            ))}
+                                        <td className="py-4 pr-4 font-mono text-xs text-gray-500 align-top hidden md:table-cell">
+                                            {pub.year}
+                                        </td>
+                                        <td className="py-4 align-top hidden md:table-cell">
+                                            {pub.link && (
+                                                <a href={pub.link} className="font-mono text-xs text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-black transition-colors">
+                                                    paper
+                                                </a>
+                                            )}
                                         </td>
                                     </tr>
                                 ))}
@@ -364,32 +320,38 @@ const HomeView: React.FC<{
                         </table>
                     </div>
 
-                    {/* Design & Building Projects Table */}
-                    <div>
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Design & Building Projects</h3>
+                    {/* Industry Experience Table */}
+                    <div id="experience">
+                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Industry Experience</h3>
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-black/10">
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-2/5">Title</th>
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-8 w-1/4">Category</th>
-                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3">Collaborators</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-[140px] hidden md:table-cell">Date</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-1/5">Role</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 pr-4 w-1/4 hidden md:table-cell">Company</th>
+                                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-gray-400 pb-3 w-1/3 hidden md:table-cell">Description</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {DESIGN_PROJECTS.map((proj) => (
-                                    <tr
-                                        key={proj.id}
-                                        onClick={() => onProjectSelect(proj)}
-                                        className="group border-b border-black/5 cursor-pointer hover:bg-gray-50 transition-colors"
-                                    >
-                                        <td className="py-4 pr-8">
-                                            <span className="font-medium group-hover:underline underline-offset-2 decoration-gray-400">{proj.title}</span>
+                                {INDUSTRY_EXPERIENCE.map((exp) => (
+                                    <tr key={exp.id} className="group border-b border-black/5 hover:bg-gray-50 transition-colors">
+                                        <td className="py-4 pr-4 font-mono text-xs text-gray-500 align-top hidden md:table-cell">
+                                            {exp.date}
                                         </td>
-                                        <td className="py-4 pr-8 font-mono text-xs text-gray-500">
-                                            {proj.tags.join(' · ')}
+                                        <td className="py-4 pr-4 align-top">
+                                            <span className="font-medium text-sm">{exp.role}</span>
+                                            {/* Mobile-only info */}
+                                            <div className="md:hidden mt-1 space-y-1">
+                                                <span className="text-gray-400 font-mono text-xs block">{exp.date}</span>
+                                                <span className="text-gray-500 text-sm block">{exp.company}</span>
+                                                <span className="text-gray-500 font-light text-sm block">{exp.description}</span>
+                                            </div>
                                         </td>
-                                        <td className="py-4 text-sm text-gray-500 font-light">
-                                            {proj.collaborators?.join(', ') ?? '—'}
+                                        <td className="py-4 pr-4 text-sm text-gray-500 align-top hidden md:table-cell">
+                                            {exp.company}
+                                        </td>
+                                        <td className="py-4 text-sm text-gray-500 font-light align-top hidden md:table-cell">
+                                            {exp.description}
                                         </td>
                                     </tr>
                                 ))}
@@ -401,39 +363,17 @@ const HomeView: React.FC<{
               </div>
             </section>
 
-            {/* Blog / Writing Section */}
-            <Section id="blog" title="Writing">
-                <div className="space-y-0">
-                    {BLOG_POSTS.map((post) => (
-                        <a key={post.id} href="#" className="group block py-6 border-b border-black/5 hover:bg-gray-50 transition-colors -mx-4 px-4">
-                            <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8">
-                                <div className="md:w-32 shrink-0 font-mono text-xs text-gray-400 group-hover:text-black transition-colors">
-                                    {post.date}
-                                </div>
-                                <div className="flex-1">
-                                    <h3 className="text-xl font-medium mb-2 group-hover:underline underline-offset-4 decoration-1 decoration-gray-300">{post.title}</h3>
-                                    <p className="text-gray-500 font-light max-w-2xl">{post.preview}</p>
-                                </div>
-                                <div className="md:w-24 text-right font-mono text-xs text-gray-300 group-hover:text-gray-500">
-                                    {post.readTime}
-                                </div>
-                            </div>
-                        </a>
-                    ))}
-                </div>
-            </Section>
-
-            {/* Footer - Grid Layout for Perfect Centering */}
+            {/* Footer */}
             <footer className="py-20 border-t border-black/5 mt-20">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                        
+
                         {/* Left: Identity */}
                         <div className="text-center md:text-left">
                             <div className="font-bold tracking-tight text-lg mb-1">YIFENG LIU</div>
                             <div className="font-mono text-xs text-gray-500 uppercase">Cambridge, MA</div>
                         </div>
-                        
+
                         {/* Center: Map Widget */}
                         <div className="flex justify-center order-last md:order-none mt-4 md:mt-0">
                              <MapWidget />
@@ -443,8 +383,8 @@ const HomeView: React.FC<{
                         <div className="flex flex-col items-center md:items-end gap-4">
                             <div className="flex gap-6">
                                 <a href={`mailto:${PROFILE.email}`} className="text-sm text-gray-500 hover:text-black transition-colors">Email</a>
-                                <a href={PROFILE.socials.twitter} className="text-sm text-gray-500 hover:text-black transition-colors">Twitter</a>
-                                <a href={PROFILE.socials.linkedin} className="text-sm text-gray-500 hover:text-black transition-colors">LinkedIn</a>
+                                <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">GitHub</a>
+                                <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">LinkedIn</a>
                             </div>
                             <div className="font-mono text-[10px] text-gray-400 uppercase tracking-widest">
                                 © {new Date().getFullYear()} All Rights Reserved
@@ -458,9 +398,8 @@ const HomeView: React.FC<{
 }
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'home' | 'project' | 'blog'>('home');
+  const [view, setView] = useState<'home' | 'project'>('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [selectedBlog, setSelectedBlog] = useState<BlogPost | null>(null);
 
   const handleNavigation = (target: string) => {
       if (target === 'top') {
@@ -468,7 +407,6 @@ const App: React.FC = () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
           setView('home');
-          // Small timeout to allow view to switch before scrolling to element
           setTimeout(() => {
             const element = document.getElementById(target);
             if (element) {
@@ -484,25 +422,16 @@ const App: React.FC = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBlogSelect = (blog: BlogPost) => {
-      setSelectedBlog(blog);
-      setView('blog');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-gray-200 selection:text-black">
       <Navbar onNavigate={handleNavigation} />
-      
+
       <main className="animate-in fade-in duration-500">
         {view === 'home' && (
-            <HomeView onProjectSelect={handleProjectSelect} onBlogSelect={handleBlogSelect} />
+            <HomeView onProjectSelect={handleProjectSelect} />
         )}
         {view === 'project' && selectedProject && (
             <ProjectDetailView project={selectedProject} onBack={() => handleNavigation('research')} />
-        )}
-        {view === 'blog' && selectedBlog && (
-            <BlogDetailView post={selectedBlog} onBack={() => handleNavigation('blog')} />
         )}
       </main>
 

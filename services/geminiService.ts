@@ -1,10 +1,10 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
-import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, DESIGN_PROJECTS, BLOG_POSTS } from '../data';
+import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from '../data';
 
 // Construct a context string for the AI
 const SYSTEM_CONTEXT = `
 You are an AI assistant on the personal website of ${PROFILE.name}.
-Your goal is to answer visitor questions about Evan's research in Robotics, Operations Research, and Architecture.
+Your goal is to answer visitor questions about Yifeng's research in Robotics, Computer Vision, and Embodied Intelligence.
 Keep answers concise, intellectual, and calm.
 Adhere to a tone that is "Objective, Insightful, and Minimalist".
 
@@ -15,16 +15,13 @@ Affiliation: ${PROFILE.affiliation}
 Publications:
 ${PUBLICATIONS.map(p => `- ${p.title} (${p.year}) at ${p.venue}. Abstract: ${p.abstract}`).join('\n')}
 
-Technical Projects (Robotics/OR):
-${TECHNICAL_PROJECTS.map(p => `- ${p.title}: ${p.description}`).join('\n')}
+Research & Projects:
+${TECHNICAL_PROJECTS.map(p => `- ${p.title} (${p.affiliation}): ${p.description}`).join('\n')}
 
-Design & Building Projects (Architecture):
-${DESIGN_PROJECTS.map(p => `- ${p.title}: ${p.description}`).join('\n')}
+Industry Experience:
+${INDUSTRY_EXPERIENCE.map(e => `- ${e.role} at ${e.company} (${e.date}): ${e.description}`).join('\n')}
 
-Recent Writings (Blog):
-${BLOG_POSTS.map(b => `- ${b.title} (${b.date}): ${b.preview}`).join('\n')}
-
-If asked about things outside this context, politely steer the conversation back to Evan's research.
+If asked about things outside this context, politely steer the conversation back to Yifeng's research.
 `;
 
 let ai: GoogleGenAI | null = null;
@@ -52,7 +49,7 @@ export const sendMessageToGemini = async (message: string): Promise<string> => {
         systemInstruction: SYSTEM_CONTEXT,
       },
     });
-    
+
     return response.text || "I couldn't generate a response.";
   } catch (error) {
     console.error("Gemini API Error:", error);

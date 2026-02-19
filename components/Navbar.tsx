@@ -11,7 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
 
   const navLinks = [
     { name: 'Research', target: 'research' },
-    { name: 'Blog', target: 'blog' },
+    { name: 'Experience', target: 'experience' },
   ];
 
   const handleNavClick = (target: string) => {
