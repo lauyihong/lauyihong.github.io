@@ -291,7 +291,8 @@ const HomeView: React.FC<{
             </div>
 
             {/* Research Section */}
-            <Section id="research" title="Research">
+            <section id="research" className="py-20 border-b border-black/5">
+              <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <div className="space-y-16">
 
                     {/* Technical Projects Table */}
@@ -397,7 +398,8 @@ const HomeView: React.FC<{
                     </div>
 
                 </div>
-            </Section>
+              </div>
+            </section>
 
             {/* Blog / Writing Section */}
             <Section id="blog" title="Writing">
