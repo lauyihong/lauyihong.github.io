@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
+import { GitHubCalendar } from 'react-github-calendar';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
 import ChatWidget from './components/ChatWidget';
@@ -202,6 +203,22 @@ const HomeView: React.FC<{
                     </div>
                 </div>
             </div>
+
+            {/* GitHub Calendar Section */}
+            <section className="py-20 border-b border-black/5">
+              <div className="container mx-auto px-6 md:px-12 lg:px-24">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">GitHub Activity</h3>
+                <div className="overflow-x-auto">
+                  <GitHubCalendar
+                    username="lauyihong"
+                    colorScheme="light"
+                    fontSize={12}
+                    blockSize={12}
+                    blockMargin={4}
+                  />
+                </div>
+              </div>
+            </section>
 
             {/* Research Section */}
             <section id="research" className="py-20 border-b border-black/5">
