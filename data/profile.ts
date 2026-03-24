@@ -12,7 +12,7 @@ export const PROFILE = {
         <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">EECS</a> and
         <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">City Planning (DUSP)</a>,
         advised by <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Prof. Manish Raghavan</a>.
-        I received my B.Arch. from <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Tsinghua University</a>.
+        I received my Bachelor's degree from <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Tsinghua University</a>.
       </p>
       <p>
         As a research assistant in the <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Multisensory Intelligence Group</a> at MIT Media Lab,
