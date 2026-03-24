@@ -208,13 +208,16 @@ const HomeView: React.FC<{
             <section className="py-20 border-b border-black/5">
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">GitHub Activity</h3>
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto flex justify-center">
                   <GitHubCalendar
                     username="lauyihong"
                     colorScheme="light"
                     fontSize={12}
                     blockSize={12}
                     blockMargin={4}
+                    theme={{
+                      light: ['#ebedf0', '#9e9e9e', '#6e6e6e', '#3e3e3e', '#000000'],
+                    }}
                   />
                 </div>
               </div>
