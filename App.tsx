@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
+import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
 import ChatWidget from './components/ChatWidget';
@@ -217,6 +218,12 @@ const HomeView: React.FC<{
                     blockMargin={4}
                     theme={{
                       light: ['#ebedf0', '#9e9e9e', '#6e6e6e', '#3e3e3e', '#000000'],
+                    }}
+                    tooltips={{
+                      activity: {
+                        text: (activity) =>
+                          `${activity.count} contribution${activity.count !== 1 ? 's' : ''} on ${activity.date}`,
+                      },
                     }}
                   />
                 </div>
