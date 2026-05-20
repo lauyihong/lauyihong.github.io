@@ -1,4 +1,4 @@
-# Evan Yifeng Liu - Academic Portfolio Website
+# Yifeng Liu(lauyihong) - Academic Portfolio Website
 
 A minimalist, research-focused personal website built with **React**, **Tailwind CSS**, and **Google Gemini AI**. 
 
