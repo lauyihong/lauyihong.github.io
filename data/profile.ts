@@ -8,11 +8,8 @@ export const PROFILE = {
   heroIntro: `
     <div class="space-y-6 text-xl font-light text-gray-800 leading-relaxed">
       <p>
-        I am a Master's student at MIT pursuing dual degrees in
-        <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">EECS</a> and
-        <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">City Planning (DUSP)</a>,
-        advised by <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Prof. Manish Raghavan</a>.
-        I received my Bachelor from <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Tsinghua University</a>.
+        I obtained my Master's degree from MIT, when I was fortunate enough to have with Dr. Kaichen Zhuang, Prof. Paul Pu Liang, and <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Prof. Manish Raghavan</a>.
+        I obtained my Bachelor from <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Tsinghua University</a>. I worked with Prof. Yuan Lai and Prof. Ning Zhu. 
       </p>
       <p>
         As a research assistant in the <a href="#" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Multisensory Intelligence Group</a> at MIT Media Lab,
