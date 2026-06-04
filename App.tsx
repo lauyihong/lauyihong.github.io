@@ -267,7 +267,7 @@ const HomeView: React.FC<{
                         </table>
                     </div>
 
-                    {/* Selected Publications Table */}
+                    {/* Selected Publications Table - hidden
                     <div>
                         <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Selected Publications</h3>
                         <table className="w-full border-collapse">
@@ -320,6 +320,7 @@ const HomeView: React.FC<{
                             </tbody>
                         </table>
                     </div>
+                    */}
 
                     {/* Industry Experience Table */}
                     <div id="experience">
