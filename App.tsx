@@ -4,7 +4,6 @@ import { GitHubCalendar } from 'react-github-calendar';
 import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
-import ChatWidget from './components/ChatWidget';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
 import { Project, IndustryExperience } from './types';
 
@@ -205,31 +204,6 @@ const HomeView: React.FC<{
                 </div>
             </div>
 
-            {/* GitHub Calendar Section */}
-            <section className="py-20 border-b border-black/5">
-              <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">GitHub Activity</h3>
-                <div className="overflow-x-auto flex justify-center">
-                  <GitHubCalendar
-                    username="lauyihong"
-                    colorScheme="light"
-                    fontSize={12}
-                    blockSize={12}
-                    blockMargin={4}
-                    theme={{
-                      light: ['#ebedf0', '#9e9e9e', '#6e6e6e', '#3e3e3e', '#000000'],
-                    }}
-                    tooltips={{
-                      activity: {
-                        text: (activity) =>
-                          `${activity.count} contribution${activity.count !== 1 ? 's' : ''} on ${activity.date}`,
-                      },
-                    }}
-                  />
-                </div>
-              </div>
-            </section>
-
             {/* Research Section */}
             <section id="research" className="py-20 border-b border-black/5">
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -390,6 +364,31 @@ const HomeView: React.FC<{
               </div>
             </section>
 
+            {/* GitHub Calendar Section */}
+            <section className="py-20 border-b border-black/5">
+              <div className="container mx-auto px-6 md:px-12 lg:px-24">
+                <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">GitHub Activity</h3>
+                <div className="overflow-x-auto flex justify-center">
+                  <GitHubCalendar
+                    username="lauyihong"
+                    colorScheme="light"
+                    fontSize={12}
+                    blockSize={12}
+                    blockMargin={4}
+                    theme={{
+                      light: ['#ebedf0', '#9e9e9e', '#6e6e6e', '#3e3e3e', '#000000'],
+                    }}
+                    tooltips={{
+                      activity: {
+                        text: (activity) =>
+                          `${activity.count} contribution${activity.count !== 1 ? 's' : ''} on ${activity.date}`,
+                      },
+                    }}
+                  />
+                </div>
+              </div>
+            </section>
+
             {/* Footer */}
             <footer className="py-20 border-t border-black/5 mt-20">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
@@ -462,7 +461,6 @@ const App: React.FC = () => {
         )}
       </main>
 
-      <ChatWidget />
     </div>
   );
 };
