@@ -2,19 +2,6 @@ import { Project } from '../types';
 
 export const TECHNICAL_PROJECTS: Project[] = [
   {
-    id: "pr1",
-    title: "xLeRobot: Autonomous Mahjong-Playing Robot",
-    description: "An end-to-end robotic system for playing physical mahjong. Built on the SO-100 robotic arm with custom end-effector for precise tile manipulation. Integrates Vision-Language Models for game-state perception and strategic decision-making, with visuomotor control deployed via the LeRobot framework. Formulates a flow network optimization model bridging high-level planning and physical execution.",
-    tags: ["Robotics", "VLM", "LeRobot"],
-    collaborators: ["Yifeng Liu"],
-    affiliation: "MIT · Feb 2026",
-    links: [
-      { label: "project page", url: "#" },
-      { label: "video", url: "#" },
-      { label: "code", url: "#" }
-    ]
-  },
-  {
     id: "pr2",
     title: "Articulated Object Reconstruction & Modeling with Active Vision",
     description: "An end-to-end pipeline for reconstructing articulated objects from fixed-perspective photos: 3D mesh generation → SAM-based part-level segmentation → hinge/joint estimation → interactable movable mesh assembly. The system supports active vision for iterative refinement through robot-object interaction.",
