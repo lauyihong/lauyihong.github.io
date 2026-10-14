@@ -13,7 +13,7 @@ export const PROFILE = {
       </p>
       <p>
         I am currently a research affiliate in the <a href="https://www.media.mit.edu/groups/multisensory-intelligence/overview/" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Multisensory Intelligence Group</a> at the MIT Media Lab,
-        working with <a href="https://kaichen-z.github.io/" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Dr. Kaichen Zhou</a> and <a href="https://pliang279.github.io/" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Prof. Paul Liang</a> on articulated object reconstruction and memory architectures for manipulation agents based on vision-language models (VLMs).
+        working on articulated object reconstruction and memory architectures for manipulation agents based on vision-language models (VLMs).
         My research focuses on developing structured world models and multimodal perception systems for robotic manipulation.
       </p>
       <p>
@@ -27,7 +27,7 @@ export const PROFILE = {
     </div>
   `,
 
-  avatar: "https://lauyihong.github.io/assets/images/8bitpix-w.png",
+  avatar: "/avatar.png",
 
   bio: `I am a research affiliate in the Multisensory Intelligence Group at the MIT Media Lab. My research focuses on articulated object reconstruction, memory architectures for VLM-based manipulation agents, structured world models, and multimodal perception for robotic manipulation.`,
 
