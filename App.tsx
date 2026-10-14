@@ -160,6 +160,12 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
 const HomeView: React.FC<{
     onProjectSelect: (p: Project) => void;
 }> = ({ onProjectSelect }) => {
+    // Section details are collapsed for now; clicking a title reveals them.
+    // Section details are hidden while they are being revised; titles stay as links.
+    const showDetails = false;
+    const showPublications = false;
+    const sectionLinkClass = "font-mono text-xs uppercase tracking-widest text-gray-500 underline underline-offset-4 decoration-gray-300 hover:text-black hover:decoration-black transition-colors";
+
     return (
         <>
              {/* Hero Section */}
@@ -209,9 +215,15 @@ const HomeView: React.FC<{
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <div className="space-y-16">
 
+                    {/* Section titles */}
+                    <div className="flex flex-wrap gap-x-12 gap-y-4">
+                        <a href="#research" onClick={(e) => e.preventDefault()} className={sectionLinkClass}>Research & Projects</a>
+                        <a href="#experience" onClick={(e) => e.preventDefault()} className={sectionLinkClass}>Industry Experience</a>
+                    </div>
+
                     {/* Research & Projects Table */}
                     <div>
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Research & Projects</h3>
+                        {showDetails && (
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-black/10">
@@ -265,9 +277,11 @@ const HomeView: React.FC<{
                                 ))}
                             </tbody>
                         </table>
+                        )}
                     </div>
 
-                    {/* Selected Publications Table */}
+                    {/* Selected Publications Table (hidden for now) */}
+                    {showPublications && (
                     <div>
                         <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Selected Publications</h3>
                         <table className="w-full border-collapse">
@@ -320,10 +334,11 @@ const HomeView: React.FC<{
                             </tbody>
                         </table>
                     </div>
+                    )}
 
                     {/* Industry Experience Table */}
                     <div id="experience">
-                        <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">Industry Experience</h3>
+                        {showDetails && (
                         <table className="w-full border-collapse">
                             <thead>
                                 <tr className="border-b border-black/10">
@@ -358,6 +373,7 @@ const HomeView: React.FC<{
                                 ))}
                             </tbody>
                         </table>
+                        )}
                     </div>
 
                 </div>
