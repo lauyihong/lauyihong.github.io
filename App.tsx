@@ -170,8 +170,8 @@ const HomeView: React.FC<{
     return (
         <>
              {/* Hero Section */}
-            <div className="pt-24 pb-20 md:pt-32 md:pb-16">
-                <div className="container mx-auto px-6 md:px-12 lg:px-24 border-b border-black/10 pb-24">
+            <div className="pt-24 pb-12 md:pt-32">
+                <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 items-start">
 
                         {/* Title Row */}
@@ -205,6 +205,10 @@ const HomeView: React.FC<{
                                 className="prose prose-lg prose-neutral max-w-none"
                                 dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
                              />
+                             <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+                                 <a id="research" href="#research" className={sectionLinkClass}>Research & Projects</a>
+                                 <a id="experience" href="#experience" className={sectionLinkClass}>Industry Experience</a>
+                             </div>
                         </div>
 
                     </div>
@@ -212,15 +216,10 @@ const HomeView: React.FC<{
             </div>
 
             {/* Research Section */}
-            <section id="research" className="py-20 border-b border-black/5">
+            {(showDetails || showPublications) && (
+            <section id="research-details" className="py-20 border-b border-black/5">
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <div className="space-y-16">
-
-                    {/* Section titles */}
-                    <div className="flex flex-wrap gap-x-12 gap-y-4">
-                        <a href="#research" onClick={(e) => e.preventDefault()} className={sectionLinkClass}>Research & Projects</a>
-                        <a href="#experience" onClick={(e) => e.preventDefault()} className={sectionLinkClass}>Industry Experience</a>
-                    </div>
 
                     {/* Research & Projects Table */}
                     <div>
@@ -338,7 +337,7 @@ const HomeView: React.FC<{
                     )}
 
                     {/* Industry Experience Table */}
-                    <div id="experience">
+                    <div id="experience-details">
                         {showDetails && (
                         <table className="w-full border-collapse">
                             <thead>
@@ -380,9 +379,10 @@ const HomeView: React.FC<{
                 </div>
               </div>
             </section>
+            )}
 
             {/* GitHub Calendar Section */}
-            <section className="py-20 border-b border-black/5">
+            <section className="py-12">
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">GitHub Activity</h3>
                 <div className="overflow-x-auto flex justify-center">
@@ -408,7 +408,7 @@ const HomeView: React.FC<{
             </section>
 
             {/* Footer */}
-            <footer className="py-20 border-t border-black/5 mt-20">
+            <footer className="py-20 border-t border-black/5">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
 
