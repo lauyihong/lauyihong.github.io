@@ -159,7 +159,8 @@ const ProjectDetailView: React.FC<{ project: Project; onBack: () => void }> = ({
 
 const HomeView: React.FC<{
     onProjectSelect: (p: Project) => void;
-}> = ({ onProjectSelect }) => {
+    isDark: boolean;
+}> = ({ onProjectSelect, isDark }) => {
     // Section details are collapsed for now; clicking a title reveals them.
     // Section details are hidden while they are being revised; titles stay as links.
     const showDetails = false;
@@ -387,12 +388,13 @@ const HomeView: React.FC<{
                 <div className="overflow-x-auto flex justify-center">
                   <GitHubCalendar
                     username="lauyihong"
-                    colorScheme="light"
+                    colorScheme={isDark ? 'dark' : 'light'}
                     fontSize={12}
                     blockSize={12}
                     blockMargin={4}
                     theme={{
                       light: ['#ebedf0', '#9e9e9e', '#6e6e6e', '#3e3e3e', '#000000'],
+                      dark: ['#252a32', '#596575', '#8493a5', '#b4c1d0', '#e5edf5'],
                     }}
                     tooltips={{
                       activity: {
@@ -440,6 +442,32 @@ const HomeView: React.FC<{
 }
 
 const App: React.FC = () => {
+  const [isDark, setIsDark] = useState(() => document.documentElement.dataset.theme === 'dark');
+  const hasThemeChoice = useRef(false);
+
+  useEffect(() => {
+    try { hasThemeChoice.current = ['dark', 'light'].includes(localStorage.getItem('theme') || ''); } catch {}
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const syncSystemTheme = () => {
+      if (!hasThemeChoice.current) setIsDark(media.matches);
+    };
+    syncSystemTheme();
+    media.addEventListener('change', syncSystemTheme);
+    return () => media.removeEventListener('change', syncSystemTheme);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+  }, [isDark]);
+
+  const toggleTheme = () => {
+    const next = !isDark;
+    hasThemeChoice.current = true;
+    setIsDark(next);
+    document.documentElement.dataset.theme = next ? 'dark' : 'light';
+    try { localStorage.setItem('theme', next ? 'dark' : 'light'); } catch {}
+  };
+
   const [view, setView] = useState<'home' | 'project'>('home');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -466,11 +494,11 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-gray-200 selection:text-black">
-      <Navbar onNavigate={handleNavigation} />
+      <Navbar onNavigate={handleNavigation} isDark={isDark} onToggleTheme={toggleTheme} />
 
       <main className="animate-in fade-in duration-500">
         {view === 'home' && (
-            <HomeView onProjectSelect={handleProjectSelect} />
+            <HomeView onProjectSelect={handleProjectSelect} isDark={isDark} />
         )}
         {view === 'project' && selectedProject && (
             <ProjectDetailView project={selectedProject} onBack={() => handleNavigation('research')} />

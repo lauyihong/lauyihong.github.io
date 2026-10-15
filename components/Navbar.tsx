@@ -1,12 +1,14 @@
 
 import React, { useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Moon, Sun } from 'lucide-react';
 
 interface NavbarProps {
   onNavigate: (target: string) => void;
+  isDark: boolean;
+  onToggleTheme: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
+const Navbar: React.FC<NavbarProps> = ({ onNavigate, isDark, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -30,6 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         </button>
 
         {/* Desktop Nav */}
+        <div className="ml-auto flex items-center gap-4 md:gap-8">
         <div className="hidden md:flex gap-8">
           {navLinks.map((link) => (
             <button 
@@ -43,9 +46,20 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate }) => {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden p-2" aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
+        <button
+          type="button"
+          onClick={onToggleTheme}
+          aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          aria-pressed={isDark}
+          className="theme-toggle inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/10 hover:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+        >
+          {isDark ? <Sun className="w-4 h-4" aria-hidden="true" /> : <Moon className="w-4 h-4" aria-hidden="true" />}
+        </button>
+        </div>
       </div>
 
       {/* Mobile Nav Overlay */}
