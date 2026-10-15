@@ -176,7 +176,7 @@ const HomeView: React.FC<{
                         {/* Title Row */}
                         <div className="md:col-span-9 md:col-start-4 mb-2">
                             <div className="text-3xl md:text-4xl font-medium text-black leading-tight">
-                                I'm Yifeng Liu.
+                                Yifeng Liu <span className="text-gray-700">刘伊丰</span>
                             </div>
                         </div>
 
