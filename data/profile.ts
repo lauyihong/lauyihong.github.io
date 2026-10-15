@@ -21,9 +21,11 @@ export const PROFILE = {
         <a href="https://www.meituan.com/" target="_blank" rel="noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Meituan</a>,
         applying operations research and machine learning to logistics optimization and recommendation systems.
       </p>
+      <!-- Temporarily hidden; restore when seeking positions again.
       <p>
         <em>I am currently seeking research and development positions in robotics.</em>
       </p>
+      -->
     </div>
   `,
 

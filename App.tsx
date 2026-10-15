@@ -446,7 +446,6 @@ const App: React.FC = () => {
   const hasThemeChoice = useRef(false);
 
   useEffect(() => {
-    try { hasThemeChoice.current = ['dark', 'light'].includes(localStorage.getItem('theme') || ''); } catch {}
     const media = window.matchMedia('(prefers-color-scheme: dark)');
     const syncSystemTheme = () => {
       if (!hasThemeChoice.current) setIsDark(media.matches);
@@ -465,7 +464,6 @@ const App: React.FC = () => {
     hasThemeChoice.current = true;
     setIsDark(next);
     document.documentElement.dataset.theme = next ? 'dark' : 'light';
-    try { localStorage.setItem('theme', next ? 'dark' : 'light'); } catch {}
   };
 
   const [view, setView] = useState<'home' | 'project'>('home');
