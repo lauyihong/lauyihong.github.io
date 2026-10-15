@@ -170,12 +170,12 @@ const HomeView: React.FC<{
     return (
         <>
              {/* Hero Section */}
-            <div className="pt-32 pb-20 md:pt-48 md:pb-16">
+            <div className="pt-24 pb-20 md:pt-32 md:pb-16">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24 border-b border-black/10 pb-24">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 items-start">
 
                         {/* Title Row */}
-                        <div className="md:col-span-9 md:col-start-4 mb-2">
+                        <div className="md:col-span-9 md:col-start-4 mb-[3px]">
                             <div className="text-3xl md:text-4xl font-medium text-black leading-tight">
                                 Yifeng Liu <span className="text-gray-700">刘伊丰</span>
                             </div>
