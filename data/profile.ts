@@ -22,7 +22,7 @@ export const PROFILE = {
         applying operations research and machine learning to logistics optimization and recommendation systems.
       </p>
       <p>
-        <em>I am actively seeking RA or Deployment Engineer positions in robotics now.</em>
+        <em>I am currently seeking research and development positions in robotics.</em>
       </p>
     </div>
   `,
