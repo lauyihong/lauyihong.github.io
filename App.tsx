@@ -183,7 +183,7 @@ const HomeView: React.FC<{
 
                         {/* Avatar & Links: Left Column */}
                         <div className="md:col-span-3 flex flex-col gap-6">
-                            <div className="w-full max-w-[180px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+                            <div className="w-full max-w-[180px] overflow-hidden">
                                 <img
                                     src={PROFILE.avatar}
                                     alt={PROFILE.name}
@@ -394,7 +394,7 @@ const HomeView: React.FC<{
                     blockMargin={4}
                     theme={{
                       light: ['#ebedf0', '#9e9e9e', '#6e6e6e', '#3e3e3e', '#000000'],
-                      dark: ['#252a32', '#596575', '#8493a5', '#b4c1d0', '#e5edf5'],
+                      dark: ['#302821', '#665344', '#967b62', '#c4aa8b', '#ecdbc4'],
                     }}
                     tooltips={{
                       activity: {
