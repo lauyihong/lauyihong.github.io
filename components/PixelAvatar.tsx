@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { avatarGrid, avatarPalette } from '../data/avatarPixels';
+import { avatarGrid, avatarPalette, avatarGridOrigin } from '../data/avatarPixels';
 
 const SIZE = avatarGrid.length;
 const PIXELS = avatarGrid.flatMap((row, y) => row.flatMap((color, x) =>
-  color < 0 ? [] : [{ x, y, color: avatarPalette[color] }]
+  color < 0 ? [] : [{ x: x + avatarGridOrigin[0], y: y + avatarGridOrigin[1], color: avatarPalette[color] }]
 ));
 
 /** The portrait is colored HTML squares, not a bitmap or canvas. */
@@ -12,7 +12,7 @@ export default function PixelAvatar() {
   const nodes = useRef<(HTMLSpanElement | null)[]>([]);
   const physics = useRef(PIXELS.map(() => ({ x: 0, y: 0, vx: 0, vy: 0, settled: false })));
   const pointer = useRef({ x: 0, y: 0, active: false });
-  const cellSize = useRef(270 / SIZE);
+  const cellSize = useRef(210 / SIZE);
   const phase = useRef<'normal' | 'fallen' | 'returning'>('normal');
   const returnTimer = useRef<number | null>(null);
   const frame = useRef(0);
@@ -172,7 +172,7 @@ export default function PixelAvatar() {
       type="button"
       aria-label="Yifeng Liu pixel portrait — click to shatter, move away to restore"
       title="Click to shatter; move away to restore"
-      className="relative block w-[270px] max-w-full self-start md:w-[150%] md:max-w-[270px] md:self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+      className="relative block w-[210px] max-w-full self-start md:w-[150%] md:max-w-[210px] md:self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
       style={{ aspectRatio: '1', padding: 0, border: 0, background: 'transparent', overflow: 'visible', cursor: 'default' }}
       onPointerEnter={event => {
         if (event.pointerType === 'touch' || reducedMotion.current) return;
