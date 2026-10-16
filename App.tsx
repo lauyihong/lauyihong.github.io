@@ -3,6 +3,7 @@ import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
+import PixelAvatar from './components/PixelAvatar';
 import Section from './components/Section';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
 import { Project, IndustryExperience } from './types';
@@ -183,13 +184,7 @@ const HomeView: React.FC<{
 
                         {/* Avatar & Links: Left Column */}
                         <div className="md:col-span-3 flex flex-col gap-6">
-                            <div className="w-full max-w-[180px] overflow-hidden">
-                                <img
-                                    src={PROFILE.avatar}
-                                    alt={PROFILE.name}
-                                    className="w-full h-auto object-contain"
-                                />
-                            </div>
+                            <PixelAvatar />
                             <div className="flex flex-row flex-wrap gap-4 items-center">
                                 <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
                                 <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
