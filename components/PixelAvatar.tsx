@@ -69,7 +69,7 @@ export default function PixelAvatar() {
       let returnProgress = 0;
       if (phase.current === 'returning') {
         if (returnStart.current === null) returnStart.current = time;
-        returnProgress = Math.min(1, (time - returnStart.current) / 3000);
+        returnProgress = Math.min(1, (time - returnStart.current) / 1000);
       }
       physics.current.forEach((p, i) => {
         const pixel = PIXELS[i];
