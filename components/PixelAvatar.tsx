@@ -12,7 +12,7 @@ export default function PixelAvatar() {
   const nodes = useRef<(HTMLSpanElement | null)[]>([]);
   const physics = useRef(PIXELS.map(() => ({ x: 0, y: 0, vx: 0, vy: 0, settled: false })));
   const pointer = useRef({ x: 0, y: 0, active: false });
-  const cellSize = useRef(210 / SIZE);
+  const cellSize = useRef(180 / SIZE);
   const phase = useRef<'normal' | 'fallen' | 'returning'>('normal');
   const returnTimer = useRef<number | null>(null);
   const frame = useRef(0);
@@ -62,9 +62,8 @@ export default function PixelAvatar() {
               p.x = Math.max(0, Math.min(SIZE - 1, absoluteX)) - pixel.x;
               p.vx *= -0.35;
             }
-            // Uneven floor produces a small pile at the bottom of the portrait.
-            const pileHeight = 6 * Math.max(0, 1 - Math.abs(pixel.x + p.x - SIZE / 2) / (SIZE / 2));
-            const floor = SIZE + 3 - pileHeight - ((i * 17) % 9);
+            // Every particle lands on the same horizontal plane.
+            const floor = SIZE + 3;
             if (pixel.y + p.y >= floor) {
               p.y = floor - pixel.y;
               p.vy *= -0.25;
@@ -172,7 +171,7 @@ export default function PixelAvatar() {
       type="button"
       aria-label="Yifeng Liu pixel portrait — click to shatter, move away to restore"
       title="Click to shatter; move away to restore"
-      className="relative block w-[210px] max-w-full self-start md:w-[150%] md:max-w-[210px] md:self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+      className="relative block w-[180px] max-w-full self-start md:w-[150%] md:max-w-[180px] md:self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
       style={{ aspectRatio: '1', padding: 0, border: 0, background: 'transparent', overflow: 'visible', cursor: 'default' }}
       onPointerEnter={event => {
         if (event.pointerType === 'touch' || reducedMotion.current) return;
