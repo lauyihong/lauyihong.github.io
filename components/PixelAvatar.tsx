@@ -10,9 +10,11 @@ const PIXELS = avatarGrid.flatMap((row, y) => row.flatMap((color, x) =>
 export default function PixelAvatar() {
   const root = useRef<HTMLButtonElement>(null);
   const nodes = useRef<(HTMLSpanElement | null)[]>([]);
-  const physics = useRef(PIXELS.map(() => ({ x: 0, y: 0, vx: 0, vy: 0, settled: false })));
+  const physics = useRef(PIXELS.map(() => ({ x: 0, y: 0, vx: 0, vy: 0, settled: false, returnX: 0, returnY: 0 })));
   const pointer = useRef({ x: 0, y: 0, active: false });
-  const cellSize = useRef(180 / SIZE);
+  const cellSize = useRef(4);
+  const gridOffset = useRef(4);
+  const returnStart = useRef<number | null>(null);
   const phase = useRef<'normal' | 'fallen' | 'returning'>('normal');
   const returnTimer = useRef<number | null>(null);
   const frame = useRef(0);
@@ -21,11 +23,28 @@ export default function PixelAvatar() {
   const wake = useRef<() => void>(() => {});
 
   useEffect(() => {
+    const alignGrid = () => {
+      const width = root.current?.getBoundingClientRect().width || 180;
+      const cell = Math.max(1, Math.floor(width / SIZE));
+      const offset = Math.floor((width - cell * SIZE) / 2);
+      cellSize.current = cell;
+      gridOffset.current = offset;
+      nodes.current.forEach((node, i) => {
+        if (!node) return;
+        node.style.left = `${Math.round(PIXELS[i].x * cell) + offset}px`;
+        node.style.top = `${Math.round(PIXELS[i].y * cell) + offset}px`;
+        node.style.width = node.style.height = `${cell}px`;
+      });
+    };
+    alignGrid();
+    const resizeObserver = new ResizeObserver(alignGrid);
+    if (root.current) resizeObserver.observe(root.current);
     const media = window.matchMedia('(prefers-reduced-motion: reduce)');
     const reset = () => {
       if (returnTimer.current !== null) window.clearTimeout(returnTimer.current);
       returnTimer.current = null;
       phase.current = 'normal';
+      returnStart.current = null;
       cancelAnimationFrame(frame.current);
       frame.current = 0;
       previousTime.current = 0;
@@ -47,6 +66,11 @@ export default function PixelAvatar() {
       const dt = previousTime.current ? Math.min((time - previousTime.current) / 16.667, 2) : 1;
       previousTime.current = time;
       let moving = false;
+      let returnProgress = 0;
+      if (phase.current === 'returning') {
+        if (returnStart.current === null) returnStart.current = time;
+        returnProgress = Math.min(1, (time - returnStart.current) / 3000);
+      }
       physics.current.forEach((p, i) => {
         const pixel = PIXELS[i];
         const previousX = p.x;
@@ -75,6 +99,12 @@ export default function PixelAvatar() {
             }
             if (!p.settled) moving = true;
           }
+        } else if (phase.current === 'returning') {
+          const eased = returnProgress * returnProgress * (3 - 2 * returnProgress);
+          p.x = p.returnX * (1 - eased);
+          p.y = p.returnY * (1 - eased);
+          p.vx = p.vy = 0;
+          if (returnProgress < 1) moving = true;
         } else {
           if (pointer.current.active && phase.current === 'normal') {
             const dx = pixel.x + 0.5 + p.x - pointer.current.x;
@@ -124,6 +154,7 @@ export default function PixelAvatar() {
     document.addEventListener('visibilitychange', pause);
     return () => {
       reset();
+      resizeObserver.disconnect();
       wake.current = () => {};
       media.removeEventListener('change', updatePreference);
       document.removeEventListener('visibilitychange', pause);
@@ -141,10 +172,15 @@ export default function PixelAvatar() {
       returnTimer.current = null;
       if (!pointer.current.active && phase.current === 'fallen') {
         phase.current = 'returning';
-        physics.current.forEach(p => { p.settled = false; });
+        returnStart.current = null;
+        physics.current.forEach(p => {
+          p.settled = false;
+          p.returnX = p.x;
+          p.returnY = p.y;
+        });
         wake.current();
       }
-    }, 1200);
+    }, 2000);
   };
   const leave = () => {
     pointer.current.active = false;
@@ -154,7 +190,6 @@ export default function PixelAvatar() {
     if (reducedMotion.current) return;
     cancelReturn();
     phase.current = 'fallen';
-    if (root.current) cellSize.current = root.current.getBoundingClientRect().width / SIZE;
     physics.current.forEach((p, i) => {
       p.settled = false;
       p.vx = (((i * 13) % 23) / 11 - 1) * 2.8 / cellSize.current;
@@ -181,10 +216,9 @@ export default function PixelAvatar() {
       onPointerMove={event => {
         if (event.pointerType === 'touch' || reducedMotion.current) return;
         const bounds = event.currentTarget.getBoundingClientRect();
-        cellSize.current = bounds.width / SIZE;
         pointer.current = {
-          x: (event.clientX - bounds.left) / bounds.width * SIZE,
-          y: (event.clientY - bounds.top) / bounds.height * SIZE,
+          x: (event.clientX - bounds.left - gridOffset.current) / cellSize.current,
+          y: (event.clientY - bounds.top - gridOffset.current) / cellSize.current,
           active: true,
         };
         wake.current();
@@ -201,8 +235,8 @@ export default function PixelAvatar() {
           aria-hidden="true"
           style={{
             position: 'absolute', pointerEvents: 'none',
-            left: `${pixel.x / SIZE * 100}%`, top: `${pixel.y / SIZE * 100}%`,
-            width: `${100 / SIZE}%`, height: `${100 / SIZE}%`,
+            left: Math.round(pixel.x * 4) + 4, top: Math.round(pixel.y * 4) + 4,
+            width: 4, height: 4,
             backgroundColor: pixel.color,
           }}
         />
