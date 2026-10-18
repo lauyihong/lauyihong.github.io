@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Plaintext sources for password-protected pages (never commit)
+private/
