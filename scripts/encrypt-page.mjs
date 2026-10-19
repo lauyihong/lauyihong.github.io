@@ -2,9 +2,11 @@
 // 把 markdown 渲染成 HTML 后用密码加密，输出一个自包含的静态页面。
 //
 // 用法：npm run encrypt-page -- <输入.md> <输出.html> [--title "页面标题"]
+//       npm run encrypt-page -- --reskin <已加密的页面.html> [--title "页面标题"]
 // 密码：优先读 PAGE_PASSWORD 环境变量；没有就在终端里隐藏输入（输两次确认）。
 // 页面在浏览器本地用 Web Crypto 解密：PBKDF2-SHA256 派生密钥 + AES-256-GCM。
 // 输出里只有标题、页面骨架和密文；写完会自检能否解密、骨架里有没有混入原文。
+// --reskin 只换页面模板（样式、脚本），原样沿用页面里的密文，不需要密码和原稿。
 
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname } from 'node:path';
@@ -21,9 +23,15 @@ function fail(message) {
   process.exit(1);
 }
 
+const USAGE = [
+  '用法：npm run encrypt-page -- <输入.md> <输出.html> [--title "页面标题"]',
+  '      npm run encrypt-page -- --reskin <已加密的页面.html> [--title "页面标题"]',
+].join('\n');
+
 function parseArgs(argv) {
   const positional = [];
-  let title = 'Protected Page';
+  let title;
+  let reskin = false;
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     if (arg === '--title') {
@@ -31,14 +39,18 @@ function parseArgs(argv) {
       if (title === undefined) fail('--title 缺少值');
     } else if (arg.startsWith('--title=')) {
       title = arg.slice('--title='.length);
+    } else if (arg === '--reskin') {
+      reskin = true;
     } else {
       positional.push(arg);
     }
   }
-  if (positional.length !== 2) {
-    fail('用法：npm run encrypt-page -- <输入.md> <输出.html> [--title "页面标题"]');
+  if (reskin) {
+    if (positional.length !== 1) fail(USAGE);
+    return { reskin: positional[0], title };
   }
-  return { input: positional[0], output: positional[1], title };
+  if (positional.length !== 2) fail(USAGE);
+  return { input: positional[0], output: positional[1], title: title ?? 'Protected Page' };
 }
 
 function promptHidden(question) {
@@ -135,8 +147,15 @@ function plaintextFragments(markdown) {
   return [...fragments];
 }
 
+const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+
 function escapeHtml(text) {
-  return text.replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
+  return text.replace(/[&<>"']/g, (ch) => HTML_ESCAPES[ch]);
+}
+
+function unescapeHtml(text) {
+  const reverse = Object.fromEntries(Object.entries(HTML_ESCAPES).map(([ch, entity]) => [entity, ch]));
+  return text.replace(/&(amp|lt|gt|quot|#39);/g, (entity) => reverse[entity]);
 }
 
 const toBase64 = (bytes) => Buffer.from(bytes).toString('base64');
@@ -151,21 +170,42 @@ function buildPage(title, payload) {
 <title>${escapeHtml(title)}</title>
 <style>
   :root {
+    color-scheme: light;
     --bg: #f6f5f2; --surface: #ffffff; --text: #1d1d1b; --muted: #6b6a66;
     --line: #e2e0da; --accent: #b5562a; --chip: #efede8; --bad: #b3261e;
+    --thumb: #d3d0c8; --thumb-hover: #b2aea4;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
+      color-scheme: dark;
       --bg: #161614; --surface: #1f1f1d; --text: #ecebe7; --muted: #a09e98;
       --line: #34332f; --accent: #e08a5c; --chip: #2a2a27; --bad: #f2b8b5;
+      --thumb: #3d3c38; --thumb-hover: #5a5852;
     }
   }
   :root[data-theme="dark"] {
+    color-scheme: dark;
     --bg: #161614; --surface: #1f1f1d; --text: #ecebe7; --muted: #a09e98;
     --line: #34332f; --accent: #e08a5c; --chip: #2a2a27; --bad: #f2b8b5;
+    --thumb: #3d3c38; --thumb-hover: #5a5852;
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-padding-top: 16px; }
+
+  /* 滚动条：细、轨道透明、滑块取背景的近似色；目录栏的滑块平时隐藏，悬停才出现。 */
+  html, .table-wrap { scrollbar-width: thin; scrollbar-color: var(--thumb) transparent; }
+  .toc-box { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+  .toc-box:hover, .toc-box:focus-within { scrollbar-color: var(--thumb) transparent; }
+  @supports not (scrollbar-color: auto) {
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track, ::-webkit-scrollbar-corner { background: transparent; }
+    ::-webkit-scrollbar-thumb {
+      background: var(--thumb); border-radius: 999px; border: 3px solid transparent; background-clip: content-box;
+    }
+    ::-webkit-scrollbar-thumb:hover { background-color: var(--thumb-hover); }
+    .toc-box::-webkit-scrollbar-thumb { background-color: transparent; }
+    .toc-box:hover::-webkit-scrollbar-thumb { background-color: var(--thumb); }
+  }
   body {
     margin: 0; background: var(--bg); color: var(--text);
     font: 15px/1.7 system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -201,10 +241,35 @@ function buildPage(title, payload) {
   .toc-box { font-size: 13px; margin-bottom: 24px; }
   .toc-box summary { cursor: pointer; font-weight: 600; color: var(--muted); margin-bottom: 6px; }
   .toc-box ol { list-style: none; margin: 0; padding: 0; }
-  .toc-box li { margin: 2px 0; }
-  .toc-box li.h3 { padding-left: 14px; }
-  .toc-box a { color: var(--muted); text-decoration: none; display: block; line-height: 1.5; padding: 1px 0; }
-  .toc-box a:hover { color: var(--accent); }
+  .toc-box a {
+    display: block; color: var(--muted); text-decoration: none; line-height: 1.5;
+    padding: 3px 8px; border-radius: 6px;
+  }
+  .toc-box a:hover { color: var(--text); background: var(--chip); }
+  .toc-box a:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .toc-box a.current { color: var(--accent); }
+  /* 大标题：点一下展开小节并跳过去，再点一下收起。 */
+  .toc-box .group { margin: 1px 0; }
+  .toc-box .h2 { display: flex; align-items: center; gap: 6px; color: var(--text); font-weight: 600; }
+  .toc-box .caret {
+    flex: none; width: 6px; height: 6px; margin: 0 3px 0 1px;
+    border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted);
+    transform: rotate(-45deg); transition: transform 0.2s ease;
+  }
+  .toc-box .caret.empty { border-color: transparent; }
+  .toc-box .group.open > .h2 .caret { transform: rotate(45deg); }
+  .toc-box .sub-wrap {
+    display: grid; grid-template-rows: 0fr; visibility: hidden;
+    transition: grid-template-rows 0.2s ease, visibility 0s linear 0.2s;
+  }
+  .toc-box .group.open > .sub-wrap {
+    grid-template-rows: 1fr; visibility: visible;
+    transition: grid-template-rows 0.2s ease, visibility 0s;
+  }
+  .toc-box .sub { overflow: hidden; min-height: 0; padding-left: 17px; }
+  @media (prefers-reduced-motion: reduce) {
+    .toc-box .caret, .toc-box .sub-wrap, .toc-box .group.open > .sub-wrap { transition: none; }
+  }
 
   article { min-width: 0; }
   article h1 { font-size: 26px; line-height: 1.3; margin: 0 0 16px; letter-spacing: -0.01em; }
@@ -273,21 +338,92 @@ function buildPage(title, payload) {
     return new TextDecoder().decode(plain);
   }
 
+  // 目录按大标题（h2）分组，小标题（h3）收在组里，默认收起。
   function buildToc(article) {
     const toc = document.getElementById('toc');
-    article.querySelectorAll('h2, h3').forEach((heading, index) => {
+    const box = document.getElementById('toc-box');
+    const headings = [...article.querySelectorAll('h2, h3')];
+    const linkOf = new Map();
+    let group = null;
+    headings.forEach((heading, index) => {
       heading.id = 'sec-' + (index + 1);
-      const item = document.createElement('li');
-      item.className = heading.tagName.toLowerCase();
       const link = document.createElement('a');
       link.href = '#' + heading.id;
       link.textContent = heading.textContent;
-      item.appendChild(link);
-      toc.appendChild(item);
+      linkOf.set(heading, link);
+      if (heading.tagName === 'H2' || !group) {
+        group = document.createElement('li');
+        group.className = 'group';
+        link.className = 'h2';
+        const caret = document.createElement('span');
+        caret.className = 'caret empty';
+        caret.setAttribute('aria-hidden', 'true');
+        link.prepend(caret);
+        group.appendChild(link);
+        toc.appendChild(group);
+        const owner = group;
+        link.addEventListener('click', (event) => {
+          if (!owner.querySelector('.sub')) return;
+          const open = !owner.classList.contains('open');
+          owner.classList.toggle('open', open);
+          link.setAttribute('aria-expanded', String(open));
+          if (!open) event.preventDefault();
+        });
+      } else {
+        let sub = group.querySelector('.sub');
+        if (!sub) {
+          const wrap = document.createElement('div');
+          wrap.className = 'sub-wrap';
+          sub = document.createElement('ol');
+          sub.className = 'sub';
+          wrap.appendChild(sub);
+          group.appendChild(wrap);
+          const head = group.querySelector('.h2');
+          head.querySelector('.caret').classList.remove('empty');
+          head.setAttribute('aria-expanded', 'false');
+        }
+        const item = document.createElement('li');
+        item.appendChild(link);
+        sub.appendChild(item);
+      }
     });
-    const box = document.getElementById('toc-box');
-    if (!toc.children.length) box.hidden = true;
-    else if (window.matchMedia('(min-width: 1100px)').matches) box.open = true;
+    if (!headings.length) {
+      box.hidden = true;
+      return;
+    }
+    if (window.matchMedia('(min-width: 1100px)').matches) box.open = true;
+
+    // 高亮当前读到的位置；所在组收起时高亮大标题，并让它留在目录栏可见范围内。
+    let pending = false;
+    function markCurrent() {
+      pending = false;
+      let current = null;
+      for (const heading of headings) {
+        if (heading.getBoundingClientRect().top > 96) break;
+        current = heading;
+      }
+      toc.querySelectorAll('a.current').forEach((a) => a.classList.remove('current'));
+      if (!current) return;
+      const link = linkOf.get(current);
+      const owner = link.closest('.group');
+      const head = owner.querySelector('.h2');
+      link.classList.add('current');
+      head.classList.add('current');
+      const shown = owner.classList.contains('open') ? link : head;
+      if (box.scrollHeight > box.clientHeight) {
+        const outer = box.getBoundingClientRect();
+        const inner = shown.getBoundingClientRect();
+        if (inner.top < outer.top) box.scrollTop -= outer.top - inner.top + 8;
+        else if (inner.bottom > outer.bottom) box.scrollTop += inner.bottom - outer.bottom + 8;
+      }
+    }
+    window.addEventListener('scroll', () => {
+      if (!pending) {
+        pending = true;
+        requestAnimationFrame(markCurrent);
+      }
+    }, { passive: true });
+    markCurrent();
   }
 
   form.addEventListener('submit', async (event) => {
@@ -304,9 +440,9 @@ function buildPage(title, payload) {
       const html = await decrypt(input.value);
       const article = document.getElementById('content');
       article.innerHTML = html;
-      buildToc(article);
       document.getElementById('lock').hidden = true;
       document.getElementById('page').hidden = false;
+      buildToc(article);
       window.scrollTo(0, 0);
     } catch (error) {
       status.textContent = '密码不对，请再试一次。';
@@ -323,8 +459,25 @@ function buildPage(title, payload) {
 `;
 }
 
+const PAYLOAD_PATTERN = /<script type="application\/json" id="payload">([^<]*)<\/script>/;
+
+async function reskinPage(path, titleArg) {
+  const old = await readFile(path, 'utf8');
+  const match = old.match(PAYLOAD_PATTERN);
+  if (!match) fail(`${path} 里找不到密文，不是 encrypt-page 生成的页面`);
+  const payload = JSON.parse(match[1]);
+  const title = titleArg ?? unescapeHtml(old.match(/<title>([^<]*)<\/title>/)?.[1] ?? 'Protected Page');
+  const page = buildPage(title, payload);
+  if (page.match(PAYLOAD_PATTERN)[1] !== match[1]) fail('自检失败：重建后的密文与原页面不一致');
+  await writeFile(path, page, 'utf8');
+  const kb = (Buffer.byteLength(page) / 1024).toFixed(1);
+  console.log(`已用当前模板重建 ${path}（${kb} KB）。密文原样沿用，没有用到密码。`);
+}
+
 async function main() {
-  const { input, output, title } = parseArgs(process.argv.slice(2));
+  const args = parseArgs(process.argv.slice(2));
+  if (args.reskin) return reskinPage(args.reskin, args.title);
+  const { input, output, title } = args;
   const markdown = await readFile(input, 'utf8');
   const password = await getPassword();
 
