@@ -3,7 +3,6 @@ import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
-import PixelAvatar from './components/PixelAvatar';
 import Section from './components/Section';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
 import { Project, IndustryExperience } from './types';
@@ -173,39 +172,27 @@ const HomeView: React.FC<{
              {/* Hero Section */}
             <div className="pt-24 pb-12 md:pt-32">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 items-start">
+                    <div>
+                        {/* Avatar temporarily hidden; restore with <PixelAvatar /> */}
 
-                        {/* Title Row */}
-                        <div className="md:col-span-9 md:col-start-4 mb-[3px]">
-                            <div className="text-3xl md:text-4xl font-medium text-black leading-tight">
-                                Yifeng Liu {/* <span className="text-gray-700">刘伊丰</span> */}
-                            </div>
+                        {/* Bio Text */}
+                        <div
+                            className="prose prose-lg prose-neutral max-w-none"
+                            dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
+                        />
+                        <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+                            <a id="research" href="#research" className={sectionLinkClass}>Research & Projects</a>
+                            <a id="experience" href="#experience" className={sectionLinkClass}>Industry Experience</a>
                         </div>
 
-                        {/* Avatar & Links: Left Column */}
-                        <div className="md:col-span-3 flex flex-col gap-6">
-                            <PixelAvatar />
-                            <div className="flex flex-row flex-wrap gap-4 items-center">
-                                <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
-                                <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
-                                <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
-                                <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
-                                <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">LinkedIn</a>
-                            </div>
+                        {/* Links */}
+                        <div className="mt-6 flex flex-row flex-wrap gap-4 items-center">
+                            <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
+                            <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
+                            <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
+                            <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
+                            <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">LinkedIn</a>
                         </div>
-
-                        {/* Bio Text: Right Column */}
-                        <div className="md:col-span-9">
-                             <div
-                                className="prose prose-lg prose-neutral max-w-none"
-                                dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
-                             />
-                             <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-                                 <a id="research" href="#research" className={sectionLinkClass}>Research & Projects</a>
-                                 <a id="experience" href="#experience" className={sectionLinkClass}>Industry Experience</a>
-                             </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
