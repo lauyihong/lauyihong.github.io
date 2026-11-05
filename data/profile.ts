@@ -29,9 +29,7 @@ export const PROFILE = {
     </div>
   `,
 
-  avatar: "/avatar-studio.jpg",
-  avatarCaption: "Construction studio, Tsinghua",
-  avatarCaptionDate: "Mar 2024",
+  avatar: "/avatar.png",
 
   bio: `I am a research affiliate in the Multisensory Intelligence Group at the MIT Media Lab. My research focuses on articulated object reconstruction, memory architectures for VLM-based manipulation agents, structured world models, and multimodal perception for robotic manipulation.`,
 

@@ -3,6 +3,7 @@ import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
+import PixelAvatar from './components/PixelAvatar';
 import Section from './components/Section';
 import { useCommandPalette } from './components/CommandPalette';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
@@ -171,36 +172,22 @@ const HomeView: React.FC<{
     return (
         <>
              {/* Hero Section */}
-            <div className="pt-24 pb-12 md:pt-32">
+            <div className="pt-24 pb-[67px] md:pt-32">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-8 items-start">
 
                         {/* Title Row: above the bio, left column */}
                         <div className="lg:col-span-8 lg:row-start-1">
-                            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight">
-                                Yifeng Liu {/* <span className="text-gray-700">刘伊丰</span> */}
+                            <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
+                                Hi, I'm Yifeng Liu. {/* <span className="text-gray-700">刘伊丰</span> */}
                             </h1>
                         </div>
 
-                        {/* Photo & Links: right column, top-aligned with the title */}
-                        <aside className="lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2 lg:justify-self-end flex flex-col gap-5 w-full max-w-[280px]">
-                            <figure className="flex flex-col gap-2">
-                                <div className="aspect-square w-full overflow-hidden bg-gray-100 border border-black/10">
-                                    <img
-                                        src={PROFILE.avatar}
-                                        alt="Yifeng Liu working in the construction studio"
-                                        className="h-full w-full object-cover"
-                                        width={720}
-                                        height={720}
-                                    />
-                                </div>
-                                {PROFILE.avatarCaption && (
-                                    <figcaption className="flex justify-between gap-3 font-mono text-[10px] uppercase tracking-wider text-gray-400">
-                                        <span>{PROFILE.avatarCaption}</span>
-                                        {PROFILE.avatarCaptionDate && <span className="shrink-0">{PROFILE.avatarCaptionDate}</span>}
-                                    </figcaption>
-                                )}
-                            </figure>
+                        {/* Avatar & Links: right column, top-aligned with the bio text */}
+                        <aside className="lg:col-span-4 lg:col-start-9 lg:row-start-2 lg:justify-self-end flex flex-col gap-5 w-full max-w-[280px]">
+                            {/* Negative margins cancel the transparent padding baked into the pixel art,
+                                so its top-left corner lines up with the bio's top and the links' left edge. */}
+                            <PixelAvatar className="relative block w-full -mt-[44px] -ml-[26px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" />
                             <div className="flex flex-row flex-wrap justify-between gap-x-3 gap-y-3 items-center">
                                 <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
                                 <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
