@@ -3,7 +3,6 @@ import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
-import PixelAvatar from './components/PixelAvatar';
 import Section from './components/Section';
 import { useCommandPalette } from './components/CommandPalette';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
@@ -174,29 +173,45 @@ const HomeView: React.FC<{
              {/* Hero Section */}
             <div className="pt-24 pb-12 md:pt-32">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-6 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-8 items-start">
 
-                        {/* Title Row */}
-                        <div className="md:col-span-9 md:col-start-4 mb-[3px]">
-                            <div className="text-3xl md:text-4xl font-medium text-black leading-tight">
+                        {/* Title Row: above the bio, left column */}
+                        <div className="lg:col-span-8 lg:row-start-1">
+                            <h1 className="text-3xl md:text-4xl font-medium text-black leading-tight">
                                 Yifeng Liu {/* <span className="text-gray-700">刘伊丰</span> */}
-                            </div>
+                            </h1>
                         </div>
 
-                        {/* Avatar & Links: Left Column */}
-                        <div className="md:col-span-3 flex flex-col gap-6">
-                            <PixelAvatar />
-                            <div className="flex flex-row flex-wrap gap-4 items-center">
+                        {/* Photo & Links: right column, top-aligned with the title */}
+                        <aside className="lg:col-span-4 lg:col-start-9 lg:row-start-1 lg:row-span-2 lg:justify-self-end flex flex-col gap-5 w-full max-w-[280px]">
+                            <figure className="flex flex-col gap-2">
+                                <div className="aspect-square w-full overflow-hidden bg-gray-100 border border-black/10">
+                                    <img
+                                        src={PROFILE.avatar}
+                                        alt="Yifeng Liu working in the construction studio"
+                                        className="h-full w-full object-cover"
+                                        width={720}
+                                        height={720}
+                                    />
+                                </div>
+                                {PROFILE.avatarCaption && (
+                                    <figcaption className="flex justify-between gap-3 font-mono text-[10px] uppercase tracking-wider text-gray-400">
+                                        <span>{PROFILE.avatarCaption}</span>
+                                        {PROFILE.avatarCaptionDate && <span className="shrink-0">{PROFILE.avatarCaptionDate}</span>}
+                                    </figcaption>
+                                )}
+                            </figure>
+                            <div className="flex flex-row flex-wrap justify-between gap-x-3 gap-y-3 items-center">
                                 <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
                                 <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
                                 <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
                                 <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">LinkedIn</a>
                             </div>
-                        </div>
+                        </aside>
 
-                        {/* Bio Text: Right Column */}
-                        <div className="md:col-span-9">
+                        {/* Bio Text: left column */}
+                        <div className="lg:col-span-8 lg:row-start-2">
                              <div
                                 className="prose prose-lg prose-neutral max-w-none"
                                 dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
