@@ -5,6 +5,7 @@ import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
 import PixelAvatar from './components/PixelAvatar';
 import Section from './components/Section';
+import { useCommandPalette } from './components/CommandPalette';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
 import { Project, IndustryExperience } from './types';
 
@@ -480,6 +481,8 @@ const App: React.FC = () => {
       }
   };
 
+  const openSearch = useCommandPalette({ onNavigate: handleNavigation, isDark, onToggleTheme: toggleTheme });
+
   const handleProjectSelect = (project: Project) => {
       setSelectedProject(project);
       setView('project');
@@ -488,7 +491,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-white text-[#1a1a1a] font-sans selection:bg-gray-200 selection:text-black">
-      <Navbar onNavigate={handleNavigation} isDark={isDark} onToggleTheme={toggleTheme} />
+      <Navbar onNavigate={handleNavigation} isDark={isDark} onToggleTheme={toggleTheme} onOpenSearch={openSearch} />
 
       <main className="animate-in fade-in duration-500">
         {view === 'home' && (

@@ -29,3 +29,34 @@ html[data-theme="dark"] .group:hover .group-hover\:border-black { border-color: 
 html[data-theme="dark"] .hover\:decoration-black:hover { text-decoration-color: #ded3c5; }
 html[data-theme="dark"] ::selection { background: #68513b; color: #fff; }
 .theme-toggle:focus-visible { outline-color: currentColor; }
+
+/* ninja-keys command palette (Ctrl+K / ⌘K) */
+ninja-keys {
+  --ninja-z-index: 60;
+  --ninja-font-family: Inter, system-ui, sans-serif;
+  --ninja-width: 560px;
+  --ninja-top: 18%;
+  --ninja-accent-color: #111;
+  --ninja-text-color: #1a1a1a;
+  --ninja-secondary-text-color: #6b7280;
+  --ninja-secondary-background-color: #f4f4f5;
+  --ninja-selected-background: #f4f4f5;
+  --ninja-modal-background: #fff;
+  --ninja-overflow-background: rgb(255 255 255 / 0.6);
+  --ninja-backdrop-filter: blur(4px);
+  --ninja-modal-shadow: 0 16px 60px rgb(0 0 0 / 0.18);
+  --ninja-key-border-radius: 4px;
+}
+ninja-keys.dark {
+  --ninja-accent-color: #ecdbc4;
+  --ninja-text-color: #f3ede5;
+  --ninja-secondary-text-color: #b2a18e;
+  --ninja-secondary-background-color: #30271f;
+  --ninja-selected-background: #30271f;
+  --ninja-modal-background: #241e19;
+  --ninja-overflow-background: rgb(25 21 17 / 0.7);
+  --ninja-group-text-color: #a99681;
+  --ninja-footer-background: #1e1915;
+  --ninja-placeholder-color: #8a7a68;
+  --ninja-separate-border: 1px solid #4b3d30;
+}
