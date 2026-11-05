@@ -61,7 +61,6 @@ export function useCommandPalette({ onNavigate, isDark, onToggleTheme }: UseComm
       { id: 'home', title: 'Home', section: 'Navigate', keywords: 'top about bio', icon: ICONS.home, handler: () => onNavigate('top') },
       { id: 'research', title: 'Research & Projects', section: 'Navigate', keywords: 'robotics vision projects', icon: ICONS.section, handler: () => onNavigate('research') },
       { id: 'experience', title: 'Industry Experience', section: 'Navigate', keywords: 'work internship bytedance meituan', icon: ICONS.section, handler: () => onNavigate('experience') },
-      { id: 'teaching', title: 'Teaching: Build Anything', section: 'Navigate', keywords: 'course lecture class', icon: ICONS.book, handler: () => { window.location.href = '/build-anything-lecture/'; } },
       // Contact
       { id: 'email', title: 'Email', section: 'Contact', keywords: `mail contact ${PROFILE.email}`, icon: ICONS.mail, handler: () => { window.location.href = `mailto:${PROFILE.email}`; } },
       { id: 'github', title: 'GitHub', section: 'Contact', keywords: 'code repositories', icon: ICONS.link, handler: () => openExternal(socials.github) },

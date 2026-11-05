@@ -209,7 +209,6 @@ const HomeView: React.FC<{
                              <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
                                  <a id="research" href="#research" className={sectionLinkClass}>Research & Projects</a>
                                  <a id="experience" href="#experience" className={sectionLinkClass}>Industry Experience</a>
-                                 <a href="/build-anything-lecture/" className={sectionLinkClass}>Teaching: Build Anything</a>
                              </div>
                         </div>
 
