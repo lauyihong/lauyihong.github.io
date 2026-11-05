@@ -1,15 +1,17 @@
 
 import React, { useState } from 'react';
-import { Menu, X, ArrowRight, Moon, Sun } from 'lucide-react';
+import { Menu, X, ArrowRight, Moon, Sun, Search } from 'lucide-react';
 
 interface NavbarProps {
   onNavigate: (target: string) => void;
   isDark: boolean;
   onToggleTheme: () => void;
+  onOpenSearch: () => void;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ onNavigate, isDark, onToggleTheme }) => {
+const Navbar: React.FC<NavbarProps> = ({ onNavigate, isDark, onToggleTheme, onOpenSearch }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isMac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent);
 
   const navLinks = [
     { name: 'Research', target: 'research' },
@@ -44,6 +46,17 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, isDark, onToggleTheme }) =>
             </button>
           ))}
         </div>
+
+        <button
+          type="button"
+          onClick={onOpenSearch}
+          aria-label="Search (Ctrl+K)"
+          title="Search"
+          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-gray-500 hover:text-black transition-colors"
+        >
+          <span className="hidden md:inline">{isMac ? '⌘ K' : 'Ctrl K'}</span>
+          <Search className="w-4 h-4" aria-hidden="true" />
+        </button>
 
         {/* Mobile Menu Toggle */}
         <button className="md:hidden p-2" aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isOpen} onClick={() => setIsOpen(!isOpen)}>
