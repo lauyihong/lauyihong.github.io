@@ -7,9 +7,7 @@ const PIXELS = avatarGrid.flatMap((row, y) => row.flatMap((color, x) =>
 ));
 
 /** The portrait is colored HTML squares, not a bitmap or canvas. */
-const DEFAULT_CLASS = 'relative block w-[180px] max-w-full self-start md:w-[150%] md:max-w-[180px] md:self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4';
-
-export default function PixelAvatar({ className = DEFAULT_CLASS }: { className?: string }) {
+export default function PixelAvatar() {
   const root = useRef<HTMLButtonElement>(null);
   const nodes = useRef<(HTMLSpanElement | null)[]>([]);
   const physics = useRef(PIXELS.map(() => ({ x: 0, y: 0, vx: 0, vy: 0, settled: false, returnX: 0, returnY: 0 })));
@@ -208,7 +206,7 @@ export default function PixelAvatar({ className = DEFAULT_CLASS }: { className?:
       type="button"
       aria-label="Yifeng Liu pixel portrait — click to shatter, move away to restore"
       title="Click to shatter; move away to restore"
-      className={className}
+      className="relative block w-[180px] max-w-full self-start md:w-[150%] md:max-w-[180px] md:self-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
       style={{ aspectRatio: '1', padding: 0, border: 0, background: 'transparent', overflow: 'visible', cursor: 'default' }}
       onPointerEnter={event => {
         if (event.pointerType === 'touch' || reducedMotion.current) return;

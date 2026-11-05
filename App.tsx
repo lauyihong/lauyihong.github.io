@@ -3,7 +3,6 @@ import { ArrowUpRight, ArrowLeft, Clock, Tag } from 'lucide-react';
 import { GitHubCalendar } from 'react-github-calendar';
 import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
-import PixelAvatar from './components/PixelAvatar';
 import Section from './components/Section';
 import { useCommandPalette } from './components/CommandPalette';
 import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
@@ -174,20 +173,24 @@ const HomeView: React.FC<{
              {/* Hero Section */}
             <div className="pt-24 pb-[67px] md:pt-32">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-8 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-8 lg:gap-y-6 items-start">
 
                         {/* Title Row: above the bio, left column */}
                         <div className="lg:col-span-8 lg:row-start-1">
-                            <h1 className="text-3xl md:text-4xl font-bold text-black leading-tight">
+                            <h1 className="text-xl font-bold text-black leading-relaxed">
                                 Hi, I'm Yifeng Liu. {/* <span className="text-gray-700">刘伊丰</span> */}
                             </h1>
                         </div>
 
-                        {/* Avatar & Links: right column, top-aligned with the bio text */}
+                        {/* Photo & Links: right column, top- and left-aligned with the bio row */}
                         <aside className="lg:col-span-4 lg:col-start-9 lg:row-start-2 lg:justify-self-end flex flex-col gap-5 w-full max-w-[280px]">
-                            {/* Negative margins cancel the transparent padding baked into the pixel art,
-                                so its top-left corner lines up with the bio's top and the links' left edge. */}
-                            <PixelAvatar className="relative block w-full -mt-[44px] -ml-[26px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" />
+                            <img
+                                src={PROFILE.avatar}
+                                alt="Yifeng Liu in the construction studio at Tsinghua, March 2024"
+                                className="block w-full h-auto"
+                                width={1163}
+                                height={1163}
+                            />
                             <div className="flex flex-row flex-wrap justify-between gap-x-3 gap-y-3 items-center">
                                 <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
                                 <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
