@@ -159,6 +159,8 @@
   .clip video { display: block; width: 100%; aspect-ratio: 4 / 3; background: #000; border: 1px solid var(--line5); }
   .clip figcaption { margin-top: 10px; }
   .clip figcaption b { display: block; font-weight: 500; color: var(--text); }
+  .ds-head { margin-top: 48px; }
+  .clips.ds { gap: 24px; margin-top: 20px; }
 
   footer { padding: 80px 0; }
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; }
@@ -220,6 +222,23 @@
         <li>Per variant <code>s = 60·LHPR + 30·TSR + 10·P/(1+ODR)</code>: progress first, then success, then a penalty for disturbing other blocks.</li>
         <li>Tasks 4–5 count three times, two thirds of the overall score.</li>
         <li>Ten official episodes per variant. Training data: the official demonstrations only, about 40–50 per variant.</li></ul></div>
+    </div>
+    <h3 class="ds-head">Samples from the official dataset</h3>
+    <p class="muted">Each demonstration is one HDF5 episode recorded at 30 Hz in Isaac Sim: four 640×480 camera streams,
+    joint states and commands, end-effector poses, the initial block poses, a language instruction and the simulator
+    configuration that generated it. One episode per task below, shown at 4× speed with the static cameras on top and the
+    wrist cameras below.</p>
+    <div class="clips ds">
+      <figure class="clip"><video src="media/ds_t12.mp4" poster="media/ds_t12.jpg" controls muted playsinline preload="none"></video>
+        <figcaption><b>T1-2 tower transfer · 116 s</b>“Transfer 4 upper side blocks from the source tower onto the destination foundation.”</figcaption></figure>
+      <figure class="clip"><video src="media/ds_t22.mp4" poster="media/ds_t22.jpg" controls muted playsinline preload="none"></video>
+        <figcaption><b>T2-2 cross-tower transfer · 60 s</b>“Transfer 2 centered blocks top-down and reconstruct the cross tower on the destination foundation.”</figcaption></figure>
+      <figure class="clip"><video src="media/ds_t32.mp4" poster="media/ds_t32.jpg" controls muted playsinline preload="none"></video>
+        <figcaption><b>T3-2 vertical stacking · 59 s</b>“Transfer 2 aligned single blocks onto the destination foundation, keeping their centers vertically aligned.”</figcaption></figure>
+      <figure class="clip"><video src="media/ds_t42.mp4" poster="media/ds_t42.jpg" controls muted playsinline preload="none"></video>
+        <figcaption><b>T4-2 full-tower push-down · 118 s</b>“Push 6 upper blocks off the full tower, one at a time from top to bottom and left to right in each alternating row.”</figcaption></figure>
+      <figure class="clip"><video src="media/ds_t53.mp4" poster="media/ds_t53.jpg" controls muted playsinline preload="none"></video>
+        <figcaption><b>T5-3 tower insertion · 160 s</b>“Insert 2 blocks into the tower center gaps, highest gap first, without destabilizing the tower.”</figcaption></figure>
     </div>
   </div>
 </div></div></section>
@@ -471,7 +490,7 @@
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   });
   var buttons = document.querySelectorAll('.speed button');
-  var videos = document.querySelectorAll('.clip video');
+  var videos = document.querySelectorAll('#clips .clip video');
   function current() { var b = document.querySelector('.speed button[aria-pressed="true"]'); return b ? Number(b.dataset.rate) : 1; }
   function setRate(r) {
     videos.forEach(function (v) { v.playbackRate = r; v.defaultPlaybackRate = r; });
