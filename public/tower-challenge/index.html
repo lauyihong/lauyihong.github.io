@@ -74,6 +74,9 @@
   @media (min-width: 768px) { h1 { font-size: 48px; } }
   .subtitle { font-size: 20px; line-height: 1.6; font-weight: 300; color: var(--g500); margin: 0; }
   @media (min-width: 768px) { .subtitle { font-size: 24px; } }
+  .tldr .label { margin-bottom: 12px; }
+  .tldr .subtitle { font-size: 18px; line-height: 1.65; }
+  @media (min-width: 768px) { .tldr .subtitle { font-size: 20px; } }
   .links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 32px; }
   .links a { font: 400 12px/1 "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: 0.05em;
     text-decoration: none; border-bottom: 1px solid var(--line20); padding-bottom: 4px; }
@@ -192,9 +195,13 @@
       <a class="back label" href="/"><span class="c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7M19 12H5"/></svg></span>Back to Index</a>
       <div class="tags"><span class="tag">TOWER Challenge 2026</span><span class="tag">Team Sakai</span><span class="tag">Imitation learning</span><span class="tag">Dual-arm manipulation</span><span class="tag">Isaac Sim</span></div>
       <h1>Learned skills on top of classical perception</h1>
-      <p class="subtitle">How we built our TOWER policy: five dual-arm block-manipulation tasks, ten variants, a few dozen
-      demonstrations each, three weeks. What broke, how we fixed it, what we tried and dropped, and what the final policy still
-      cannot do.</p>
+      <div class="tldr"><div class="label">TL;DR</div>
+      <p class="subtitle">Our policy, RAX-AM, splits each task into the skills the demonstrations already label: move to the
+      block, close the gripper, lift, carry, place, release. Before each block, a classical vision step measures how far the
+      block and its target sit from where the demonstrations had them. One small learned network decides which skill is
+      running and when it ends; a second turns that skill and the measured offset into the next half second of arm motion.
+      Both were trained on the official demonstrations, shifted to random block positions so they learn to correct for the
+      offset. A safety filter limits every command, and no demonstration motion is replayed.</p></div>
       <div class="links"><a href="TOWER_Sakai_technical_report.pdf">Technical report (PDF)</a><a href="#design">Final design</a><a href="#limits">Limitations</a></div>
       <div class="stats">
         <div class="stat"><div class="v">93.58</div><div class="l">Overall score, per-variant best of our official submissions</div></div>
