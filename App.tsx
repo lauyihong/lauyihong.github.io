@@ -5,7 +5,7 @@ import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
 import { useCommandPalette } from './components/CommandPalette';
-import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE } from './data';
+import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE, RESEARCH } from './data';
 import { Project, IndustryExperience } from './types';
 
 // --- Components ---
@@ -166,6 +166,7 @@ const HomeView: React.FC<{
     // Section details are hidden while they are being revised; titles stay as links.
     const showDetails = false;
     const showPublications = false;
+    const [researchOpen, setResearchOpen] = useState(false);
     const sectionLinkClass = "font-mono text-xs uppercase tracking-widest text-gray-500 underline underline-offset-4 decoration-gray-300 hover:text-black hover:decoration-black transition-colors";
 
     return (
@@ -207,11 +208,54 @@ const HomeView: React.FC<{
                                 dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
                              />
                              <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-                                 <a id="research" href="#research" className={sectionLinkClass}>Research & Projects</a>
-                                 <a id="experience" href="#experience" className={sectionLinkClass}>Industry Experience</a>
+                                 <a id="research" href="#research" aria-expanded={researchOpen} aria-controls="research-list" onClick={(e) => { e.preventDefault(); setResearchOpen((o) => !o); }} className={`${sectionLinkClass}${researchOpen ? '' : ' link-breathe'}`}>Research & Projects</a>
+                                 <span id="experience" className="font-mono text-xs uppercase tracking-widest text-gray-500 underline underline-offset-4 decoration-gray-300 cursor-default select-none">Industry Experience</span>
                              </div>
                         </div>
 
+                    </div>
+
+                    {/* Research list: expands when "Research & Projects" is clicked */}
+                    <div
+                        aria-hidden={!researchOpen}
+                        style={{
+                            display: 'grid',
+                            gridTemplateRows: researchOpen ? '1fr' : '0fr',
+                            opacity: researchOpen ? 1 : 0,
+                            transition: 'grid-template-rows 700ms ease-in-out, opacity 700ms ease-in-out',
+                        }}
+                    >
+                    <div className="overflow-hidden min-h-0" inert={!researchOpen ? true : undefined}>
+                    <ul id="research-list" className="mt-12 border-t border-black/10">
+                        {RESEARCH.map((item) => (
+                            <li key={item.id} className="flex flex-col sm:flex-row gap-5 sm:gap-8 py-8 border-b border-black/5">
+                                <div className="w-full max-w-[320px] sm:w-48 shrink-0 self-start aspect-[4/3] bg-gray-100 overflow-hidden">
+                                    {item.image && (
+                                        <img src={item.image} alt="" className="w-full h-full object-cover" loading="lazy" />
+                                    )}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <h3 className="font-medium leading-snug mb-2">{item.links?.[0] ? <a href={item.links[0].url} className="hover:underline underline-offset-4">{item.title}</a> : item.title}</h3>
+                                    <span className="inline-block font-mono text-[10px] uppercase tracking-widest text-gray-500 border border-black/15 px-2 py-0.5 mb-3">{item.status}</span>
+                                    <p className="text-sm font-light mb-2">
+                                        {item.authors.map((author, i) => (
+                                            <span key={i} className={author.includes("Liu") ? "text-black font-medium" : "text-gray-500"}>
+                                                {author}{i < item.authors.length - 1 ? ', ' : ''}
+                                            </span>
+                                        ))}
+                                    </p>
+                                    {item.links && (
+                                        <div className="flex flex-wrap gap-3 mt-3">
+                                            {item.links.map((link, i) => (
+                                                <a key={i} href={link.url} {...(link.url.endsWith('.pdf') ? { target: '_blank', rel: 'noreferrer' } : {})} className="font-mono text-xs text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-black transition-colors">{link.label}</a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                    </div>
                     </div>
                 </div>
             </div>

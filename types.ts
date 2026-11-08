@@ -51,3 +51,12 @@ export interface ChatMessage {
   text: string;
   isThinking?: boolean;
 }
+
+export interface ResearchItem {
+  id: string;
+  title: string;
+  status: string;
+  authors: string[];
+  image?: string;
+  links?: { label: string; url: string }[];
+}

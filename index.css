@@ -60,3 +60,24 @@ ninja-keys.dark {
   --ninja-placeholder-color: #8a7a68;
   --ninja-separate-border: 1px solid #4b3d30;
 }
+
+/* Slow "breathing" pulse on the Research & Projects link while collapsed,
+   fading between its resting colors and its hover colors. */
+.link-breathe {
+  --breathe-rest: #6b7280; --breathe-rest-line: #d1d5db;
+  --breathe-peak: #000;    --breathe-peak-line: #000;
+  --breathe-bg: rgb(0 0 0 / 0.08);
+  padding: 2px 6px; margin: -2px -6px; border-radius: 3px;
+  animation: link-breathe 2.8s ease-in-out infinite;
+}
+html[data-theme="dark"] .link-breathe {
+  --breathe-rest: #b2a18e; --breathe-rest-line: #806b55;
+  --breathe-peak: #fff;    --breathe-peak-line: #ded3c5;
+  --breathe-bg: rgb(255 255 255 / 0.12);
+}
+.link-breathe:hover { animation: none; }
+@keyframes link-breathe {
+  0%, 100% { color: var(--breathe-rest); text-decoration-color: var(--breathe-rest-line); background-color: transparent; }
+  50%      { color: var(--breathe-peak); text-decoration-color: var(--breathe-peak-line); background-color: var(--breathe-bg); }
+}
+@media (prefers-reduced-motion: reduce) { .link-breathe { animation: none; } }
