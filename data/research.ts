@@ -7,7 +7,7 @@ export const RESEARCH: ResearchItem[] = [
   {
     id: "tower-challenge",
     title: "Agentic Task Decomposition for Skill-Specialist Robot Policies",
-    status: "Competition · TOWER Challenge 2026",
+    status: "CORL 2026 Generation to Action Challenge · Competition · Top 5",
     authors: ["Yifeng Liu"],
     image: "/research/tower_t5_t4_t1.gif",
     links: [
