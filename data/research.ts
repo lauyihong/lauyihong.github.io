@@ -14,7 +14,7 @@ export const RESEARCH: ResearchItem[] = [
   {
     id: "tower-challenge",
     title: "Agentic Task Decomposition for Skill-Specialist Robot Policies",
-    status: "CORL 2026 Generation to Action Challenge · Competition · Top 5",
+    status: "CORL 2026 Generation to Action Challenge · Competition",
     authors: ["Yifeng Liu"],
     image: "/research/tower_t5_t4_t1.gif",
     links: [
@@ -25,8 +25,10 @@ export const RESEARCH: ResearchItem[] = [
   {
     id: "act2see",
     title: "Act2See: Structured Articulated Representations through Robot Interaction",
-    status: "Workshop · RSS 2026 FM4RoboPlan · Extended paper in submission",
+    status: "Workshop · RSS 2026 FM4RoboPlan",
+    note: "Extended paper in submission",
     authors: ["Yifeng Liu*", "Yuzhen Chen*", "Bingyang Wang*", "Chengqi Li", "Jingyi Lu", "Han Li", "Kaichen Zhou", "Mengyu Wang", "Fangneng Zhan"],
+    authorNote: "* Equal contribution",
     image: "/research/act2see.gif",
     links: [
       { label: "project page", url: "https://lauyihong.github.io/act2see/" },

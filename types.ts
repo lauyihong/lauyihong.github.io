@@ -56,6 +56,8 @@ export interface ResearchItem {
   id: string;
   title: string;
   status: string;
+  note?: string; // shown below the status badge, outside the box
+  authorNote?: string; // e.g. "* Equal contribution"
   authors: string[];
   image?: string;
   links?: { label: string; url: string }[];
