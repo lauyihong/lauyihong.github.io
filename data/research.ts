@@ -9,7 +9,7 @@ export const RESEARCH: ResearchItem[] = [
     title: "Agentic Task Decomposition for Skill-Specialist Robot Policies",
     status: "Competition · TOWER Challenge 2026",
     authors: ["Yifeng Liu"],
-    image: "/research/tower_t52_10x.gif",
+    image: "/research/tower_t5_t4_t1.gif",
     links: [
       { label: "project page", url: "/tower-challenge/" },
       { label: "technical report", url: "/tower-challenge/TOWER_Sakai_technical_report.pdf" },
