@@ -237,6 +237,7 @@ const HomeView: React.FC<{
                                 <div className="flex-1 min-w-0">
                                     <h3 className="font-medium leading-snug mb-2">{item.links?.[0] ? <a href={item.links[0].url} className="hover:underline underline-offset-4">{item.title}</a> : item.title}</h3>
                                     <span className="inline-block font-mono text-[10px] uppercase tracking-widest text-gray-500 border border-black/15 px-2 py-0.5 mb-3">{item.status}</span>
+                                    {item.badgeNote && <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 ml-3">{item.badgeNote}</span>}
                                     {item.note && <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500 -mt-1 mb-3">{item.note}</p>}
                                     <p className="text-sm font-light mb-2">
                                         {item.authors.map((author, i) => (

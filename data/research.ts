@@ -8,7 +8,7 @@ export const RESEARCH: ResearchItem[] = [
     id: "lerobotneck",
     title: "LeRobotNeck: Open Sourced Low Cost Robot Neck for Active Perception",
     status: "Open Source · Hardware",
-    note: "All coming soon",
+    badgeNote: "Coming Soon!!!",
     authors: ["Yifeng Liu"],
     image: "/research/lerobotneck.jpg",
   },
