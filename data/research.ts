@@ -6,7 +6,7 @@ import { ResearchItem } from '../types';
 export const RESEARCH: ResearchItem[] = [
   {
     id: "lerobotneck",
-    title: "LeRobotNeck: Open Sourced, Low Cost Robot Neck for Active Perception",
+    title: "LeRobotNeck: Open Sourced Low Cost Robot Neck for Active Perception",
     status: "Open Source · Hardware",
     authors: ["Yifeng Liu"],
     image: "/research/lerobotneck.jpg",
