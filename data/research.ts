@@ -20,7 +20,7 @@ export const RESEARCH: ResearchItem[] = [
     title: "Act2See: Structured Articulated Representations through Robot Interaction",
     status: "Workshop · RSS 2026 FM4RoboPlan · Extended paper in submission",
     authors: ["Yifeng Liu*", "Yuzhen Chen*", "Bingyang Wang*", "Chengqi Li", "Jingyi Lu", "Han Li", "Kaichen Zhou", "Mengyu Wang", "Fangneng Zhan"],
-    image: "/research/act2see.jpg",
+    image: "/research/act2see.gif",
     links: [
       { label: "project page", url: "https://lauyihong.github.io/act2see/" },
       { label: "paper", url: "https://openreview.net/forum?id=sghH6peEK8" },
