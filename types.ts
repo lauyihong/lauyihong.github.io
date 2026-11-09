@@ -61,5 +61,5 @@ export interface ResearchItem {
   authorNote?: string; // e.g. "* Equal contribution"
   authors: string[];
   image?: string;
-  links?: { label: string; url: string }[];
+  links?: { label: string; url?: string }[]; // omit url to show a non-clickable label
 }

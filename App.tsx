@@ -235,7 +235,7 @@ const HomeView: React.FC<{
                                     )}
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                    <h3 className="font-medium leading-snug mb-2">{item.links?.[0] ? <a href={item.links[0].url} className="hover:underline underline-offset-4">{item.title}</a> : item.title}</h3>
+                                    <h3 className="font-medium leading-snug mb-2">{item.links?.[0]?.url ? <a href={item.links[0].url} className="hover:underline underline-offset-4">{item.title}</a> : item.title}</h3>
                                     <span className="inline-block font-mono text-[10px] uppercase tracking-widest text-gray-500 border border-black/15 px-2 py-0.5 mb-3">{item.status}</span>
                                     {item.badgeNote && <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 ml-3">{item.badgeNote}</span>}
                                     {item.note && <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500 -mt-1 mb-3">{item.note}</p>}
@@ -249,7 +249,9 @@ const HomeView: React.FC<{
                                     {item.authorNote && <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-2">{item.authorNote}</p>}
                                     {item.links && (
                                         <div className="flex flex-wrap gap-3 mt-3">
-                                            {item.links.map((link, i) => (
+                                            {item.links.map((link, i) => !link.url ? (
+                                                <span key={i} className="font-mono text-xs text-gray-400 cursor-default">{link.label}</span>
+                                            ) : (
                                                 <a key={i} href={link.url} {...(link.url.endsWith('.pdf') ? { target: '_blank', rel: 'noreferrer' } : {})} className="font-mono text-xs text-gray-500 underline underline-offset-2 decoration-gray-300 hover:text-black hover:decoration-black transition-colors">{link.label}</a>
                                             ))}
                                         </div>

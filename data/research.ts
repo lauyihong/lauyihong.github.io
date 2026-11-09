@@ -11,6 +11,9 @@ export const RESEARCH: ResearchItem[] = [
     badgeNote: "Coming Soon!!!",
     authors: ["Yifeng Liu"],
     image: "/research/lerobotneck.jpg",
+    links: [
+      { label: "code", url: "https://github.com/lauyihong/lerobotneck" },
+    ],
   },
   {
     id: "tower-challenge",
@@ -34,7 +37,7 @@ export const RESEARCH: ResearchItem[] = [
     links: [
       { label: "project page", url: "https://lauyihong.github.io/act2see/" },
       { label: "paper", url: "https://openreview.net/forum?id=sghH6peEK8" },
-      { label: "code", url: "https://github.com/lauyihong/active_perception" },
+      { label: "code (coming soon)" }, // repo private until review ends: https://github.com/lauyihong/active_perception
     ],
   },
 ];
