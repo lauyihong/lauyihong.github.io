@@ -11,6 +11,9 @@ export const RESEARCH: ResearchItem[] = [
     badgeNote: "Coming Soon!!!",
     authors: ["Yifeng Liu"],
     image: "/research/lerobotneck.jpg",
+    links: [
+      { label: "code", url: "https://github.com/lauyihong/lerobotneck" },
+    ],
   },
   {
     id: "tower-challenge",
