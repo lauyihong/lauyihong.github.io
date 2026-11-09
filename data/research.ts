@@ -5,6 +5,13 @@ import { ResearchItem } from '../types';
 // status: venue/type label, e.g. "Conference · NeurIPS 2025", "Workshop", "Competition", "Journal", "Preprint".
 export const RESEARCH: ResearchItem[] = [
   {
+    id: "lerobotneck",
+    title: "LeRobotNeck: Open Sourced, Low Cost Robot Neck for Active Perception",
+    status: "Open Source · Hardware",
+    authors: ["Yifeng Liu"],
+    image: "/research/lerobotneck.jpg",
+  },
+  {
     id: "tower-challenge",
     title: "Agentic Task Decomposition for Skill-Specialist Robot Policies",
     status: "CORL 2026 Generation to Action Challenge · Competition · Top 5",
