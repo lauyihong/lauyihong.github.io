@@ -4,7 +4,7 @@ export const PROFILE = {
   role: "Researcher & Engineer",
   affiliation: "MIT Media Lab",
   email: "liuyf23@mit.edu",
-  cv: "#",
+  cv: "/Yifeng_Liu_CV.pdf",
   heroIntro: `
     <div class="space-y-6 text-xl font-light text-gray-800 leading-relaxed">
       <p>

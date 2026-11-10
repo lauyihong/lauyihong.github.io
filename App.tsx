@@ -193,7 +193,7 @@ const HomeView: React.FC<{
                                 height={1163}
                             />
                             <div className="flex flex-row flex-wrap justify-between gap-x-3 gap-y-3 items-center">
-                                <a href={PROFILE.cv} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
+                                <a href={PROFILE.cv} target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
                                 <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
                                 <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
