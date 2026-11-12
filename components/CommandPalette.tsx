@@ -66,6 +66,7 @@ export function useCommandPalette({ onNavigate, isDark, onToggleTheme }: UseComm
       { id: 'github', title: 'GitHub', section: 'Contact', keywords: 'code repositories', icon: ICONS.link, handler: () => openExternal(socials.github) },
       { id: 'scholar', title: 'Google Scholar', section: 'Contact', keywords: 'papers publications citations', icon: ICONS.link, handler: () => openExternal(socials.scholar) },
       { id: 'linkedin', title: 'LinkedIn', section: 'Contact', keywords: 'cv resume', icon: ICONS.link, handler: () => openExternal(socials.linkedin) },
+      { id: 'x', title: 'X (Twitter)', section: 'Contact', keywords: 'twitter x social', icon: ICONS.link, handler: () => openExternal(socials.twitter) },
       // Settings
       { id: 'theme', title: isDark ? 'Switch to light mode' : 'Switch to dark mode', section: 'Settings', keywords: 'theme dark light appearance', icon: ICONS.theme, handler: onToggleTheme },
     ];

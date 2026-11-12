@@ -198,6 +198,7 @@ const HomeView: React.FC<{
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
                                 <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
                                 <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">LinkedIn</a>
+                                <a href={PROFILE.socials.twitter} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">X</a>
                             </div>
                         </aside>
 
@@ -239,13 +240,13 @@ const HomeView: React.FC<{
                                     <span className="inline-block font-mono text-[10px] uppercase tracking-widest text-gray-500 border border-black/15 px-2 py-0.5 mb-3">{item.status}</span>
                                     {item.badgeNote && <span className="font-mono text-[10px] uppercase tracking-widest text-gray-500 ml-3">{item.badgeNote}</span>}
                                     {item.note && <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500 -mt-1 mb-3">{item.note}</p>}
-                                    <p className="text-sm font-light mb-2">
+                                    {item.authors.length > 0 && <p className="text-sm font-light mb-2">
                                         {item.authors.map((author, i) => (
                                             <span key={i} className={author.includes("Liu") ? "text-black font-medium" : "text-gray-500"}>
                                                 {author}{i < item.authors.length - 1 ? ', ' : ''}
                                             </span>
                                         ))}
-                                    </p>
+                                    </p>}
                                     {item.authorNote && <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-2">{item.authorNote}</p>}
                                     {item.links && (
                                         <div className="flex flex-wrap gap-3 mt-3">
@@ -479,6 +480,7 @@ const HomeView: React.FC<{
                                 <a href={`mailto:${PROFILE.email}`} className="text-sm text-gray-500 hover:text-black transition-colors">Email</a>
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">GitHub</a>
                                 <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">LinkedIn</a>
+                                <a href={PROFILE.socials.twitter} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">X</a>
                             </div>
                             <div className="font-mono text-[10px] text-gray-400 uppercase tracking-widest">
                                 © {new Date().getFullYear()} All Rights Reserved

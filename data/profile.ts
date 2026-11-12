@@ -37,6 +37,6 @@ export const PROFILE = {
     github: "https://github.com/lauyihong",
     scholar: "https://scholar.google.com",
     linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com"
+    twitter: "https://x.com/lau_yihong"
   }
 };
