@@ -198,14 +198,14 @@
       <h1>Agentic Task Decomposition for Skill-Specialist Robot Policies</h1>
       <div class="tldr"><div class="label">TL;DR</div>
       <p class="subtitle">Coding agents helped us plan each task offline and build its training data; two small learned
-      networks then do the acting, in 20–40 ms on a CPU. Of the approaches we tried, this scored highest on TOWER.</p>
+      networks then do the acting, in milliseconds on a CPU. Of the approaches we tried, this scored highest.</p>
       <p class="subtitle">Our policy, RAX-AM, runs each task as the skills the demonstrations label: move to the block, close
       the gripper, lift, carry, place, release. Before each block, a classical vision step measures how far the block and its
       target sit from where the demonstrations had them. One network decides which skill is running and when it ends; the
       other turns that skill and the offset into the next half second of motion. Both learned from the official
       demonstrations, retargeted to random block positions by a teacher we built with the agents. A safety filter limits
-      every command, and no demonstration motion is replayed. Its best submission scored 91.93 (91 of 100 episodes); on
-      Tasks 1–3 it averaged 98.6, against 89.4 for end-to-end π0.5.</p></div>
+      every command, and no demonstration motion is replayed. Its best submission scored 91.93 (91 of 100 episodes). On
+      Tasks 1–3, the only tasks where we submitted end-to-end π0.5, that submission averaged 98.6 against 89.4.</p></div>
       <div class="links"><a href="TOWER_Sakai_technical_report.pdf">Technical report (PDF)</a><a href="#design">Final design</a><a href="#limits">Limitations</a></div>
       <div class="stats">
         <div class="stat"><div class="v">93.58</div><div class="l">Overall score, per-variant best of our official submissions</div></div>
@@ -286,7 +286,8 @@
     <h2>RAX-AM</h2>
     <p class="lead">Each task is a sequence of skills taken from the demonstrations' phase labels (approach, close, lift,
     transport, place, release, …). Perception measures where the next block is; two small networks decide which skill is
-    active and produce the motion.</p>
+    active and produce the motion. In dual-process terms, coding agents working with us were a design-time System 2, and the plan we
+    worked out was trained into a fast run-time System 1. Nothing deliberates at inference.</p>
     <figure>
       <div class="diagram">
         <svg viewBox="0 0 760 214" role="img" aria-label="RAX-AM inference: observation to perception and proprioception, to the learned skill selector and executor, to the safety filter, to 16 command rows">
@@ -326,7 +327,7 @@
         </svg>
       </div>
       <div class="legend label"><span><i></i>Learned (MLPs)</span><span><i class="dash"></i>Classical, declared to the organisers</span></div>
-      <figcaption>One request. The networks are small (0.45–17 M parameters) and run on a CPU with numpy in 20–40 ms.</figcaption>
+      <figcaption>One request. The networks are small (0.45–17 M parameters) and run on a CPU with numpy in milliseconds per request; requests that also run perception take about a second.</figcaption>
     </figure>
     <div class="cols2" style="margin-top: 40px">
       <div><h3>Learned</h3><ul class="plain">
@@ -449,7 +450,9 @@
         <li>Deterministic MLPs imitate near-identical demonstrations and their retargeted copies; generalisation comes mostly from
           the augmentation and the perception, not from the networks.</li>
         <li>On Tasks 1–3 the executor builds on its own commands rather than the measured joints, so it is open-loop within a skill.</li>
-        <li>No recovery from states far from the demonstrations, such as a dragged lower block on Task 4.</li></ul></div>
+        <li>No recovery from states far from the demonstrations, such as a dragged lower block on Task 4.</li>
+        <li>No run-time System 2: a model-driven agent watching the cameras could re-plan or pick a recovery skill. The
+          rules allowed one; we did not build it.</li></ul></div>
       <div><h3>Engineering</h3><ul class="plain">
         <li>T5-3 relies on four classical corrections tuned in our replica; T1-2 needs a scripted start transition.</li>
         <li>The Task 4–5 replica was never calibrated against official results and ranked our Task 4 models in the opposite order.</li>
