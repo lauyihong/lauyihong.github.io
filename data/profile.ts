@@ -12,7 +12,7 @@ export const PROFILE = {
         I received my bachelor's degree from <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Tsinghua University</a>, where I worked with <a href="https://www.arch.tsinghua.edu.cn/info/FUrban%20Planning%20and%20Design/2133" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Prof. Yuan Lai</a> and <a href="https://www.arch.tsinghua.edu.cn/info/rw_jzx/1404" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Prof. Ning Zhu</a>.
       </p>
       <p>
-        I am currently a research affiliate in the <a href="https://www.media.mit.edu/groups/multisensory-intelligence/overview/" target="_blank" rel="noopener noreferrer" class="text-black font-medium underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity">Multisensory Intelligence Group</a> at the MIT Media Lab,
+        I am currently a research affiliate in the Multisensory Intelligence Group at the MIT Media Lab,
         working on articulated object reconstruction and memory architectures for manipulation agents based on vision-language models (VLMs).
         My research focuses on developing structured world models and multimodal perception systems for robotic manipulation.
       </p>

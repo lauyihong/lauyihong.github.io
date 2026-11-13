@@ -24,7 +24,7 @@ export const RESEARCH: ResearchItem[] = [
     image: "/research/tower_t5_t4_t1.gif",
     links: [
       { label: "project page", url: "/tower-challenge/" },
-      { label: "technical report", url: "/tower-challenge/TOWER_Sakai_technical_report.pdf" },
+      { label: "talk slides", url: "/tower-challenge/TOWER_2026_Talk.pdf" },
     ],
   },
   {
