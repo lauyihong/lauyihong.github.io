@@ -5,7 +5,7 @@ import 'react-github-calendar/tooltips.css';
 import Navbar from './components/Navbar';
 import Section from './components/Section';
 import { useCommandPalette } from './components/CommandPalette';
-import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE, RESEARCH } from './data';
+import { PROFILE, PUBLICATIONS, TECHNICAL_PROJECTS, INDUSTRY_EXPERIENCE, RESEARCH, NEWS } from './data';
 import { Project, IndustryExperience } from './types';
 
 // --- Components ---
@@ -166,13 +166,32 @@ const HomeView: React.FC<{
     // Section details are hidden while they are being revised; titles stay as links.
     const showDetails = false;
     const showPublications = false;
-    const [researchOpen, setResearchOpen] = useState(false);
+    const [researchOpen, setResearchOpen] = useState(() => window.location.hash === '#research');
+    const researchLinkRef = useRef<HTMLAnchorElement>(null);
+
+    // Expand "Research & Projects" automatically the first time the visitor scrolls it into view.
+    useEffect(() => {
+        if (researchOpen) return;
+        const el = researchLinkRef.current;
+        if (!el) return;
+        const check = () => {
+            if (window.scrollY <= 0) return;
+            const r = el.getBoundingClientRect();
+            if (r.top < window.innerHeight * 0.9 && r.bottom > 0) {
+                setResearchOpen(true);
+                window.removeEventListener('scroll', check);
+            }
+        };
+        window.addEventListener('scroll', check, { passive: true });
+        return () => window.removeEventListener('scroll', check);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
     const sectionLinkClass = "font-mono text-xs uppercase tracking-widest text-gray-500 underline underline-offset-4 decoration-gray-300 hover:text-black hover:decoration-black transition-colors";
 
     return (
         <>
              {/* Hero Section */}
-            <div className="pt-24 pb-[67px] md:pt-32">
+            <div className="pt-24 pb-16 md:pt-32 md:pb-20">
                 <div className="container mx-auto px-6 md:px-12 lg:px-24">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-x-16 gap-y-8 lg:gap-y-6 items-start">
 
@@ -208,8 +227,21 @@ const HomeView: React.FC<{
                                 className="prose prose-lg prose-neutral max-w-none"
                                 dangerouslySetInnerHTML={{ __html: PROFILE.heroIntro || '' }}
                              />
-                             <div className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-                                 <a id="research" href="#research" aria-expanded={researchOpen} aria-controls="research-list" onClick={(e) => { e.preventDefault(); setResearchOpen((o) => !o); }} className={`${sectionLinkClass}${researchOpen ? '' : ' link-breathe'}`}>Research & Projects</a>
+                             {NEWS.length > 0 && (
+                                 <section id="news" aria-labelledby="news-title" className="mt-10">
+                                     <h2 id="news-title" className="font-mono text-xs uppercase tracking-widest text-gray-500 mb-4">News</h2>
+                                     <ul className="space-y-2">
+                                         {NEWS.map((n, i) => (
+                                             <li key={i} className="flex gap-6 text-base font-light text-gray-800 leading-relaxed">
+                                                 <span className="font-mono text-xs uppercase tracking-wider text-gray-500 shrink-0 w-20 pt-1">{n.date}</span>
+                                                 <span dangerouslySetInnerHTML={{ __html: n.text }} />
+                                             </li>
+                                         ))}
+                                     </ul>
+                                 </section>
+                             )}
+                             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
+                                 <a ref={researchLinkRef} id="research" href="#research" aria-expanded={researchOpen} aria-controls="research-list" onClick={(e) => { e.preventDefault(); setResearchOpen((o) => !o); }} className={`${sectionLinkClass}${researchOpen ? '' : ' link-breathe'}`}>Research & Projects</a>
                                  <span id="experience" className="font-mono text-xs uppercase tracking-widest text-gray-500 underline underline-offset-4 decoration-gray-300 cursor-default select-none">Industry Experience</span>
                              </div>
                         </div>
@@ -227,9 +259,9 @@ const HomeView: React.FC<{
                         }}
                     >
                     <div className="overflow-hidden min-h-0" inert={!researchOpen ? true : undefined}>
-                    <ul id="research-list" className="mt-12 border-t border-black/10">
+                    <ul id="research-list" className="mt-12 space-y-12">
                         {RESEARCH.map((item) => (
-                            <li key={item.id} className="flex flex-col sm:flex-row gap-5 sm:gap-8 py-8 border-b border-black/5">
+                            <li key={item.id} className="flex flex-col sm:flex-row gap-5 sm:gap-8">
                                 <div className="w-full max-w-[320px] sm:w-48 shrink-0 self-start aspect-[4/3] bg-gray-100 overflow-hidden">
                                     {item.image && (
                                         <img src={item.image} alt="" className="w-full h-full object-cover" loading="lazy" />
@@ -433,7 +465,7 @@ const HomeView: React.FC<{
             )}
 
             {/* GitHub Calendar Section */}
-            <section className="py-12">
+            <section className="pt-4 pb-16">
               <div className="container mx-auto px-6 md:px-12 lg:px-24">
                 <h3 className="font-mono text-xs uppercase tracking-widest text-gray-400 mb-6">GitHub Activity</h3>
                 <div className="overflow-x-auto flex justify-center">
