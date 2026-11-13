@@ -62,7 +62,6 @@ export function useCommandPalette({ onNavigate, isDark, onToggleTheme }: UseComm
       { id: 'research', title: 'Research & Projects', section: 'Navigate', keywords: 'robotics vision projects', icon: ICONS.section, handler: () => onNavigate('research') },
       { id: 'experience', title: 'Industry Experience', section: 'Navigate', keywords: 'work internship bytedance meituan', icon: ICONS.section, handler: () => onNavigate('experience') },
       // Contact
-      { id: 'email', title: 'Email', section: 'Contact', keywords: `mail contact ${PROFILE.email}`, icon: ICONS.mail, handler: () => { window.location.href = `mailto:${PROFILE.email}`; } },
       { id: 'github', title: 'GitHub', section: 'Contact', keywords: 'code repositories', icon: ICONS.link, handler: () => openExternal(socials.github) },
       { id: 'scholar', title: 'Google Scholar', section: 'Contact', keywords: 'papers publications citations', icon: ICONS.link, handler: () => openExternal(socials.scholar) },
       { id: 'linkedin', title: 'LinkedIn', section: 'Contact', keywords: 'cv resume', icon: ICONS.link, handler: () => openExternal(socials.linkedin) },

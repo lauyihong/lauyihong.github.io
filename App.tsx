@@ -211,9 +211,9 @@ const HomeView: React.FC<{
                                 width={1163}
                                 height={1163}
                             />
-                            <div className="flex flex-row flex-wrap justify-between gap-x-3 gap-y-3 items-center">
+                            <div className="flex flex-row flex-wrap sm:flex-nowrap justify-between gap-x-3 gap-y-3 items-center">
                                 <a href={PROFILE.cv} target="_blank" rel="noopener noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">CV</a>
-                                <a href={`mailto:${PROFILE.email}`} className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Email</a>
+                                {/* Email hidden: the preferred address is on the CV. */}
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">GitHub</a>
                                 <a href={PROFILE.socials.scholar} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">Scholar</a>
                                 <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="font-mono text-xs uppercase tracking-wider border-b border-black/20 hover:border-black pb-1">LinkedIn</a>
@@ -510,7 +510,6 @@ const HomeView: React.FC<{
                         {/* Right: Socials & Copyright */}
                         <div className="flex flex-col items-center md:items-end gap-4">
                             <div className="flex gap-6">
-                                <a href={`mailto:${PROFILE.email}`} className="text-sm text-gray-500 hover:text-black transition-colors">Email</a>
                                 <a href={PROFILE.socials.github} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">GitHub</a>
                                 <a href={PROFILE.socials.linkedin} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">LinkedIn</a>
                                 <a href={PROFILE.socials.twitter} target="_blank" rel="noreferrer" className="text-sm text-gray-500 hover:text-black transition-colors">X</a>
