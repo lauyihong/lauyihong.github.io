@@ -240,8 +240,8 @@ const HomeView: React.FC<{
                                      </ul>
                                  </section>
                              )}
-                             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3">
-                                 <a ref={researchLinkRef} id="research" href="#research" aria-expanded={researchOpen} aria-controls="research-list" onClick={(e) => { e.preventDefault(); setResearchOpen((o) => !o); }} className={`${sectionLinkClass}${researchOpen ? '' : ' link-breathe'}`}>Research & Projects</a>
+                             <div className="mt-16 flex flex-wrap gap-x-8 gap-y-3">
+                                 <a ref={researchLinkRef} id="research" href="#research" aria-expanded={researchOpen} aria-controls="research-list" onClick={(e) => { e.preventDefault(); setResearchOpen((o) => !o); }} className={`${sectionLinkClass}${researchOpen ? ' link-open' : ' link-breathe'}`}>Research & Projects</a>
                                  <span id="experience" className="font-mono text-xs uppercase tracking-widest text-gray-500 underline underline-offset-4 decoration-gray-300 cursor-default select-none">Industry Experience</span>
                              </div>
                         </div>
@@ -278,6 +278,7 @@ const HomeView: React.FC<{
                                                 {author}{i < item.authors.length - 1 ? ', ' : ''}
                                             </span>
                                         ))}
+                                        {item.award && <span className="award-badge ml-3 align-middle">{item.award}</span>}
                                     </p>}
                                     {item.authorNote && <p className="font-mono text-[10px] uppercase tracking-widest text-gray-500 mb-2">{item.authorNote}</p>}
                                     {item.links && (

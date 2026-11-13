@@ -81,3 +81,38 @@ html[data-theme="dark"] .link-breathe {
   50%      { color: var(--breathe-peak); text-decoration-color: var(--breathe-peak-line); background-color: var(--breathe-bg); }
 }
 @media (prefers-reduced-motion: reduce) { .link-breathe { animation: none; } }
+
+/* Research & Projects link while expanded: hold the breathing pulse's peak state (same padding, radius and tint). */
+.link-open {
+  --breathe-peak: #000; --breathe-peak-line: #000;
+  --breathe-bg: rgb(0 0 0 / 0.08);
+  padding: 2px 6px; margin: -2px -6px; border-radius: 3px;
+  color: var(--breathe-peak); text-decoration-color: var(--breathe-peak-line);
+  background-color: var(--breathe-bg);
+}
+html[data-theme="dark"] .link-open {
+  --breathe-peak: #fff; --breathe-peak-line: #ded3c5;
+  --breathe-bg: rgb(255 255 255 / 0.12);
+}
+
+/* Award badge on a research card: warm gold pill with a slow shimmer sweeping across it. */
+.award-badge {
+  --award-fg: #7a4b00; --award-bg: #fff4d6; --award-line: #f1c75b; --award-shine: rgb(255 255 255 / 0.85);
+  position: relative; display: inline-block; overflow: hidden;
+  padding: 1px 8px; border: 1px solid var(--award-line); border-radius: 999px;
+  background: var(--award-bg); color: var(--award-fg);
+  font: 500 11px/1.6 "JetBrains Mono", monospace; letter-spacing: 0.02em; white-space: nowrap;
+  animation: award-pop 600ms cubic-bezier(.2,1.4,.4,1) both;
+}
+.award-badge::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, transparent 35%, var(--award-shine) 50%, transparent 65%);
+  transform: translateX(-120%);
+  animation: award-shine 3.2s ease-in-out 0.8s infinite;
+}
+html[data-theme="dark"] .award-badge {
+  --award-fg: #ffd98a; --award-bg: rgb(255 196 64 / 0.12); --award-line: rgb(255 196 64 / 0.45); --award-shine: rgb(255 230 170 / 0.35);
+}
+@keyframes award-shine { 0% { transform: translateX(-120%); } 45%, 100% { transform: translateX(120%); } }
+@keyframes award-pop { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .award-badge, .award-badge::after { animation: none; } }
