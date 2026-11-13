@@ -59,6 +59,7 @@ export interface ResearchItem {
   badgeNote?: string; // shown right of the status badge
   note?: string; // shown below the status badge, outside the box
   authorNote?: string; // e.g. "* Equal contribution"
+  award?: string; // highlighted badge shown after the author line, e.g. "#1 🏆 in challenge!"
   authors: string[];
   image?: string;
   links?: { label: string; url?: string }[]; // omit url to show a non-clickable label
