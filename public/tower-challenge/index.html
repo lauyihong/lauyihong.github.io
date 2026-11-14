@@ -227,9 +227,8 @@
     cameras), 16 joint positions, two gripper widths and the task variant, and returns 16 rows of joint commands at 30 Hz.</p>
     <div class="cols2">
       <div><h3>Tasks</h3><ul class="plain">
-        <li><b>T1–T3</b> tower transfer, cross-tower transfer and vertical stacking: pick and place blocks, two- and three-layer variants.</li>
-        <li><b>T4</b> full-tower push-down: push the blocks of a tower out one by one without dragging the blocks below.</li>
-        <li><b>T5</b> tower insertion: insert blocks into a tower with about 1 mm of clearance per side, without moving its walls and roof.</li></ul></div>
+        <li><b>T1–T3</b> pick and place: tower transfer, cross-tower transfer, vertical stacking.</li>
+        <li><b>T4–T5</b> contact-rich: push a tower's blocks out one by one; insert blocks with about 1 mm clearance.</li></ul></div>
       <div><h3>Scoring and data</h3><ul class="plain">
         <li>Per variant <code>s = 60·LHPR + 30·TSR + 10·P/(1+ODR)</code>: progress first, then success, then a penalty for disturbing other blocks.</li>
         <li>Tasks 4–5 count three times, two thirds of the overall score.</li>
@@ -255,19 +254,11 @@
   </div>
 </div></div></section>
 
-<section class="sec" id="overview"><div class="container"><div class="sec-grid">
-  <div class="label">Overview</div>
+<section class="sec" id="journey"><div class="container"><div class="sec-grid">
+  <div class="label">How It Evolved</div>
   <div class="body">
-    <h2>Our path in three steps</h2>
-    <div class="cols3" style="margin:8px 0 40px">
-      <div><h3>1 · π0.5: end-to-end policy</h3><p class="muted">π0.5, fully fine-tuned on the official demonstrations: images and joints in, joint commands out. About 38 h of fine-tuning in 4 stages, mostly on 2× H20 (≈130 GPU-hours).</p>
-        <p><b>89.4 on Tasks 1–3, official.</b> Stuck on Tasks 4–5.</p></div>
-      <div><h3>2 · RAX: agent-supervised program</h3><p class="muted">Coding agents split each task into skills and wrote, with us, a program that retargets the demonstrations to the blocks it perceives.</p>
-        <p><b>90 of 100 official episodes</b>, but it frequently timed out and had no learned part.</p></div>
-      <div><h3>3 · RAX-AM: agent program + small models</h3><p class="muted">The agents' program makes the training data; small learned MLPs (0.45–17 M parameters) pick and execute the skills.</p>
-        <p><b>91 of 100 official episodes.</b> Best single submission 91.93.</p></div>
-    </div>
-    <p class="muted">Agents think slowly at design time; small models act fast at run time.</p>
+    <img src="media/overview.png" alt="Three steps: π0.5 end-to-end policy (89.4 on Tasks 1–3), RAX agent-supervised program (90 of 100 episodes), RAX-AM agent program plus small models (91 of 100, best 91.93)" style="width:100%;height:auto;border-radius:8px;display:block">
+    <p class="muted" style="margin-top:16px">Agents think slowly at design time; small models act fast at run time.</p>
   </div>
 </div></div></section>
 
