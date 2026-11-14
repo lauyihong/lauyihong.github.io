@@ -255,10 +255,10 @@
   </div>
 </div></div></section>
 
-<section class="sec" id="journey"><div class="container"><div class="sec-grid">
-  <div class="label">How It Evolved</div>
+<section class="sec" id="overview"><div class="container"><div class="sec-grid">
+  <div class="label">Overview</div>
   <div class="body">
-    <h2>From an end-to-end VLA to a modular learned policy</h2>
+    <h2>Our path in three steps</h2>
     <div class="cols3" style="margin:8px 0 40px">
       <div><h3>1 · π0.5: end-to-end policy</h3><p class="muted">π0.5, fully fine-tuned on the official demonstrations: images and joints in, joint commands out. About 38 h of fine-tuning in 4 stages, mostly on 2× H20 (≈130 GPU-hours).</p>
         <p><b>89.4 on Tasks 1–3, official.</b> Stuck on Tasks 4–5.</p></div>
@@ -267,25 +267,7 @@
       <div><h3>3 · RAX-AM: agent program + small models</h3><p class="muted">The agents' program makes the training data; small learned MLPs (0.45–17 M parameters) pick and execute the skills.</p>
         <p><b>91 of 100 official episodes.</b> Best single submission 91.93.</p></div>
     </div>
-    <p class="muted">Agents think slowly at design time; small models act fast at run time. Each turn had a concrete reason.</p>
-    <div class="rows">
-      <div class="row"><div class="d">Oct 11–12</div><div><h3>Pick a backbone</h3><p>ACT, our own diffusion model and π0.5 with
-        LoRA all lost to a full fine-tune of π0.5. We also set a rule we kept to the end: the environment is fixed, only the policy changes.</p></div></div>
-      <div class="row"><div class="d">Oct 13–16</div><div><h3>A replica we can trust</h3><p>We rebuilt the evaluation simulator in
-        Isaac Sim from the configuration stored in the official HDF5 files. Comparing it with official results exposed that the
-        official Task 1–3 static cameras were rotated by 180° relative to the training data.</p></div></div>
-      <div class="row"><div class="d">Oct 17–23</div><div><h3>Precision and multitask π0.5</h3><p>Averaging eight flow samples
-        (<i>mean8</i>) raised the official Task 3-2 success rate from 0.30 to 0.80 without retraining. A multitask model reached
-        56.7% success on Tasks 1–3, and 30 Hz interpolation stopped the left arm from dropping blocks.</p></div></div>
-      <div class="row"><div class="d">Oct 23–28</div><div><h3>Tasks 4–5 change the plan</h3><p>π0.5 behaviour cloning was weak on
-        push-down and insertion (0/12 on Task 4 in our replica). Coding agents explored the tasks in our replica and helped us
-        write a program that reuses demonstrations retargeted to the perceived block poses (the <i>RAX program</i>); we reviewed
-        every change. It was strong on all three task families. On Oct 27 the organisers
-        published the scoring formula and banned replay and fixed scripted solutions.</p></div></div>
-      <div class="row"><div class="d">Oct 28–Nov 1</div><div><h3>From program to learned policy</h3><p>In five days we replaced the
-        program's decision and motion parts by learned networks (<i>RAX-AM</i>) and kept the classical perception. Successive
-        versions (v1 → v6d) took it from 77 to 91 successful episodes out of 100, ahead of the program it replaced (90/100).</p></div></div>
-    </div>
+    <p class="muted">Agents think slowly at design time; small models act fast at run time.</p>
   </div>
 </div></div></section>
 
@@ -353,46 +335,6 @@
         <li><b>Task-specific modules.</b> A 45-row start transition on T1-2, and four corrections on T5-3: a height loop, a slowed
           push window with a height offset, and a slot-corner check.</li>
         <li>No demonstration rows are stored or replayed at inference.</li></ul></div>
-    </div>
-  </div>
-</div></div></section>
-
-<section class="sec" id="fixes"><div class="container"><div class="sec-grid">
-  <div class="label">Problems &amp; Fixes</div>
-  <div class="body">
-    <h2>Most gains came from understanding a failure, not from more training</h2>
-    <p class="muted">Numbers marked “replica” come from our local simulator; the others from official evaluations.</p>
-    <div class="pf">
-      <div class="pf-item"><h3>The simulator was hidden in the data</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>Our first local evaluations ranked models in the wrong order.</p></div>
-        <div><span class="label">Fix</span><p>The official HDF5 files carry the simulator configuration (gains, latency, gripper,
-          tolerances). A replica built from it matched the official result of our Task 3-2 model (0.52 vs 0.45) and stayed reliable for Tasks 1–3.</p></div></div></div>
-      <div class="pf-item"><h3>Upside-down cameras</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>Models that worked locally failed officially on Tasks 1–3.</p></div>
-        <div><span class="label">Fix</span><p>The official static images were rotated by 180° relative to the training data.
-          Rotating them back (<i>camfix</i>) fixed it; every Task 1–3 evaluation before that had been affected.</p></div></div></div>
-      <div class="pf-item"><h3>Good grasps, poor placement</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>π0.5 grasped reliably but placed poorly on Task 3-2 (success 0.30).</p></div>
-        <div><span class="label">Fix</span><p>Averaging eight flow samples per request (<i>mean8</i>) raised success to 0.80 with the same weights.</p></div></div></div>
-      <div class="pf-item"><h3>The left arm dropped blocks</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>Commands at 10 Hz excited the left arm and shook blocks loose.</p></div>
-        <div><span class="label">Fix</span><p>Interpolating to 30 Hz removed the drops (replica: 14/21 → 0/21); training on all three
-          30 Hz phases used the rest of the data.</p></div></div></div>
-      <div class="pf-item"><h3>A start pose no demonstration had</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>RAX-AM v1 succeeded on T1-2 in only 2 of 10 episodes.</p></div>
-        <div><span class="label">Fix</span><p>The official start differed from the demonstrated start by up to 0.165 rad. A 45-row
-          transition to the demonstrated start gave 10/10.</p></div></div></div>
-      <div class="pf-item"><h3>A safety filter that froze the robot</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>After rejecting one oversized step, the policy kept proposing it and never advanced.</p></div>
-        <div><span class="label">Fix</span><p>After repeated holds, the chunk is slewed from the last command within the unchanged limits.</p></div></div></div>
-      <div class="pf-item"><h3>Insertion with 1 mm of clearance</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>On T5-3 the held block met the walls, and the first push dragged the roof.</p></div>
-        <div><span class="label">Fix</span><p>Failure modes found in official videos and reproduced in the replica led to four
-          declared modules; T5-3 went from 5/10 to 8/10 with the same network weights.</p></div></div></div>
-      <div class="pf-item"><h3>A rule change five days before the end</h3><div class="pf-grid">
-        <div><span class="label">Problem</span><p>Our strongest policy, the RAX program, had no learned part when scripted solutions were banned.</p></div>
-        <div><span class="label">Fix</span><p>We moved its decisions and motions into learned networks trained on the
-          demonstrations, and declared every classical component that remained.</p></div></div></div>
     </div>
   </div>
 </div></div></section>
