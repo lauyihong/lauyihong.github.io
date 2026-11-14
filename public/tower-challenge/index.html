@@ -196,6 +196,7 @@
       <a class="back label" href="/"><span class="c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7M19 12H5"/></svg></span>Back to Index</a>
       <div class="tags"><span class="tag">TOWER Challenge 2026</span><span class="tag">Team Sakai</span><span class="tag">Imitation learning</span><span class="tag">Dual-arm manipulation</span><span class="tag">Isaac Sim</span></div>
       <h1>Agentic Task Decomposition for Skill-Specialist Robot Policies</h1>
+      <p class="lead">Think slowly at design and training, act fast at run time.</p>
       <div class="tldr"><div class="label">TL;DR</div>
       <p class="subtitle">Coding agents helped us plan each task offline and build its training data; two small learned
       networks then do the acting, in milliseconds on a CPU. Of the approaches we tried, this scored highest.</p>
@@ -211,7 +212,7 @@
         <div class="stat"><div class="v">93.50</div><div class="l">Overall score, per-variant best of our learned submissions</div></div>
         <div class="stat"><div class="v">91.93</div><div class="l">Best single submission (RAX-AM v6d)</div></div>
         <div class="stat"><div class="v">91 / 100</div><div class="l">Successful episodes of our best single submission (RAX-AM v6d)</div></div>
-        <div class="stat"><div class="v">7 / 10</div><div class="l">Variants at the maximum score of 100</div></div>
+        <div class="stat"><div class="v">7 / 10</div><div class="l">Variants at the maximum score of 100, per-variant best (6 / 10 in RAX-AM v6d alone)</div></div>
       </div>
     </div>
   </div>
@@ -258,7 +259,15 @@
   <div class="label">How It Evolved</div>
   <div class="body">
     <h2>From an end-to-end VLA to a modular learned policy</h2>
-    <p class="muted">Each turn had a concrete reason.</p>
+    <div class="cols3" style="margin:8px 0 40px">
+      <div><h3>1 · π0.5: end-to-end policy</h3><p class="muted">π0.5, fully fine-tuned on the official demonstrations: images and joints in, joint commands out. About 38 h of fine-tuning in 4 stages, mostly on 2× H20 (≈130 GPU-hours).</p>
+        <p><b>89.4 on Tasks 1–3, official.</b> Stuck on Tasks 4–5.</p></div>
+      <div><h3>2 · RAX: agent-supervised program</h3><p class="muted">Coding agents split each task into skills and wrote, with us, a program that retargets the demonstrations to the blocks it perceives.</p>
+        <p><b>90 of 100 official episodes</b>, but it frequently timed out and had no learned part.</p></div>
+      <div><h3>3 · RAX-AM: agent program + small models</h3><p class="muted">The agents' program makes the training data; small learned MLPs (0.45–17 M parameters) pick and execute the skills.</p>
+        <p><b>91 of 100 official episodes.</b> Best single submission 91.93.</p></div>
+    </div>
+    <p class="muted">Agents think slowly at design time; small models act fast at run time. Each turn had a concrete reason.</p>
     <div class="rows">
       <div class="row"><div class="d">Oct 11–12</div><div><h3>Pick a backbone</h3><p>ACT, our own diffusion model and π0.5 with
         LoRA all lost to a full fine-tune of π0.5. We also set a rule we kept to the end: the environment is fixed, only the policy changes.</p></div></div>
@@ -432,7 +441,17 @@
         </tbody>
       </table>
     </div>
-    <p class="note">Per-variant best of our learned submissions (T5-3 from v6d): 93.50. v6b and v6d differ only in the
+    <h3 style="margin-top:40px">RAX-AM across versions</h3>
+    <p class="muted">Official successful episodes out of 100.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Version</th><th class="n">Episodes</th><th>What changed</th></tr></thead>
+      <tbody>
+        <tr><td>v1</td><td class="num">77</td><td>First learned selector and executor</td></tr>
+        <tr><td>v3</td><td class="num">81</td><td>Start transition: T1-2 from 2/10 to 10/10</td></tr>
+        <tr><td>v6b</td><td class="num">89</td><td>T5-3 corrections: 5/10 to 8/10 with the same weights</td></tr>
+        <tr><td>v6d</td><td class="num best">91</td><td>New Task 4 model; 6 of 10 variants at 100</td></tr>
+      </tbody></table></div>
+    <p class="note">On Tasks 1–3, RAX-AM v6d averaged 98.6 against 89.4 for end-to-end π0.5. Per-variant best of our learned submissions (T5-3 from v6d): 93.50. v6b and v6d differ only in the
     Task 4 model; their identical Task 1–3 backends still gave 10/10 and 9/10 on T3-3, so one-episode differences are noise.</p>
   </div>
 </div></div></section>
@@ -463,7 +482,11 @@
 
 <section class="sec" id="lessons"><div class="container"><div class="sec-grid">
   <div class="label">Lessons</div>
-  <div class="body"><ul class="plain">
+  <div class="body">
+    <h3>Takeaways</h3><ul class="plain" style="margin-bottom:32px">
+    <li><b>Human and programmed demonstrations feed the robot agent.</b> The official human demonstrations give the skills and their order; the agents' program retargets them to new block positions (±20 mm, ±12°).</li>
+    <li><b>In contact-rich tasks, small learned action models beat the pure agent-supervised program.</b> Task 4 push-down, official, same track: 83.9 and 91.9 against 80.9 and 81.3. Task 5 insertion: even.</li></ul>
+    <h3>Lessons</h3><ul class="plain">
     <li><b>Calibrate the evaluator before trusting it.</b> An uncalibrated replica is good for rejecting broken versions, not for close calls.</li>
     <li><b>Look for the mechanism.</b> Configuration hidden in the data, a rotated camera, a 10 Hz excitation and an unseen start pose each became a fix.</li>
     <li><b>Inference and execution moved the score more than training.</b> Holding after done, sample averaging, 30 Hz interpolation and a start transition each beat a retrain.</li>
