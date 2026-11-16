@@ -12,6 +12,7 @@ export const RESEARCH: ResearchItem[] = [
     authors: [],
     image: "/research/lerobotneck.jpg",
     links: [
+      { label: "project page (coming soon)" },
       { label: "code", url: "https://github.com/lauyihong/lerobotneck" },
     ],
   },
