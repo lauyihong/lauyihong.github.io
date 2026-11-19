@@ -165,6 +165,11 @@
   .clip figcaption b { display: block; font-weight: 500; color: var(--text); }
   .ds-head { margin-top: 48px; }
   .clips.ds { gap: 24px; margin-top: 20px; }
+  @media (min-width: 768px) {
+    .clips.ds { grid-template-columns: repeat(6, 1fr); }
+    .clips.ds .clip { grid-column: span 2; }
+    .clips.ds .clip:nth-child(4) { grid-column: 2 / span 2; }
+  }
 
   footer { padding: 80px 0; }
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: center; }
