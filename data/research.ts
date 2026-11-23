@@ -5,18 +5,6 @@ import { ResearchItem } from '../types';
 // status: venue/type label, e.g. "Conference · NeurIPS 2025", "Workshop", "Competition", "Journal", "Preprint".
 export const RESEARCH: ResearchItem[] = [
   {
-    id: "lerobotneck",
-    title: "LeRobotNeck: Open Sourced Low Cost Robot Neck for Active Perception",
-    status: "Open Source · Hardware",
-    badgeNote: "Coming Soon!!!",
-    authors: [],
-    image: "/research/lerobotneck.jpg",
-    links: [
-      { label: "project page", url: "https://lauyihong.github.io/lerobotneck/" },
-      { label: "code", url: "https://github.com/lauyihong/lerobotneck" },
-    ],
-  },
-  {
     id: "tower-challenge",
     title: "Agent Task Decomposition for Precise Robotic Manipulation",
     status: "CORL 2026 Generation to Action Challenge · Competition",
@@ -27,6 +15,18 @@ export const RESEARCH: ResearchItem[] = [
       { label: "project page", url: "/tower-challenge/" },
       { label: "leaderboard", url: "https://huggingface.co/spaces/tower-benchmark/TOWER-Leaderboard" },
       { label: "talk slides", url: "/tower-challenge/TOWER_2026_Talk.pdf" },
+    ],
+  },
+  {
+    id: "lerobotneck",
+    title: "LeRobotNeck: Open Sourced Low Cost Robot Neck for Active Perception",
+    status: "Open Source · Hardware",
+    badgeNote: "Coming Soon!!!",
+    authors: [],
+    image: "/research/lerobotneck.jpg",
+    links: [
+      { label: "project page", url: "https://lauyihong.github.io/lerobotneck/" },
+      { label: "code", url: "https://github.com/lauyihong/lerobotneck" },
     ],
   },
   {
